@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllFixDoc · Guide</title>
+<meta name="description" content="AllFixDoc user guide: reading, notes, tools, voice notes, AI assistant, cloud and settings.">
+<style>
+  :root { --bg: #f4eef0; --surface: #fffafb; --text: #221a1d; --muted: #6c5f64; --primary: #9b1f47; --tertiary: #2f63c0;
+          --border: #ead9df; --chip: #f6e6ec; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #191315; --surface: #241c1f; --text: #f3e9ec; --muted: #c4b3b9; --primary: #ffb1c3; --tertiary: #a9c7ff;
+            --border: #3a2d32; --chip: #33262b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
+  .brand { font-size: 34px; font-weight: 700; letter-spacing: .5px; margin: 0;
+           background: linear-gradient(90deg, var(--primary), var(--tertiary)); -webkit-background-clip: text; background-clip: text;
+           color: transparent; text-shadow: 0 3px 8px color-mix(in srgb, var(--primary) 25%, transparent); }
+  .tagline { margin: 0 0 16px; font-weight: 600; font-size: 14px;
+             background: linear-gradient(90deg, var(--primary), var(--tertiary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+  nav a { font-size: 13px; padding: 4px 10px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; }
+  nav a.on { background: linear-gradient(90deg, var(--primary), var(--tertiary)); color: #fff; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 18px 0 6px; }
+  .intro { color: var(--muted); margin: 0 0 8px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 16px 18px; margin-top: 14px;
+          box-shadow: 0 2px 10px color-mix(in srgb, var(--primary) 8%, transparent); }
+  h2 { font-size: 19px; margin: 0 0 6px; color: var(--primary); }
+  ul { margin: 0; padding-inline-start: 22px; }
+  li { margin: 4px 0; overflow-wrap: anywhere; }
+  dt { font-weight: 600; margin-top: 10px; }
+  dd { margin: 2px 0 0; color: var(--muted); overflow-wrap: anywhere; }
+  a { color: var(--tertiary); }
+  b { color: var(--text); }
+  footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+<p class="brand">AllFixDoc</p>
+<p class="tagline">PDF · Office · Scan · Notes</p>
+<nav><a href="#tr">Türkçe</a> <a href="#en">English</a> <a href="#az">Azərbaycan dili</a> <a href="#de">Deutsch</a> <a href="#es">Español</a> <a href="#fr">Français</a> <a href="#id">Bahasa Indonesia</a> <a href="#it">Italiano</a> <a href="#pt-BR">Português (Brasil)</a> <a href="#ru">Русский</a> <a href="#ar">العربية</a> <a href="#hi">हिन्दी</a> <a href="#ja">日本語</a> <a href="#zh-CN">简体中文</a></nav>
+<section class="lang" id="tr" lang="tr" data-title="AllFixDoc Kullanım Kılavuzu">
+<h1>AllFixDoc Kullanım Kılavuzu</h1>
+<p class="intro">AllFixDoc ile PDF ve Office belgelerini okuyabilir, not alabilir, düzenleyebilir, tarayabilir ve paylaşabilirsin. Bu kılavuz özellikleri kısaca anlatır; adlar uygulamadaki gibidir.</p>
+<div class="card">
+<h2>Başlarken</h2>
+<ul><li>Belge açmak için Ana sayfa ekranındaki <b>Belge aç</b> düğmesine dokun ya da başka bir uygulamada (Dosyalar, Gmail, WhatsApp) bir PDF'e dokunup AllFixDoc'u seç.</li><li>Ana sayfa ekranının üstünde üç büyük düğme var: <b>Belge tara</b>, <b>Sesli notlar</b> ve Google Drive. Altındaki satırda önce favori araçların, sonra <b>Diğer Bulut</b> ve <b>Bu cihaz</b> durur; tümünü görmek için satırı sola kaydır.</li><li><b>Diğer Bulut</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA ve diğerleri. Telefonunda yüklü bulut uygulamaları dosya seçicide görünür: dosyayı oradan açar, düzenlediğin PDF'i oraya kaydedersin.</li><li>Word, Excel, PowerPoint, OpenDocument, RTF, CSV ve TXT dosyaları da açılır; okumak için otomatik olarak PDF'e çevrilir.</li><li>Sık kullandığın klasörleri Dosyalar › Klasörler › <b>Klasör ekle</b> ile ekle; içlerindeki PDF'ler tek listede görünür.</li><li>PDF'lerin hep AllFixDoc ile açılması için: Ayarlar › <b>Varsayılan uygulama</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Okuma</h2>
+<ul><li>Yakınlaştırmak için iki parmakla aç ya da çift dokun; sayfalar arasında kaydır.</li><li><b>Ara</b>: belgenin tamamında arar; Türkçe karakter yazmasan da bulur ("surum" → "sürüm").</li><li><b>İçindekiler ve sayfalar</b>: içindekiler, sayfa küçük resimleri ve yer imleri. Bir sayfayı işaretlemek için <b>Bu sayfaya yer imi koy</b>.</li><li><b>Gece modu</b> ve <b>Ekranı açık tut</b>: Ayarlar › Okuma.</li><li><b>Sesli oku</b>: belgeyi cihazın sesiyle okur, okunan kelimeyi işaretler.</li><li>Taranmış belgede metni seçmek ve aramak için ⋮ › <b>Metni tanı (OCR)</b>; sonucu <b>Aranabilir PDF olarak kaydet</b> ile kaydedebilirsin.</li></ul>
+</div>
+<div class="card">
+<h2>Not alma ve düzenleme</h2>
+<ul><li>Belge açıkken <b>Düzenle ve not al</b> araç çubuğunu açar: Vurgula, Çiz, Not, Metin, İmza, Karart, Silgi.</li><li>Not ve metin kutularındaki 🎤 simgesiyle yazmak yerine konuşabilirsin.</li><li><b>İmza</b>: imzanı bir kez çiz, istediğin sayfaya yerleştir.</li><li><b>Karart</b>: gizlemek istediğin alanı işaretle; kaydedince alttaki metin dosyadan kalıcı olarak silinir (yalnızca üstü kapanmaz).</li><li>Geri al / yinele ile değişiklikleri düzelt; aynı dosyaya ya da kopya olarak kaydet.</li><li>Doldurulabilir formlar için ⋮ › <b>Formu doldur</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Araçlar</h2>
+<ul><li><b>Araçlar</b> sekmesinde araçlar kategorilere ayrılmıştır; üstteki arama kutusuyla hızlıca bul.</li><li>Düzenleme: PDF birleştir, PDF böl, PDF sıkıştır, Sayfaları düzenle, Filigran, Sayfa numarası.</li><li>Dönüştürme: Görsellerden PDF, PDF'ten görsele, Office'ten PDF, PDF'ten Word'e, PDF'ten Excel'e, Yazdır.</li><li>Güvenlik: Şifre ekle, Şifreyi kaldır.</li><li>Tarama: Belge tara, QR kod tara, QR kod oluştur.</li><li>Dosya ve görsel: ZIP oluştur, ZIP aç, Görsel sıkıştır, Görsel boyutlandır, Görsel dönüştür, Görsellerden GIF, GIF'i karelere ayır.</li><li>Bir aracın köşesindeki ☆ işaretine dokun: araç ana sayfadaki ikinci satırda ve hızlı menüde görünür.</li></ul>
+</div>
+<div class="card">
+<h2>Sesli notlar</h2>
+<ul><li>Ana sayfa › <b>Sesli notlar</b>. Mikrofona dokun ve konuş; söylediğin yazıya dönüşür, her konuşma yeni satır olarak eklenir. Metni elle de düzenleyebilirsin.</li><li>Notlar otomatik kaydedilir. 🕘 <b>Notlarım</b> eski notları açar, ＋ <b>Yeni not</b> boş bir not başlatır.</li><li><b>Farklı kaydet</b>: Word, PDF ya da TXT. Ayrıca <b>E-posta ile gönder</b> (Word ekiyle), <b>Paylaş</b> ve <b>Yazdır</b>.</li><li>Konuşmayı yazıya çevirmek için cihazın konuşma tanıma hizmeti (çoğunlukla Google) kullanılır; AllFixDoc ses kaydetmez.</li></ul>
+</div>
+<div class="card">
+<h2>Paylaşma, e-posta ve yazdırma</h2>
+<ul><li>Ana sayfa ya da Dosyalar listesinde bir dosyanın ⋮ menüsü: <b>Paylaş</b>, <b>E-posta ile gönder</b>, <b>Yazdır</b>; dosyayı açmana gerek yok.</li><li>Belge açıkken aynı seçenekler ⋮ menüsündedir.</li><li><b>E-posta ile gönder</b> yalnızca e-posta uygulamalarını (Gmail, Outlook…) gösterir ve dosyayı ek olarak koyar.</li></ul>
+</div>
+<div class="card">
+<h2>AI asistan (ücretsiz Gemini)</h2>
+<ul><li>Ücretsiz bir Google Gemini anahtarı al: <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> adresine Google hesabınla gir, "Create API key" düğmesine dokun ve anahtarı kopyala.</li><li>Ayarlar › AI asistan › Google Gemini › <b>Anahtar ekle</b>: anahtarı yapıştır. Anahtar yalnızca bu cihazda, şifreli saklanır.</li><li>Belge açıkken ⋮ › <b>AI asistan</b>: belgeyi özetle, soru sor, çevir ya da sadeleştir. Yanıtlar sayfa numarasıyla gelir.</li><li>İstersen Claude (Anthropic) ya da <b>Asistan ekle</b> ile Groq, OpenRouter, Mistral veya OpenAI uyumlu başka bir servisi kullanabilirsin.</li><li>Yalnızca seçtiğin sayfaların metni, senin anahtarınla seçtiğin servise gider. AllFixDoc'un geliştiricisi bu verileri görmez. Ücretsiz kullanım sınırlarını servis belirler.</li></ul>
+</div>
+<div class="card">
+<h2>Kişiselleştirme</h2>
+<ul><li><b>Dil</b>: 14 dil. Telefonunun dili uygulamada yoksa <b>Otomatik çeviri</b> arayüzü cihazında çevirir (çeviri modeli Wi‑Fi'de bir kez indirilir).</li><li>Ayarlar › Görünüm: Tema, Renk, Saf siyah koyu tema, Uygulama simgesi, Simge stili.</li><li><b>Yarım daire hızlı menü</b>: sol kenardaki tutamağa dokun; menüyü yukarı-aşağı kaydırarak döndür, dışına dokununca kapanır.</li><li>Ayarlarını <b>Yedeği dışa aktar</b> ve <b>Yedeği içe aktar</b> ile başka bir telefona taşıyabilirsin.</li></ul>
+</div>
+<div class="card">
+<h2>Gizlilik</h2>
+<ul><li>Depolama izni istenmez; uygulama yalnızca senin seçtiğin dosyaları açar. Hesap açman gerekmez.</li><li>Belgeler cihazında işlenir. İnternet yalnızca AI asistanı (kendi anahtarınla), reklam ve satın alma için kullanılır.</li><li>Ayrıntılar: <a href="privacy.html#tr">Gizlilik politikası</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Sık sorulanlar</h2><dl>
+<dt>Taranmış PDF'te arama sonuç vermiyor.</dt><dd>Önce ⋮ › Metni tanı (OCR) ile metni tanıt, sonra ara.</dd>
+<dt>Mikrofon "konuşma tanıma yok" diyor.</dt><dd>Google uygulamasını yükle ya da güncelle; konuşma tanıma onunla gelir.</dd>
+<dt>AI "anahtar reddedildi" diyor.</dt><dd>Anahtarı eksiksiz kopyaladığından emin ol; gerekirse aistudio.google.com'da yeni bir anahtar oluştur.</dd>
+<dt>Şifreli PDF açılmıyor.</dt><dd>Açarken şifreyi gir; şifreyi kalıcı olarak kaldırmak için Araçlar › Şifreyi kaldır.</dd>
+<dt>Google Drive'daki dosyamı nasıl açarım?</dt><dd><b>Belge aç</b> ya da ana sayfadaki Google Drive düğmesi; dosya seçicinin sol menüsünden Drive'ı seç.</dd>
+</dl></div>
+</section>
+<section class="lang" id="en" lang="en" data-title="AllFixDoc User Guide">
+<h1>AllFixDoc User Guide</h1>
+<p class="intro">With AllFixDoc you can read, annotate, edit, scan and share PDF and Office documents. This guide gives a short tour of the features; names match the app.</p>
+<div class="card">
+<h2>Getting started</h2>
+<ul><li>To open a document, tap <b>Open document</b> on the Home screen, or tap a PDF in another app (Files, Gmail, WhatsApp) and choose AllFixDoc.</li><li>At the top of Home are three large buttons: <b>Scan document</b>, <b>Voice notes</b> and Google Drive. The row below starts with your favorite tools, followed by <b>Other Cloud</b> and <b>This device</b>; swipe it left to see them all.</li><li><b>Other Cloud</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA and more. Cloud apps installed on your phone appear in the file picker: open files from there and save edited PDFs back there.</li><li>Word, Excel, PowerPoint, OpenDocument, RTF, CSV and TXT files open too; they are converted to PDF for reading.</li><li>Add folders you use often with Files › Folders › <b>Add folder</b>; their PDFs appear in one list.</li><li>To always open PDFs with AllFixDoc: Settings › <b>Default app</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Reading</h2>
+<ul><li>Pinch or double-tap to zoom; scroll between pages.</li><li><b>Search</b>: searches the whole document, even when you type without accents.</li><li><b>Contents and pages</b>: table of contents, page thumbnails and bookmarks. To mark a page, use <b>Bookmark this page</b>.</li><li><b>Night mode</b> and <b>Keep screen on</b>: Settings › Reading.</li><li><b>Read aloud</b>: reads the document with your device's voice and highlights each word.</li><li>To select and search text in a scanned document, use ⋮ › <b>Recognize text (OCR)</b>; save the result with <b>Save as searchable PDF</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Notes and editing</h2>
+<ul><li>With a document open, <b>Edit and annotate</b> opens the toolbar: Highlight, Draw, Note, Text, Sign, Redact, Eraser.</li><li>Tap 🎤 in note and text boxes to dictate instead of typing.</li><li><b>Sign</b>: draw your signature once and place it on any page.</li><li><b>Redact</b>: mark what to hide; when you save, the text underneath is permanently removed from the file, not just covered.</li><li>Fix mistakes with undo / redo; save into the same file or as a copy.</li><li>For fillable forms, use ⋮ › <b>Fill in form</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Tools</h2>
+<ul><li>The <b>Tools</b> tab groups tools by category; use the search box at the top to find one quickly.</li><li>Editing: Merge PDFs, Split PDF, Compress PDF, Organize pages, Watermark, Page numbers.</li><li>Converting: Images to PDF, PDF to image, Office to PDF, PDF to Word, PDF to Excel, Print.</li><li>Security: Add password, Remove password.</li><li>Scanning: Scan document, Scan QR code, Create QR code.</li><li>Files and images: Create ZIP, Extract ZIP, Compress images, Resize images, Convert images, Images to GIF, GIF to frames.</li><li>Tap the ☆ in a tool's corner: it then appears in the second row of the home screen and in the quick menu.</li></ul>
+</div>
+<div class="card">
+<h2>Voice notes</h2>
+<ul><li>Home › <b>Voice notes</b>. Tap the microphone and speak; your words are written down, each dictation on a new line. You can also edit the text by hand.</li><li>Notes are saved automatically. 🕘 <b>My notes</b> opens earlier notes, ＋ <b>New note</b> starts an empty one.</li><li><b>Save as</b>: Word, PDF or TXT. You can also <b>Email</b> (with a Word attachment), <b>Share</b> and <b>Print</b>.</li><li>Speech is turned into text by your device's speech recognition service (usually Google); AllFixDoc doesn't record or keep audio.</li></ul>
+</div>
+<div class="card">
+<h2>Sharing, email and printing</h2>
+<ul><li>In the Home or Files list, a file's ⋮ menu offers <b>Share</b>, <b>Email</b> and <b>Print</b>, without opening it.</li><li>The same options are in the ⋮ menu while a document is open.</li><li><b>Email</b> lists only email apps (Gmail, Outlook…) and attaches the file.</li></ul>
+</div>
+<div class="card">
+<h2>AI assistant (free Gemini)</h2>
+<ul><li>Get a free Google Gemini key: sign in at <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> with your Google account, tap "Create API key" and copy the key.</li><li>Settings › AI assistant › Google Gemini › <b>Add key</b>: paste the key. It is stored encrypted on this device only.</li><li>With a document open, ⋮ › <b>AI assistant</b>: summarize, ask questions, translate or simplify. Answers cite page numbers.</li><li>You can also use Claude (Anthropic), or <b>Add assistant</b> for Groq, OpenRouter, Mistral or another OpenAI-compatible service.</li><li>Only the text of the pages you select is sent, with your key, to the service you chose. The developer of AllFixDoc never sees it. Free usage limits are set by the service.</li></ul>
+</div>
+<div class="card">
+<h2>Personalization</h2>
+<ul><li><b>Language</b>: 14 languages. If your phone's language isn't built in, <b>Automatic translation</b> translates the interface on your device (the model downloads once over Wi‑Fi).</li><li>Settings › Appearance: Theme, Color, Pure black dark theme, App icon, Icon style.</li><li><b>Half-circle quick menu</b>: tap the handle on the left edge; swipe up or down to turn the menu, tap outside to close it.</li><li>Move your settings to another phone with <b>Export backup</b> and <b>Import backup</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Privacy</h2>
+<ul><li>No storage permission is requested; the app opens only the files you choose. No account is needed.</li><li>Documents are processed on your device. The internet is used only for the AI assistant (with your own key), ads and purchases.</li><li>Details: <a href="privacy.html#en">Privacy policy</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Frequently asked questions</h2><dl>
+<dt>Search finds nothing in a scanned PDF.</dt><dd>First run ⋮ › Recognize text (OCR), then search.</dd>
+<dt>The microphone says speech recognition isn't available.</dt><dd>Install or update the Google app; speech recognition comes with it.</dd>
+<dt>The AI says the key was rejected.</dt><dd>Make sure you copied the whole key; if needed, create a new one at aistudio.google.com.</dd>
+<dt>A password-protected PDF won't open.</dt><dd>Enter the password when opening; to remove it permanently, use Tools › Remove password.</dd>
+<dt>How do I open a file from Google Drive?</dt><dd><b>Open document</b> or the Google Drive button on the home screen; pick Drive in the file picker's side menu.</dd>
+</dl></div>
+</section>
+<section class="lang" id="az" lang="az" data-title="AllFixDoc İstifadə Təlimatı">
+<h1>AllFixDoc İstifadə Təlimatı</h1>
+<p class="intro">AllFixDoc ilə PDF və Office sənədlərini oxuya, qeyd edə, redaktə edə, skan edə və paylaşa bilərsiniz. Bu təlimat funksiyaları qısaca izah edir; adlar tətbiqdəki kimidir.</p>
+<div class="card">
+<h2>Başlanğıc</h2>
+<ul><li>Sənəd açmaq üçün Ana səhifə ekranındakı <b>Sənəd aç</b> düyməsinə toxunun və ya başqa tətbiqdə (Fayllar, Gmail, WhatsApp) PDF-ə toxunub AllFixDoc-u seçin.</li><li>Ana səhifə ekranının yuxarısında üç böyük düymə var: <b>Sənəd skan et</b>, <b>Səsli qeydlər</b> və Google Drive. Altındakı sətirdə əvvəlcə sevimli alətləriniz, sonra <b>Digər Bulud</b> və <b>Bu cihaz</b> var; hamısını görmək üçün sətri sola sürüşdürün.</li><li><b>Digər Bulud</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA və digərləri. Telefonunuzda quraşdırılmış bulud tətbiqləri fayl seçicidə görünür: faylı oradan açın, redaktə etdiyiniz PDF-i ora saxlayın.</li><li>Word, Excel, PowerPoint, OpenDocument, RTF, CSV və TXT faylları da açılır; oxumaq üçün avtomatik PDF-ə çevrilir.</li><li>Tez-tez istifadə etdiyiniz qovluqları Fayllar › Qovluqlar › <b>Qovluq əlavə et</b> ilə əlavə edin; içindəki PDF-lər bir siyahıda görünür.</li><li>PDF-lərin həmişə AllFixDoc ilə açılması üçün: Ayarlar › <b>Standart tətbiq</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Oxuma</h2>
+<ul><li>Böyütmək üçün iki barmaqla açın və ya iki dəfə toxunun; səhifələr arasında sürüşdürün.</li><li><b>Axtar</b>: bütün sənəddə axtarır; xüsusi hərfləri yazmasanız da tapır.</li><li><b>Mündəricat və səhifələr</b>: mündəricat, səhifə miniatürləri və əlfəcinlər. Səhifəni işarələmək üçün <b>Bu səhifəni əlfəcinlə</b>.</li><li><b>Gecə rejimi</b> və <b>Ekranı açıq saxla</b>: Ayarlar › Oxuma.</li><li><b>Səsli oxu</b>: sənədi cihazın səsi ilə oxuyur, oxunan sözü işarələyir.</li><li>Skan edilmiş sənəddə mətni seçmək və axtarmaq üçün ⋮ › <b>Mətni tanı (OCR)</b>; nəticəni <b>Axtarıla bilən PDF kimi saxla</b> ilə saxlaya bilərsiniz.</li></ul>
+</div>
+<div class="card">
+<h2>Qeyd və redaktə</h2>
+<ul><li>Sənəd açıq olanda <b>Redaktə və qeyd</b> alətlər panelini açır: Vurğula, Çək, Qeyd, Mətn, İmza, Qaralt, Pozan.</li><li>Qeyd və mətn qutularındakı 🎤 ilə yazmaq əvəzinə danışa bilərsiniz.</li><li><b>İmza</b>: imzanızı bir dəfə çəkin, istədiyiniz səhifəyə yerləşdirin.</li><li><b>Qaralt</b>: gizlətmək istədiyiniz yeri işarələyin; saxlayanda altdakı mətn fayldan həmişəlik silinir (sadəcə üstü örtülmür).</li><li>Geri al / təkrarla ilə dəyişiklikləri düzəldin; eyni fayla və ya surət kimi saxlayın.</li><li>Doldurula bilən formalar üçün ⋮ › <b>Formu doldur</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Alətlər</h2>
+<ul><li><b>Alətlər</b> bölməsində alətlər kateqoriyalara ayrılıb; yuxarıdakı axtarış qutusu ilə tez tapın.</li><li>Redaktə: PDF-ləri birləşdir, PDF-i böl, PDF-i sıx, Səhifələri təşkil et, Su nişanı, Səhifə nömrələri.</li><li>Çevirmə: Şəkillərdən PDF, PDF-dən şəklə, Office-dən PDF-ə, PDF-dən Word-ə, PDF-dən Excel-ə, Çap et.</li><li>Təhlükəsizlik: Parol əlavə et, Parolu sil.</li><li>Skan: Sənəd skan et, QR kod skan et, QR kod yarat.</li><li>Fayl və şəkil: ZIP yarat, ZIP-i aç, Şəkilləri sıx, Şəkil ölçüsünü dəyiş, Şəkilləri çevir, Şəkillərdən GIF, GIF-dən kadrlara.</li><li>Alətin küncündəki ☆ işarəsinə toxunun: alət ana səhifənin ikinci sətrində və sürətli menyuda görünür.</li></ul>
+</div>
+<div class="card">
+<h2>Səsli qeydlər</h2>
+<ul><li>Ana səhifə › <b>Səsli qeydlər</b>. Mikrofona toxunub danışın; dedikləriniz mətnə çevrilir, hər danışıq yeni sətir kimi əlavə olunur. Mətni əl ilə də redaktə edə bilərsiniz.</li><li>Qeydlər avtomatik saxlanılır. 🕘 <b>Qeydlərim</b> köhnə qeydləri açır, ＋ <b>Yeni qeyd</b> boş qeyd başladır.</li><li><b>Fərqli saxla</b>: Word, PDF və ya TXT. Həmçinin <b>E-poçtla göndər</b> (Word əlavəsi ilə), <b>Paylaş</b> və <b>Çap et</b>.</li><li>Danışığı mətnə çevirmək üçün cihazın nitqi tanıma xidməti (adətən Google) istifadə olunur; AllFixDoc səs yazmır.</li></ul>
+</div>
+<div class="card">
+<h2>Paylaşma, e-poçt və çap</h2>
+<ul><li>Ana səhifə və ya Fayllar siyahısında faylın ⋮ menyusu: <b>Paylaş</b>, <b>E-poçtla göndər</b>, <b>Çap et</b>; faylı açmağa ehtiyac yoxdur.</li><li>Sənəd açıq olanda eyni seçimlər ⋮ menyusundadır.</li><li><b>E-poçtla göndər</b> yalnız e-poçt tətbiqlərini (Gmail, Outlook…) göstərir və faylı əlavə kimi qoyur.</li></ul>
+</div>
+<div class="card">
+<h2>AI assistent (pulsuz Gemini)</h2>
+<ul><li>Pulsuz Google Gemini açarı alın: <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> ünvanına Google hesabınızla daxil olun, "Create API key" düyməsinə toxunun və açarı kopyalayın.</li><li>Ayarlar › Süni intellekt köməkçisi › Google Gemini › <b>Açar əlavə et</b>: açarı yapışdırın. Açar yalnız bu cihazda şifrəli saxlanılır.</li><li>Sənəd açıq olanda ⋮ › <b>Süni intellekt köməkçisi</b>: sənədi xülasə edin, sual verin, tərcümə edin və ya sadələşdirin. Cavablar səhifə nömrəsi ilə gəlir.</li><li>İstəsəniz Claude (Anthropic) və ya <b>Assistent əlavə et</b> ilə Groq, OpenRouter, Mistral və ya OpenAI ilə uyğun başqa xidmətdən istifadə edə bilərsiniz.</li><li>Yalnız seçdiyiniz səhifələrin mətni sizin açarınızla seçdiyiniz xidmətə gedir. AllFixDoc-un tərtibatçısı bu məlumatları görmür. Pulsuz istifadə limitlərini xidmət müəyyən edir.</li></ul>
+</div>
+<div class="card">
+<h2>Fərdiləşdirmə</h2>
+<ul><li><b>Dil</b>: 14 dil. Telefonunuzun dili tətbiqdə yoxdursa, <b>Avtomatik tərcümə</b> interfeysi cihazınızda tərcümə edir (model Wi‑Fi ilə bir dəfə endirilir).</li><li>Ayarlar › Görünüş: Mövzu, Rəng, Tünd mövzuda tam qara, Tətbiq ikonu, İkon üslubu.</li><li><b>Yarımdairə sürətli menyu</b>: sol kənardakı tutacağa toxunun; menyunu yuxarı-aşağı sürüşdürərək fırladın, kənarına toxunanda bağlanır.</li><li>Ayarlarınızı <b>Ehtiyat nüsxəni ixrac et</b> və <b>Ehtiyat nüsxəni idxal et</b> ilə başqa telefona köçürə bilərsiniz.</li></ul>
+</div>
+<div class="card">
+<h2>Məxfilik</h2>
+<ul><li>Yaddaş icazəsi istənmir; tətbiq yalnız seçdiyiniz faylları açır. Hesab tələb olunmur.</li><li>Sənədlər cihazınızda emal olunur. İnternet yalnız AI assistenti (öz açarınızla), reklam və satınalmalar üçün istifadə olunur.</li><li>Ətraflı: <a href="privacy.html#az">Məxfilik siyasəti</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Tez-tez verilən suallar</h2><dl>
+<dt>Skan edilmiş PDF-də axtarış nəticə vermir.</dt><dd>Əvvəlcə ⋮ › Mətni tanı (OCR) ilə mətni tanıdın, sonra axtarın.</dd>
+<dt>Mikrofon nitqi tanımanın olmadığını deyir.</dt><dd>Google tətbiqini quraşdırın və ya yeniləyin; nitqi tanıma onunla gəlir.</dd>
+<dt>AI açarın rədd edildiyini deyir.</dt><dd>Açarı tam kopyaladığınıza əmin olun; lazım olsa, aistudio.google.com-da yeni açar yaradın.</dd>
+<dt>Şifrəli PDF açılmır.</dt><dd>Açanda şifrəni daxil edin; şifrəni həmişəlik silmək üçün Alətlər › Parolu sil.</dd>
+<dt>Google Drive-dakı faylı necə açım?</dt><dd><b>Sənəd aç</b> və ya ana səhifədəki Google Drive düyməsi; fayl seçicinin yan menyusundan Drive-ı seçin.</dd>
+</dl></div>
+</section>
+<section class="lang" id="de" lang="de" data-title="AllFixDoc Benutzerhandbuch">
+<h1>AllFixDoc Benutzerhandbuch</h1>
+<p class="intro">Mit AllFixDoc kannst du PDF- und Office-Dokumente lesen, kommentieren, bearbeiten, scannen und teilen. Diese Anleitung stellt die Funktionen kurz vor; die Namen entsprechen der App.</p>
+<div class="card">
+<h2>Erste Schritte</h2>
+<ul><li>Um ein Dokument zu öffnen, tippe auf dem Bildschirm Start auf <b>Dokument öffnen</b> oder tippe in einer anderen App (Dateien, Gmail, WhatsApp) auf eine PDF und wähle AllFixDoc.</li><li>Oben auf Start findest du drei große Schaltflächen: <b>Dokument scannen</b>, <b>Sprachnotizen</b> und Google Drive. Die Leiste darunter beginnt mit deinen Lieblingswerkzeugen, danach folgen <b>Weitere Cloud</b> und <b>Dieses Gerät</b>; wische nach links, um alle zu sehen.</li><li><b>Weitere Cloud</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA und weitere. Auf dem Handy installierte Cloud-Apps erscheinen in der Dateiauswahl: Öffne Dateien von dort und speichere bearbeitete PDFs wieder dorthin.</li><li>Auch Word-, Excel-, PowerPoint-, OpenDocument-, RTF-, CSV- und TXT-Dateien lassen sich öffnen; zum Lesen werden sie automatisch in PDF umgewandelt.</li><li>Häufig genutzte Ordner fügst du unter Dateien › Ordner › <b>Ordner hinzufügen</b> hinzu; ihre PDFs erscheinen in einer Liste.</li><li>Damit PDFs immer mit AllFixDoc geöffnet werden: Einstellungen › <b>Standard-App</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Lesen</h2>
+<ul><li>Zum Zoomen zwei Finger spreizen oder doppelt tippen; zwischen den Seiten scrollen.</li><li><b>Suchen</b>: durchsucht das ganze Dokument, auch wenn du ohne Umlaute tippst.</li><li><b>Inhalt und Seiten</b>: Inhaltsverzeichnis, Seitenvorschauen und Lesezeichen. Eine Seite markierst du mit <b>Lesezeichen für diese Seite</b>.</li><li><b>Nachtmodus</b> und <b>Bildschirm eingeschaltet lassen</b>: Einstellungen › Lesen.</li><li><b>Vorlesen</b>: liest das Dokument mit der Stimme des Geräts vor und markiert jedes Wort.</li><li>Um Text in einem gescannten Dokument auszuwählen und zu durchsuchen: ⋮ › <b>Text erkennen (OCR)</b>; das Ergebnis speicherst du mit <b>Als durchsuchbare PDF speichern</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Notizen und Bearbeitung</h2>
+<ul><li>Bei geöffnetem Dokument öffnet <b>Bearbeiten und kommentieren</b> die Werkzeugleiste: Markieren, Zeichnen, Notiz, Text, Signatur, Schwärzen, Radierer.</li><li>Tippe in Notiz- und Textfeldern auf 🎤, um zu diktieren statt zu tippen.</li><li><b>Signatur</b>: Zeichne deine Unterschrift einmal und setze sie auf jede beliebige Seite.</li><li><b>Schwärzen</b>: Markiere, was verborgen werden soll; beim Speichern wird der Text darunter dauerhaft aus der Datei entfernt, nicht nur verdeckt.</li><li>Mit Rückgängig / Wiederholen korrigieren; in dieselbe Datei oder als Kopie speichern.</li><li>Für ausfüllbare Formulare: ⋮ › <b>Formular ausfüllen</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Werkzeuge</h2>
+<ul><li>Der Bereich <b>Werkzeuge</b> ordnet die Werkzeuge nach Kategorien; mit dem Suchfeld oben findest du sie schnell.</li><li>Bearbeiten: PDFs verbinden, PDF teilen, PDF komprimieren, Seiten ordnen, Wasserzeichen, Seitenzahlen.</li><li>Umwandeln: Bilder in PDF, PDF in Bild, Office in PDF, PDF in Word, PDF in Excel, Drucken.</li><li>Sicherheit: Passwort hinzufügen, Passwort entfernen.</li><li>Scannen: Dokument scannen, QR-Code scannen, QR-Code erstellen.</li><li>Dateien und Bilder: ZIP erstellen, ZIP entpacken, Bilder komprimieren, Bildgröße ändern, Bilder umwandeln, Bilder in GIF, GIF in Einzelbilder.</li><li>Tippe auf den ☆ in der Ecke eines Werkzeugs: Es erscheint dann in der zweiten Leiste der Startseite und im Schnellmenü.</li></ul>
+</div>
+<div class="card">
+<h2>Sprachnotizen</h2>
+<ul><li>Start › <b>Sprachnotizen</b>. Tippe auf das Mikrofon und sprich; deine Worte werden aufgeschrieben, jedes Diktat in einer neuen Zeile. Du kannst den Text auch von Hand bearbeiten.</li><li>Notizen werden automatisch gespeichert. 🕘 <b>Meine Notizen</b> öffnet frühere Notizen, ＋ <b>Neue Notiz</b> beginnt eine leere.</li><li><b>Speichern als</b>: Word, PDF oder TXT. Außerdem <b>Per E-Mail senden</b> (mit Word-Anhang), <b>Teilen</b> und <b>Drucken</b>.</li><li>Die Umwandlung von Sprache in Text übernimmt die Spracherkennung deines Geräts (meist Google); AllFixDoc nimmt kein Audio auf.</li></ul>
+</div>
+<div class="card">
+<h2>Teilen, E-Mail und Drucken</h2>
+<ul><li>In der Liste Start oder Dateien bietet das ⋮-Menü einer Datei <b>Teilen</b>, <b>Per E-Mail senden</b> und <b>Drucken</b>, ohne sie zu öffnen.</li><li>Bei geöffnetem Dokument findest du dieselben Optionen im ⋮-Menü.</li><li><b>Per E-Mail senden</b> zeigt nur E-Mail-Apps (Gmail, Outlook…) und hängt die Datei an.</li></ul>
+</div>
+<div class="card">
+<h2>KI-Assistent (kostenloses Gemini)</h2>
+<ul><li>Hol dir einen kostenlosen Google-Gemini-Schlüssel: Melde dich auf <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> mit deinem Google-Konto an, tippe auf "Create API key" und kopiere den Schlüssel.</li><li>Einstellungen › KI-Assistent › Google Gemini › <b>Schlüssel hinzufügen</b>: Schlüssel einfügen. Er wird nur verschlüsselt auf diesem Gerät gespeichert.</li><li>Bei geöffnetem Dokument ⋮ › <b>KI-Assistent</b>: zusammenfassen, Fragen stellen, übersetzen oder vereinfachen. Antworten nennen die Seitenzahlen.</li><li>Du kannst auch Claude (Anthropic) nutzen oder mit <b>Assistent hinzufügen</b> Groq, OpenRouter, Mistral oder einen anderen OpenAI-kompatiblen Dienst.</li><li>Nur der Text der ausgewählten Seiten geht mit deinem Schlüssel an den gewählten Dienst. Der Entwickler von AllFixDoc sieht ihn nie. Kostenlose Nutzungsgrenzen legt der Dienst fest.</li></ul>
+</div>
+<div class="card">
+<h2>Anpassen</h2>
+<ul><li><b>Sprache</b>: 14 Sprachen. Ist die Sprache deines Handys nicht dabei, übersetzt <b>Automatische Übersetzung</b> die Oberfläche auf deinem Gerät (das Modell wird einmal über WLAN geladen).</li><li>Einstellungen › Darstellung: Design, Farbe, Reines Schwarz im dunklen Design, App-Symbol, Symbolstil.</li><li><b>Halbkreis-Schnellmenü</b>: Tippe auf den Griff am linken Rand; wische nach oben oder unten, um das Menü zu drehen, und tippe daneben, um es zu schließen.</li><li>Mit <b>Sicherung exportieren</b> und <b>Sicherung importieren</b> nimmst du deine Einstellungen auf ein anderes Handy mit.</li></ul>
+</div>
+<div class="card">
+<h2>Datenschutz</h2>
+<ul><li>Es wird keine Speicherberechtigung verlangt; die App öffnet nur die Dateien, die du auswählst. Ein Konto ist nicht nötig.</li><li>Dokumente werden auf deinem Gerät verarbeitet. Das Internet wird nur für den KI-Assistenten (mit deinem eigenen Schlüssel), Werbung und Käufe genutzt.</li><li>Details: <a href="privacy.html#de">Datenschutzerklärung</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Häufige Fragen</h2><dl>
+<dt>Die Suche findet in einer gescannten PDF nichts.</dt><dd>Führe zuerst ⋮ › Text erkennen (OCR) aus und suche dann.</dd>
+<dt>Das Mikrofon meldet, dass keine Spracherkennung verfügbar ist.</dt><dd>Installiere oder aktualisiere die Google-App; die Spracherkennung ist darin enthalten.</dd>
+<dt>Die KI meldet, dass der Schlüssel abgelehnt wurde.</dt><dd>Prüfe, ob du den ganzen Schlüssel kopiert hast; erstelle bei Bedarf auf aistudio.google.com einen neuen.</dd>
+<dt>Eine passwortgeschützte PDF lässt sich nicht öffnen.</dt><dd>Gib beim Öffnen das Passwort ein; zum dauerhaften Entfernen: Werkzeuge › Passwort entfernen.</dd>
+<dt>Wie öffne ich eine Datei aus Google Drive?</dt><dd><b>Dokument öffnen</b> oder die Google-Drive-Schaltfläche auf der Startseite; wähle Drive im Seitenmenü der Dateiauswahl.</dd>
+</dl></div>
+</section>
+<section class="lang" id="es" lang="es" data-title="Guía de uso de AllFixDoc">
+<h1>Guía de uso de AllFixDoc</h1>
+<p class="intro">Con AllFixDoc puedes leer, anotar, editar, escanear y compartir documentos PDF y de Office. Esta guía resume las funciones; los nombres coinciden con la app.</p>
+<div class="card">
+<h2>Primeros pasos</h2>
+<ul><li>Para abrir un documento, toca <b>Abrir documento</b> en la pantalla Inicio, o toca un PDF en otra app (Archivos, Gmail, WhatsApp) y elige AllFixDoc.</li><li>En la parte superior de Inicio hay tres botones grandes: <b>Escanear documento</b>, <b>Notas de voz</b> y Google Drive. La fila de debajo empieza con tus herramientas favoritas y sigue con <b>Otra nube</b> y <b>Este dispositivo</b>; desliza hacia la izquierda para verlas todas.</li><li><b>Otra nube</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA y otras. Las apps de nube instaladas en tu teléfono aparecen en el selector de archivos: abre los archivos desde ahí y guarda allí los PDF editados.</li><li>También se abren archivos de Word, Excel, PowerPoint, OpenDocument, RTF, CSV y TXT; se convierten a PDF para leerlos.</li><li>Añade las carpetas que usas a menudo en Archivos › Carpetas › <b>Añadir carpeta</b>; sus PDF aparecen en una sola lista.</li><li>Para abrir siempre los PDF con AllFixDoc: Ajustes › <b>App predeterminada</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Lectura</h2>
+<ul><li>Pellizca o toca dos veces para hacer zoom; desplázate entre páginas.</li><li><b>Buscar</b>: busca en todo el documento, aunque escribas sin tildes.</li><li><b>Índice y páginas</b>: índice, miniaturas de páginas y marcadores. Para marcar una página, usa <b>Marcar esta página</b>.</li><li><b>Modo nocturno</b> y <b>Mantener la pantalla encendida</b>: Ajustes › Lectura.</li><li><b>Leer en voz alta</b>: lee el documento con la voz del dispositivo y resalta cada palabra.</li><li>Para seleccionar y buscar texto en un documento escaneado, usa ⋮ › <b>Reconocer texto (OCR)</b>; guarda el resultado con <b>Guardar como PDF con búsqueda</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Notas y edición</h2>
+<ul><li>Con un documento abierto, <b>Editar y anotar</b> abre la barra de herramientas: Resaltar, Dibujar, Nota, Texto, Firmar, Tachar, Borrador.</li><li>Toca 🎤 en los cuadros de nota y texto para dictar en lugar de escribir.</li><li><b>Firmar</b>: dibuja tu firma una vez y colócala en cualquier página.</li><li><b>Tachar</b>: marca lo que quieres ocultar; al guardar, el texto de debajo se elimina del archivo para siempre, no solo se tapa.</li><li>Corrige con deshacer / rehacer; guarda en el mismo archivo o como copia.</li><li>Para formularios rellenables, usa ⋮ › <b>Rellenar formulario</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Herramientas</h2>
+<ul><li>La pestaña <b>Herramientas</b> agrupa las herramientas por categoría; usa el buscador de arriba para encontrarlas rápido.</li><li>Edición: Unir PDF, Dividir PDF, Comprimir PDF, Organizar páginas, Marca de agua, Números de página.</li><li>Conversión: Imágenes a PDF, PDF a imagen, Office a PDF, PDF a Word, PDF a Excel, Imprimir.</li><li>Seguridad: Añadir contraseña, Quitar contraseña.</li><li>Escaneo: Escanear documento, Escanear código QR, Crear código QR.</li><li>Archivos e imágenes: Crear ZIP, Extraer ZIP, Comprimir imágenes, Redimensionar imágenes, Convertir imágenes, Imágenes a GIF, GIF a fotogramas.</li><li>Toca la ☆ en la esquina de una herramienta: aparecerá en la segunda fila de la pantalla de inicio y en el menú rápido.</li></ul>
+</div>
+<div class="card">
+<h2>Notas de voz</h2>
+<ul><li>Inicio › <b>Notas de voz</b>. Toca el micrófono y habla; tus palabras se escriben y cada dictado va en una línea nueva. También puedes editar el texto a mano.</li><li>Las notas se guardan solas. 🕘 <b>Mis notas</b> abre notas anteriores, ＋ <b>Nueva nota</b> empieza una vacía.</li><li><b>Guardar como</b>: Word, PDF o TXT. También: <b>Enviar por correo</b> (con adjunto de Word), <b>Compartir</b>, <b>Imprimir</b>.</li><li>El servicio de reconocimiento de voz del dispositivo (normalmente Google) convierte la voz en texto; AllFixDoc no graba audio.</li></ul>
+</div>
+<div class="card">
+<h2>Compartir, correo e impresión</h2>
+<ul><li>En la lista de Inicio o Archivos, el menú ⋮ de un archivo ofrece <b>Compartir</b>, <b>Enviar por correo</b>, <b>Imprimir</b>, sin abrirlo.</li><li>Con un documento abierto, las mismas opciones están en el menú ⋮.</li><li><b>Enviar por correo</b> muestra solo apps de correo (Gmail, Outlook…) y adjunta el archivo.</li></ul>
+</div>
+<div class="card">
+<h2>Asistente de IA (Gemini gratis)</h2>
+<ul><li>Consigue una clave gratuita de Google Gemini: entra en <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> con tu cuenta de Google, toca "Create API key" y copia la clave.</li><li>Ajustes › Asistente de IA › Google Gemini › <b>Añadir clave</b>: pega la clave. Se guarda cifrada solo en este dispositivo.</li><li>Con un documento abierto, ⋮ › <b>Asistente de IA</b>: resume, pregunta, traduce o simplifica. Las respuestas citan la página.</li><li>También puedes usar Claude (Anthropic) o, con <b>Añadir asistente</b>, Groq, OpenRouter, Mistral u otro servicio compatible con OpenAI.</li><li>Solo se envía el texto de las páginas que elijas, con tu clave, al servicio que elegiste. El desarrollador de AllFixDoc nunca lo ve. Los límites de uso gratuito los fija el servicio.</li></ul>
+</div>
+<div class="card">
+<h2>Personalización</h2>
+<ul><li><b>Idioma</b>: 14 idiomas. Si el idioma de tu teléfono no está incluido, <b>Traducción automática</b> traduce la interfaz en tu dispositivo (el modelo se descarga una vez por Wi‑Fi).</li><li>Ajustes › Apariencia: Tema, Color, Tema oscuro negro puro, Icono de la app, Estilo de iconos.</li><li><b>Menú rápido semicircular</b>: toca el asa del borde izquierdo; desliza arriba o abajo para girar el menú y toca fuera para cerrarlo.</li><li>Lleva tus ajustes a otro teléfono con <b>Exportar copia de seguridad</b> y <b>Importar copia de seguridad</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Privacidad</h2>
+<ul><li>No se pide permiso de almacenamiento; la app solo abre los archivos que eliges. No necesitas cuenta.</li><li>Los documentos se procesan en tu dispositivo. Internet solo se usa para el asistente de IA (con tu propia clave), los anuncios y las compras.</li><li>Detalles: <a href="privacy.html#es">Política de privacidad</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Preguntas frecuentes</h2><dl>
+<dt>La búsqueda no encuentra nada en un PDF escaneado.</dt><dd>Primero usa ⋮ › Reconocer texto (OCR) y luego busca.</dd>
+<dt>El micrófono dice que no hay reconocimiento de voz.</dt><dd>Instala o actualiza la app de Google; el reconocimiento de voz viene con ella.</dd>
+<dt>La IA dice que la clave fue rechazada.</dt><dd>Comprueba que copiaste la clave completa; si hace falta, crea una nueva en aistudio.google.com.</dd>
+<dt>Un PDF con contraseña no se abre.</dt><dd>Escribe la contraseña al abrirlo; para quitarla definitivamente, usa Herramientas › Quitar contraseña.</dd>
+<dt>¿Cómo abro un archivo de Google Drive?</dt><dd><b>Abrir documento</b> o el botón de Google Drive en la pantalla de inicio; elige Drive en el menú lateral del selector de archivos.</dd>
+</dl></div>
+</section>
+<section class="lang" id="fr" lang="fr" data-title="Guide d&#x27;utilisation d&#x27;AllFixDoc">
+<h1>Guide d'utilisation d'AllFixDoc</h1>
+<p class="intro">Avec AllFixDoc, vous pouvez lire, annoter, modifier, numériser et partager des documents PDF et Office. Ce guide présente brièvement les fonctions ; les noms sont ceux de l'app.</p>
+<div class="card">
+<h2>Bien démarrer</h2>
+<ul><li>Pour ouvrir un document, touchez <b>Ouvrir un document</b> sur l'écran Accueil, ou touchez un PDF dans une autre app (Fichiers, Gmail, WhatsApp) et choisissez AllFixDoc.</li><li>En haut de Accueil, trois grands boutons : <b>Numériser un document</b>, <b>Notes vocales</b> et Google Drive. La rangée en dessous commence par vos outils favoris, puis <b>Autre cloud</b> et <b>Cet appareil</b> ; faites-la glisser vers la gauche pour tout voir.</li><li><b>Autre cloud</b> : OneDrive, Dropbox, iCloud Drive, Box, MEGA et d'autres. Les apps cloud installées sur votre téléphone apparaissent dans le sélecteur de fichiers : ouvrez vos fichiers depuis là et enregistrez-y vos PDF modifiés.</li><li>Les fichiers Word, Excel, PowerPoint, OpenDocument, RTF, CSV et TXT s'ouvrent aussi ; ils sont convertis en PDF pour la lecture.</li><li>Ajoutez vos dossiers fréquents via Fichiers › Dossiers › <b>Ajouter un dossier</b> ; leurs PDF apparaissent dans une seule liste.</li><li>Pour toujours ouvrir les PDF avec AllFixDoc : Paramètres › <b>Application par défaut</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Lecture</h2>
+<ul><li>Pincez ou touchez deux fois pour zoomer ; faites défiler entre les pages.</li><li><b>Rechercher</b> : recherche dans tout le document, même si vous tapez sans accents.</li><li><b>Sommaire et pages</b> : table des matières, miniatures des pages et signets. Pour marquer une page, utilisez <b>Ajouter un signet à cette page</b>.</li><li><b>Mode nuit</b> et <b>Garder l'écran allumé</b> : Paramètres › Lecture.</li><li><b>Lire à voix haute</b> : lit le document avec la voix de l'appareil et surligne chaque mot.</li><li>Pour sélectionner et rechercher du texte dans un document numérisé : ⋮ › <b>Reconnaître le texte (OCR)</b> ; enregistrez le résultat avec <b>Enregistrer en PDF interrogeable</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Notes et modification</h2>
+<ul><li>Document ouvert, <b>Modifier et annoter</b> affiche la barre d'outils : Surligner, Dessiner, Note, Texte, Signer, Caviarder, Gomme.</li><li>Touchez 🎤 dans les zones de note et de texte pour dicter au lieu de taper.</li><li><b>Signer</b> : dessinez votre signature une fois et placez-la sur n'importe quelle page.</li><li><b>Caviarder</b> : marquez ce qu'il faut masquer ; à l'enregistrement, le texte dessous est définitivement supprimé du fichier, pas seulement recouvert.</li><li>Corrigez avec annuler / rétablir ; enregistrez dans le même fichier ou en copie.</li><li>Pour les formulaires à remplir : ⋮ › <b>Remplir le formulaire</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Outils</h2>
+<ul><li>L'onglet <b>Outils</b> classe les outils par catégorie ; utilisez la recherche en haut pour les trouver vite.</li><li>Modifier : Fusionner des PDF, Diviser un PDF, Compresser un PDF, Organiser les pages, Filigrane, Numéros de page.</li><li>Convertir : Images en PDF, PDF en image, Office en PDF, PDF en Word, PDF en Excel, Imprimer.</li><li>Sécurité : Ajouter un mot de passe, Supprimer le mot de passe.</li><li>Numériser : Numériser un document, Scanner un code QR, Créer un code QR.</li><li>Fichiers et images : Créer un ZIP, Extraire un ZIP, Compresser des images, Redimensionner, Convertir des images, Images en GIF, GIF en images.</li><li>Touchez le ☆ dans le coin d'un outil : il apparaît alors dans la deuxième rangée de l'accueil et dans le menu rapide.</li></ul>
+</div>
+<div class="card">
+<h2>Notes vocales</h2>
+<ul><li>Accueil › <b>Notes vocales</b>. Touchez le micro et parlez ; vos paroles sont écrites, chaque dictée sur une nouvelle ligne. Vous pouvez aussi modifier le texte à la main.</li><li>Les notes sont enregistrées automatiquement. 🕘 <b>Mes notes</b> ouvre les notes précédentes, ＋ <b>Nouvelle note</b> en commence une vide.</li><li><b>Enregistrer sous</b> : Word, PDF ou TXT. Également <b>Envoyer par e-mail</b> (avec pièce jointe Word), <b>Partager</b> et <b>Imprimer</b>.</li><li>La conversion de la voix en texte est assurée par le service de reconnaissance vocale de l'appareil (souvent Google) ; AllFixDoc n'enregistre pas d'audio.</li></ul>
+</div>
+<div class="card">
+<h2>Partage, e-mail et impression</h2>
+<ul><li>Dans la liste Accueil ou Fichiers, le menu ⋮ d'un fichier propose <b>Partager</b>, <b>Envoyer par e-mail</b> et <b>Imprimer</b>, sans l'ouvrir.</li><li>Document ouvert, les mêmes options sont dans le menu ⋮.</li><li><b>Envoyer par e-mail</b> n'affiche que les apps d'e-mail (Gmail, Outlook…) et joint le fichier.</li></ul>
+</div>
+<div class="card">
+<h2>Assistant IA (Gemini gratuit)</h2>
+<ul><li>Obtenez une clé Google Gemini gratuite : connectez-vous sur <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> avec votre compte Google, touchez "Create API key" et copiez la clé.</li><li>Paramètres › Assistant IA › Google Gemini › <b>Ajouter une clé</b> : collez la clé. Elle est stockée chiffrée sur cet appareil uniquement.</li><li>Document ouvert, ⋮ › <b>Assistant IA</b> : résumez, posez des questions, traduisez ou simplifiez. Les réponses citent les pages.</li><li>Vous pouvez aussi utiliser Claude (Anthropic) ou, via <b>Ajouter un assistant</b>, Groq, OpenRouter, Mistral ou un autre service compatible OpenAI.</li><li>Seul le texte des pages choisies est envoyé, avec votre clé, au service choisi. Le développeur d'AllFixDoc ne le voit jamais. Les limites d'usage gratuit dépendent du service.</li></ul>
+</div>
+<div class="card">
+<h2>Personnalisation</h2>
+<ul><li><b>Langue</b> : 14 langues. Si la langue de votre téléphone n'est pas intégrée, <b>Traduction automatique</b> traduit l'interface sur l'appareil (le modèle se télécharge une fois en Wi‑Fi).</li><li>Paramètres › Apparence : Thème, Couleur, Thème sombre noir pur, Icône de l'application, Style des icônes.</li><li><b>Menu rapide en demi-cercle</b> : touchez la poignée sur le bord gauche ; glissez vers le haut ou le bas pour faire tourner le menu, touchez à côté pour le fermer.</li><li>Transférez vos réglages sur un autre téléphone avec <b>Exporter une sauvegarde</b> et <b>Importer une sauvegarde</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Confidentialité</h2>
+<ul><li>Aucune autorisation de stockage n'est demandée ; l'app n'ouvre que les fichiers que vous choisissez. Aucun compte n'est nécessaire.</li><li>Les documents sont traités sur votre appareil. Internet ne sert qu'à l'assistant IA (avec votre propre clé), aux annonces et aux achats.</li><li>Détails : <a href="privacy.html#fr">Politique de confidentialité</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Questions fréquentes</h2><dl>
+<dt>La recherche ne trouve rien dans un PDF numérisé.</dt><dd>Lancez d'abord ⋮ › Reconnaître le texte (OCR), puis recherchez.</dd>
+<dt>Le micro indique que la reconnaissance vocale n'est pas disponible.</dt><dd>Installez ou mettez à jour l'app Google ; la reconnaissance vocale est fournie avec.</dd>
+<dt>L'IA indique que la clé a été refusée.</dt><dd>Vérifiez que vous avez copié toute la clé ; au besoin, créez-en une nouvelle sur aistudio.google.com.</dd>
+<dt>Un PDF protégé par mot de passe ne s'ouvre pas.</dt><dd>Saisissez le mot de passe à l'ouverture ; pour le retirer définitivement : Outils › Supprimer le mot de passe.</dd>
+<dt>Comment ouvrir un fichier de Google Drive ?</dt><dd><b>Ouvrir un document</b> ou le bouton Google Drive de l'accueil ; choisissez Drive dans le menu latéral du sélecteur de fichiers.</dd>
+</dl></div>
+</section>
+<section class="lang" id="id" lang="id" data-title="Panduan Penggunaan AllFixDoc">
+<h1>Panduan Penggunaan AllFixDoc</h1>
+<p class="intro">Dengan AllFixDoc Anda dapat membaca, memberi catatan, mengedit, memindai, dan membagikan dokumen PDF dan Office. Panduan ini menjelaskan fitur secara singkat; nama-namanya sama seperti di aplikasi.</p>
+<div class="card">
+<h2>Memulai</h2>
+<ul><li>Untuk membuka dokumen, ketuk <b>Buka dokumen</b> di layar Beranda, atau ketuk PDF di aplikasi lain (File, Gmail, WhatsApp) lalu pilih AllFixDoc.</li><li>Di bagian atas Beranda ada tiga tombol besar: <b>Pindai dokumen</b>, <b>Catatan suara</b>, dan Google Drive. Baris di bawahnya diawali alat favorit Anda, lalu <b>Cloud lain</b> dan <b>Perangkat ini</b>; geser ke kiri untuk melihat semuanya.</li><li><b>Cloud lain</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA, dan lainnya. Aplikasi cloud yang terpasang di ponsel muncul di pemilih file: buka file dari sana dan simpan PDF yang diedit ke sana.</li><li>File Word, Excel, PowerPoint, OpenDocument, RTF, CSV, dan TXT juga bisa dibuka; file dikonversi ke PDF untuk dibaca.</li><li>Tambahkan folder yang sering dipakai melalui File › Folder › <b>Tambah folder</b>; PDF di dalamnya tampil dalam satu daftar.</li><li>Agar PDF selalu dibuka dengan AllFixDoc: Setelan › <b>Aplikasi default</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Membaca</h2>
+<ul><li>Cubit atau ketuk dua kali untuk memperbesar; gulir antarhalaman.</li><li><b>Cari</b>: mencari di seluruh dokumen.</li><li><b>Daftar isi dan halaman</b>: daftar isi, gambar mini halaman, dan penanda. Untuk menandai halaman, gunakan <b>Tandai halaman ini</b>.</li><li><b>Mode malam</b> dan <b>Biarkan layar tetap menyala</b>: Setelan › Membaca.</li><li><b>Bacakan</b>: membacakan dokumen dengan suara perangkat dan menandai setiap kata.</li><li>Untuk memilih dan mencari teks di dokumen hasil pindaian, gunakan ⋮ › <b>Kenali teks (OCR)</b>; simpan hasilnya dengan <b>Simpan sebagai PDF yang dapat dicari</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Catatan dan pengeditan</h2>
+<ul><li>Saat dokumen terbuka, <b>Edit dan beri anotasi</b> membuka bilah alat: Sorot, Gambar, Catatan, Teks, TTD, Sensor, Penghapus.</li><li>Ketuk 🎤 di kotak catatan dan teks untuk mendikte alih-alih mengetik.</li><li><b>TTD</b>: gambar tanda tangan sekali, lalu letakkan di halaman mana pun.</li><li><b>Sensor</b>: tandai bagian yang ingin disembunyikan; saat disimpan, teks di bawahnya dihapus permanen dari file, bukan hanya ditutupi.</li><li>Perbaiki dengan urungkan / ulangi; simpan ke file yang sama atau sebagai salinan.</li><li>Untuk formulir yang dapat diisi, gunakan ⋮ › <b>Isi formulir</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Alat</h2>
+<ul><li>Tab <b>Alat</b> mengelompokkan alat menurut kategori; gunakan kotak pencarian di atas untuk menemukannya dengan cepat.</li><li>Pengeditan: Gabung PDF, Pisah PDF, Kompres PDF, Atur halaman, Tanda air, Nomor halaman.</li><li>Konversi: Gambar ke PDF, PDF ke gambar, Office ke PDF, PDF ke Word, PDF ke Excel, Cetak.</li><li>Keamanan: Tambah kata sandi, Hapus kata sandi.</li><li>Pemindaian: Pindai dokumen, Pindai kode QR, Buat kode QR.</li><li>File dan gambar: Buat ZIP, Ekstrak ZIP, Kompres gambar, Ubah ukuran gambar, Konversi gambar, Gambar ke GIF, GIF ke bingkai.</li><li>Ketuk ☆ di sudut alat: alat itu akan muncul di baris kedua layar beranda dan di menu cepat.</li></ul>
+</div>
+<div class="card">
+<h2>Catatan suara</h2>
+<ul><li>Beranda › <b>Catatan suara</b>. Ketuk mikrofon dan bicara; kata-kata Anda ditulis, setiap dikte di baris baru. Teks juga bisa diedit manual.</li><li>Catatan tersimpan otomatis. 🕘 <b>Catatan saya</b> membuka catatan sebelumnya, ＋ <b>Catatan baru</b> memulai catatan kosong.</li><li><b>Simpan sebagai</b>: Word, PDF, atau TXT. Juga <b>Kirim lewat email</b> (dengan lampiran Word), <b>Bagikan</b>, dan <b>Cetak</b>.</li><li>Ucapan diubah menjadi teks oleh layanan pengenalan suara perangkat (biasanya Google); AllFixDoc tidak merekam audio.</li></ul>
+</div>
+<div class="card">
+<h2>Berbagi, email, dan mencetak</h2>
+<ul><li>Di daftar Beranda atau File, menu ⋮ pada file menyediakan <b>Bagikan</b>, <b>Kirim lewat email</b>, dan <b>Cetak</b> tanpa membukanya.</li><li>Saat dokumen terbuka, opsi yang sama ada di menu ⋮.</li><li><b>Kirim lewat email</b> hanya menampilkan aplikasi email (Gmail, Outlook…) dan melampirkan file.</li></ul>
+</div>
+<div class="card">
+<h2>Asisten AI (Gemini gratis)</h2>
+<ul><li>Dapatkan kunci Google Gemini gratis: masuk ke <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> dengan akun Google, ketuk "Create API key", lalu salin kuncinya.</li><li>Setelan › Asisten AI › Google Gemini › <b>Tambah kunci</b>: tempel kuncinya. Kunci disimpan terenkripsi hanya di perangkat ini.</li><li>Saat dokumen terbuka, ⋮ › <b>Asisten AI</b>: ringkas, ajukan pertanyaan, terjemahkan, atau sederhanakan. Jawaban menyebut nomor halaman.</li><li>Anda juga bisa memakai Claude (Anthropic), atau dengan <b>Tambah asisten</b> memakai Groq, OpenRouter, Mistral, atau layanan lain yang kompatibel dengan OpenAI.</li><li>Hanya teks halaman yang Anda pilih yang dikirim, dengan kunci Anda, ke layanan pilihan Anda. Pengembang AllFixDoc tidak pernah melihatnya. Batas penggunaan gratis ditentukan oleh layanan.</li></ul>
+</div>
+<div class="card">
+<h2>Personalisasi</h2>
+<ul><li><b>Bahasa</b>: 14 bahasa. Jika bahasa ponsel Anda belum tersedia, <b>Terjemahan otomatis</b> menerjemahkan antarmuka di perangkat (model diunduh sekali lewat Wi‑Fi).</li><li>Setelan › Tampilan: Tema, Warna, Hitam pekat di tema gelap, Ikon aplikasi, Gaya ikon.</li><li><b>Menu cepat setengah lingkaran</b>: ketuk pegangan di tepi kiri; geser ke atas atau bawah untuk memutar menu, ketuk di luar untuk menutupnya.</li><li>Pindahkan setelan ke ponsel lain dengan <b>Ekspor cadangan</b> dan <b>Impor cadangan</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Privasi</h2>
+<ul><li>Tidak ada izin penyimpanan yang diminta; aplikasi hanya membuka file yang Anda pilih. Tidak perlu akun.</li><li>Dokumen diproses di perangkat Anda. Internet hanya dipakai untuk asisten AI (dengan kunci Anda sendiri), iklan, dan pembelian.</li><li>Rincian: <a href="privacy.html#id">Kebijakan privasi</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Pertanyaan umum</h2><dl>
+<dt>Pencarian tidak menemukan apa pun di PDF hasil pindaian.</dt><dd>Jalankan dulu ⋮ › Kenali teks (OCR), lalu cari.</dd>
+<dt>Mikrofon menyebut pengenalan suara tidak tersedia.</dt><dd>Pasang atau perbarui aplikasi Google; pengenalan suara tersedia bersamanya.</dd>
+<dt>AI menyebut kunci ditolak.</dt><dd>Pastikan Anda menyalin seluruh kunci; jika perlu, buat kunci baru di aistudio.google.com.</dd>
+<dt>PDF yang dilindungi kata sandi tidak bisa dibuka.</dt><dd>Masukkan kata sandi saat membuka; untuk menghapusnya secara permanen, gunakan Alat › Hapus kata sandi.</dd>
+<dt>Bagaimana membuka file dari Google Drive?</dt><dd><b>Buka dokumen</b> atau tombol Google Drive di layar beranda; pilih Drive di menu samping pemilih file.</dd>
+</dl></div>
+</section>
+<section class="lang" id="it" lang="it" data-title="Guida all&#x27;uso di AllFixDoc">
+<h1>Guida all'uso di AllFixDoc</h1>
+<p class="intro">Con AllFixDoc puoi leggere, annotare, modificare, scansionare e condividere documenti PDF e Office. Questa guida presenta in breve le funzioni; i nomi sono quelli dell'app.</p>
+<div class="card">
+<h2>Per iniziare</h2>
+<ul><li>Per aprire un documento tocca <b>Apri documento</b> nella schermata Home, oppure tocca un PDF in un'altra app (File, Gmail, WhatsApp) e scegli AllFixDoc.</li><li>In alto in Home ci sono tre pulsanti grandi: <b>Scansiona documento</b>, <b>Note vocali</b> e Google Drive. La riga sotto inizia con i tuoi strumenti preferiti, seguiti da <b>Altro cloud</b> e <b>Questo dispositivo</b>; scorrila verso sinistra per vederli tutti.</li><li><b>Altro cloud</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA e altri. Le app cloud installate sul telefono compaiono nel selettore file: apri i file da lì e salvaci i PDF modificati.</li><li>Si aprono anche file Word, Excel, PowerPoint, OpenDocument, RTF, CSV e TXT; vengono convertiti in PDF per la lettura.</li><li>Aggiungi le cartelle che usi spesso da File › Cartelle › <b>Aggiungi cartella</b>; i loro PDF compaiono in un unico elenco.</li><li>Per aprire sempre i PDF con AllFixDoc: Impostazioni › <b>App predefinita</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Lettura</h2>
+<ul><li>Pizzica o tocca due volte per lo zoom; scorri tra le pagine.</li><li><b>Cerca</b>: cerca in tutto il documento, anche se scrivi senza accenti.</li><li><b>Indice e pagine</b>: indice, miniature delle pagine e segnalibri. Per segnare una pagina usa <b>Aggiungi segnalibro a questa pagina</b>.</li><li><b>Modalità notte</b> e <b>Mantieni lo schermo acceso</b>: Impostazioni › Lettura.</li><li><b>Leggi ad alta voce</b>: legge il documento con la voce del dispositivo ed evidenzia ogni parola.</li><li>Per selezionare e cercare testo in un documento scansionato usa ⋮ › <b>Riconosci testo (OCR)</b>; salva il risultato con <b>Salva come PDF ricercabile</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Note e modifica</h2>
+<ul><li>Con un documento aperto, <b>Modifica e annota</b> apre la barra degli strumenti: Evidenzia, Disegna, Nota, Testo, Firma, Oscura, Gomma.</li><li>Tocca 🎤 nelle caselle di nota e testo per dettare invece di scrivere.</li><li><b>Firma</b>: disegna la firma una volta e posizionala su qualsiasi pagina.</li><li><b>Oscura</b>: segna ciò che vuoi nascondere; al salvataggio il testo sottostante viene eliminato definitivamente dal file, non solo coperto.</li><li>Correggi con annulla / ripeti; salva nello stesso file o come copia.</li><li>Per i moduli compilabili usa ⋮ › <b>Compila modulo</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Strumenti</h2>
+<ul><li>La scheda <b>Strumenti</b> raggruppa gli strumenti per categoria; usa la ricerca in alto per trovarli subito.</li><li>Modifica: Unisci PDF, Dividi PDF, Comprimi PDF, Organizza pagine, Filigrana, Numeri di pagina.</li><li>Conversione: Immagini in PDF, PDF in immagine, Office in PDF, PDF in Word, PDF in Excel, Stampa.</li><li>Sicurezza: Aggiungi password, Rimuovi password.</li><li>Scansione: Scansiona documento, Scansiona codice QR, Crea codice QR.</li><li>File e immagini: Crea ZIP, Estrai ZIP, Comprimi immagini, Ridimensiona immagini, Converti immagini, Immagini in GIF, GIF in fotogrammi.</li><li>Tocca la ☆ nell'angolo di uno strumento: comparirà nella seconda riga della schermata iniziale e nel menu rapido.</li></ul>
+</div>
+<div class="card">
+<h2>Note vocali</h2>
+<ul><li>Home › <b>Note vocali</b>. Tocca il microfono e parla; le tue parole vengono scritte, ogni dettatura su una nuova riga. Puoi anche modificare il testo a mano.</li><li>Le note si salvano da sole. 🕘 <b>Le mie note</b> apre le note precedenti, ＋ <b>Nuova nota</b> ne inizia una vuota.</li><li><b>Salva come</b>: Word, PDF o TXT. Inoltre <b>Invia via email</b> (con allegato Word), <b>Condividi</b> e <b>Stampa</b>.</li><li>La voce viene convertita in testo dal servizio di riconoscimento vocale del dispositivo (di solito Google); AllFixDoc non registra audio.</li></ul>
+</div>
+<div class="card">
+<h2>Condivisione, email e stampa</h2>
+<ul><li>Nell'elenco Home o File, il menu ⋮ di un file offre <b>Condividi</b>, <b>Invia via email</b> e <b>Stampa</b> senza aprirlo.</li><li>Con un documento aperto trovi le stesse opzioni nel menu ⋮.</li><li><b>Invia via email</b> mostra solo app di posta (Gmail, Outlook…) e allega il file.</li></ul>
+</div>
+<div class="card">
+<h2>Assistente IA (Gemini gratuito)</h2>
+<ul><li>Ottieni una chiave Google Gemini gratuita: accedi a <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> con il tuo account Google, tocca "Create API key" e copia la chiave.</li><li>Impostazioni › Assistente IA › Google Gemini › <b>Aggiungi chiave</b>: incolla la chiave. Viene salvata cifrata solo su questo dispositivo.</li><li>Con un documento aperto, ⋮ › <b>Assistente IA</b>: riassumi, fai domande, traduci o semplifica. Le risposte citano le pagine.</li><li>Puoi anche usare Claude (Anthropic) oppure, con <b>Aggiungi assistente</b>, Groq, OpenRouter, Mistral o un altro servizio compatibile con OpenAI.</li><li>Viene inviato solo il testo delle pagine scelte, con la tua chiave, al servizio scelto. Lo sviluppatore di AllFixDoc non lo vede mai. I limiti di uso gratuito li stabilisce il servizio.</li></ul>
+</div>
+<div class="card">
+<h2>Personalizzazione</h2>
+<ul><li><b>Lingua</b>: 14 lingue. Se la lingua del telefono non è inclusa, <b>Traduzione automatica</b> traduce l'interfaccia sul dispositivo (il modello si scarica una volta via Wi‑Fi).</li><li>Impostazioni › Aspetto: Tema, Colore, Nero puro nel tema scuro, Icona dell'app, Stile icone.</li><li><b>Menu rapido a semicerchio</b>: tocca la maniglia sul bordo sinistro; scorri su o giù per ruotare il menu, tocca fuori per chiuderlo.</li><li>Porta le impostazioni su un altro telefono con <b>Esporta backup</b> e <b>Importa backup</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Privacy</h2>
+<ul><li>Non viene richiesto il permesso di archiviazione; l'app apre solo i file che scegli. Non serve un account.</li><li>I documenti sono elaborati sul dispositivo. Internet serve solo per l'assistente IA (con la tua chiave), gli annunci e gli acquisti.</li><li>Dettagli: <a href="privacy.html#it">Informativa sulla privacy</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Domande frequenti</h2><dl>
+<dt>La ricerca non trova nulla in un PDF scansionato.</dt><dd>Prima usa ⋮ › Riconosci testo (OCR), poi cerca.</dd>
+<dt>Il microfono dice che il riconoscimento vocale non è disponibile.</dt><dd>Installa o aggiorna l'app Google; il riconoscimento vocale è incluso.</dd>
+<dt>L'IA dice che la chiave è stata rifiutata.</dt><dd>Controlla di aver copiato tutta la chiave; se serve, creane una nuova su aistudio.google.com.</dd>
+<dt>Un PDF protetto da password non si apre.</dt><dd>Inserisci la password all'apertura; per rimuoverla definitivamente usa Strumenti › Rimuovi password.</dd>
+<dt>Come apro un file da Google Drive?</dt><dd><b>Apri documento</b> o il pulsante Google Drive nella schermata iniziale; scegli Drive nel menu laterale del selettore file.</dd>
+</dl></div>
+</section>
+<section class="lang" id="pt-BR" lang="pt-BR" data-title="Guia de uso do AllFixDoc">
+<h1>Guia de uso do AllFixDoc</h1>
+<p class="intro">Com o AllFixDoc você lê, anota, edita, digitaliza e compartilha documentos PDF e do Office. Este guia resume os recursos; os nomes são os mesmos do app.</p>
+<div class="card">
+<h2>Primeiros passos</h2>
+<ul><li>Para abrir um documento, toque em <b>Abrir documento</b> na tela Início ou toque em um PDF em outro app (Arquivos, Gmail, WhatsApp) e escolha o AllFixDoc.</li><li>No topo de Início há três botões grandes: <b>Digitalizar documento</b>, <b>Notas de voz</b> e Google Drive. A linha de baixo começa com suas ferramentas favoritas, seguidas de <b>Outra nuvem</b> e <b>Este aparelho</b>; deslize para a esquerda para ver todas.</li><li><b>Outra nuvem</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA e outros. Os apps de nuvem instalados no celular aparecem no seletor de arquivos: abra os arquivos por lá e salve lá os PDFs editados.</li><li>Arquivos do Word, Excel, PowerPoint, OpenDocument, RTF, CSV e TXT também abrem; eles são convertidos em PDF para leitura.</li><li>Adicione as pastas que você usa muito em Arquivos › Pastas › <b>Adicionar pasta</b>; os PDFs delas aparecem em uma só lista.</li><li>Para abrir sempre os PDFs com o AllFixDoc: Configurações › <b>App padrão</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Leitura</h2>
+<ul><li>Faça pinça ou toque duas vezes para ampliar; role entre as páginas.</li><li><b>Pesquisar</b>: busca no documento inteiro, mesmo se você digitar sem acentos.</li><li><b>Sumário e páginas</b>: sumário, miniaturas das páginas e marcadores. Para marcar uma página, use <b>Marcar esta página</b>.</li><li><b>Modo noturno</b> e <b>Manter a tela ligada</b>: Configurações › Leitura.</li><li><b>Ler em voz alta</b>: lê o documento com a voz do aparelho e destaca cada palavra.</li><li>Para selecionar e buscar texto em um documento digitalizado, use ⋮ › <b>Reconhecer texto (OCR)</b>; salve o resultado com <b>Salvar como PDF pesquisável</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Anotações e edição</h2>
+<ul><li>Com um documento aberto, <b>Editar e anotar</b> abre a barra de ferramentas: Destacar, Desenhar, Nota, Texto, Assinar, Ocultar, Borracha.</li><li>Toque em 🎤 nas caixas de nota e de texto para ditar em vez de digitar.</li><li><b>Assinar</b>: desenhe sua assinatura uma vez e coloque-a em qualquer página.</li><li><b>Ocultar</b>: marque o que quer esconder; ao salvar, o texto por baixo é removido do arquivo de forma permanente, não apenas coberto.</li><li>Corrija com desfazer / refazer; salve no mesmo arquivo ou como cópia.</li><li>Para formulários preenchíveis, use ⋮ › <b>Preencher formulário</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Ferramentas</h2>
+<ul><li>A aba <b>Ferramentas</b> agrupa as ferramentas por categoria; use a busca no topo para achá-las rápido.</li><li>Edição: Juntar PDFs, Dividir PDF, Comprimir PDF, Organizar páginas, Marca d'água, Números de página.</li><li>Conversão: Imagens para PDF, PDF para imagem, Office para PDF, PDF para Word, PDF para Excel, Imprimir.</li><li>Segurança: Adicionar senha, Remover senha.</li><li>Digitalização: Digitalizar documento, Ler QR code, Criar QR code.</li><li>Arquivos e imagens: Criar ZIP, Extrair ZIP, Comprimir imagens, Redimensionar imagens, Converter imagens, Imagens para GIF, GIF para quadros.</li><li>Toque na ☆ no canto de uma ferramenta: ela passa a aparecer na segunda linha da tela inicial e no menu rápido.</li></ul>
+</div>
+<div class="card">
+<h2>Notas de voz</h2>
+<ul><li>Início › <b>Notas de voz</b>. Toque no microfone e fale; suas palavras viram texto, cada ditado em uma nova linha. Você também pode editar o texto à mão.</li><li>As notas são salvas automaticamente. 🕘 <b>Minhas notas</b> abre notas anteriores, ＋ <b>Nova nota</b> começa uma em branco.</li><li><b>Salvar como</b>: Word, PDF ou TXT. Também <b>Enviar por e-mail</b> (com anexo do Word), <b>Compartilhar</b> e <b>Imprimir</b>.</li><li>A voz vira texto pelo serviço de reconhecimento de fala do aparelho (geralmente o Google); o AllFixDoc não grava áudio.</li></ul>
+</div>
+<div class="card">
+<h2>Compartilhar, e-mail e impressão</h2>
+<ul><li>Na lista de Início ou Arquivos, o menu ⋮ de um arquivo oferece <b>Compartilhar</b>, <b>Enviar por e-mail</b> e <b>Imprimir</b>, sem abri-lo.</li><li>Com um documento aberto, as mesmas opções ficam no menu ⋮.</li><li><b>Enviar por e-mail</b> mostra apenas apps de e-mail (Gmail, Outlook…) e anexa o arquivo.</li></ul>
+</div>
+<div class="card">
+<h2>Assistente de IA (Gemini grátis)</h2>
+<ul><li>Pegue uma chave gratuita do Google Gemini: entre em <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> com sua conta Google, toque em "Create API key" e copie a chave.</li><li>Configurações › Assistente de IA › Google Gemini › <b>Adicionar chave</b>: cole a chave. Ela fica criptografada somente neste aparelho.</li><li>Com um documento aberto, ⋮ › <b>Assistente de IA</b>: resuma, pergunte, traduza ou simplifique. As respostas citam a página.</li><li>Você também pode usar o Claude (Anthropic) ou, com <b>Adicionar assistente</b>, Groq, OpenRouter, Mistral ou outro serviço compatível com OpenAI.</li><li>Só o texto das páginas escolhidas é enviado, com sua chave, ao serviço que você escolheu. O desenvolvedor do AllFixDoc nunca o vê. Os limites de uso gratuito são definidos pelo serviço.</li></ul>
+</div>
+<div class="card">
+<h2>Personalização</h2>
+<ul><li><b>Idioma</b>: 14 idiomas. Se o idioma do celular não estiver incluído, <b>Tradução automática</b> traduz a interface no aparelho (o modelo é baixado uma vez pelo Wi‑Fi).</li><li>Configurações › Aparência: Tema, Cor, Tema escuro preto puro, Ícone do app, Estilo dos ícones.</li><li><b>Menu rápido em meio círculo</b>: toque na alça na borda esquerda; deslize para cima ou para baixo para girar o menu e toque fora para fechá-lo.</li><li>Leve suas configurações para outro celular com <b>Exportar backup</b> e <b>Importar backup</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Privacidade</h2>
+<ul><li>Não é pedida permissão de armazenamento; o app abre só os arquivos que você escolhe. Não precisa de conta.</li><li>Os documentos são processados no aparelho. A internet só é usada pelo assistente de IA (com sua própria chave), anúncios e compras.</li><li>Detalhes: <a href="privacy.html#pt-BR">Política de privacidade</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Perguntas frequentes</h2><dl>
+<dt>A busca não encontra nada em um PDF digitalizado.</dt><dd>Primeiro use ⋮ › Reconhecer texto (OCR) e depois busque.</dd>
+<dt>O microfone diz que o reconhecimento de fala não está disponível.</dt><dd>Instale ou atualize o app Google; o reconhecimento de fala vem com ele.</dd>
+<dt>A IA diz que a chave foi recusada.</dt><dd>Confira se copiou a chave inteira; se precisar, crie uma nova em aistudio.google.com.</dd>
+<dt>Um PDF com senha não abre.</dt><dd>Digite a senha ao abrir; para removê-la de vez, use Ferramentas › Remover senha.</dd>
+<dt>Como abro um arquivo do Google Drive?</dt><dd><b>Abrir documento</b> ou o botão do Google Drive na tela inicial; escolha o Drive no menu lateral do seletor de arquivos.</dd>
+</dl></div>
+</section>
+<section class="lang" id="ru" lang="ru" data-title="Руководство пользователя AllFixDoc">
+<h1>Руководство пользователя AllFixDoc</h1>
+<p class="intro">AllFixDoc позволяет читать, комментировать, редактировать, сканировать и отправлять документы PDF и Office. В этом руководстве кратко описаны возможности; названия совпадают с приложением.</p>
+<div class="card">
+<h2>Начало работы</h2>
+<ul><li>Чтобы открыть документ, нажмите <b>Открыть документ</b> на экране «Главная» или нажмите на PDF в другом приложении (Файлы, Gmail, WhatsApp) и выберите AllFixDoc.</li><li>Вверху экрана «Главная» три крупные кнопки: <b>Сканировать документ</b>, <b>Голосовые заметки</b> и Google Drive. Строка под ними начинается с ваших избранных инструментов, за ними — <b>Другое облако</b> и <b>Это устройство</b>; проведите влево, чтобы увидеть все.</li><li><b>Другое облако</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA и другие. Облачные приложения, установленные на телефоне, появляются в окне выбора файлов: открывайте файлы оттуда и сохраняйте туда отредактированные PDF.</li><li>Открываются и файлы Word, Excel, PowerPoint, OpenDocument, RTF, CSV и TXT; для чтения они преобразуются в PDF.</li><li>Добавьте часто используемые папки: Файлы › Папки › <b>Добавить папку</b>; их PDF появятся в одном списке.</li><li>Чтобы PDF всегда открывались в AllFixDoc: Настройки › <b>Приложение по умолчанию</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Чтение</h2>
+<ul><li>Для масштабирования сведите или разведите пальцы либо дважды нажмите; прокручивайте страницы.</li><li><b>Поиск</b>: поиск по всему документу.</li><li><b>Содержание и страницы</b>: оглавление, миниатюры страниц и закладки. Чтобы отметить страницу, используйте <b>Закладка на эту страницу</b>.</li><li><b>Ночной режим</b> и <b>Не выключать экран</b>: Настройки › Чтение.</li><li><b>Читать вслух</b>: читает документ голосом устройства и подсвечивает каждое слово.</li><li>Чтобы выделять и искать текст в отсканированном документе, выберите ⋮ › <b>Распознать текст (OCR)</b>; результат можно сохранить через <b>Сохранить как PDF с поиском</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Заметки и редактирование</h2>
+<ul><li>В открытом документе <b>Правка и аннотации</b> открывает панель инструментов: Выделить, Рисовать, Заметка, Текст, Подпись, Скрыть, Ластик.</li><li>Нажмите 🎤 в полях заметки и текста, чтобы диктовать вместо набора.</li><li><b>Подпись</b>: нарисуйте подпись один раз и ставьте её на любую страницу.</li><li><b>Скрыть</b>: отметьте, что нужно скрыть; при сохранении текст под отметкой навсегда удаляется из файла, а не просто закрывается.</li><li>Исправляйте ошибки кнопками отмены и повтора; сохраняйте в тот же файл или как копию.</li><li>Для заполняемых форм: ⋮ › <b>Заполнить форму</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Инструменты</h2>
+<ul><li>На вкладке <b>Инструменты</b> инструменты разбиты по категориям; поиск вверху помогает быстро найти нужный.</li><li>Редактирование: Объединить PDF, Разделить PDF, Сжать PDF, Упорядочить страницы, Водяной знак, Номера страниц.</li><li>Преобразование: Изображения в PDF, PDF в изображение, Office в PDF, PDF в Word, PDF в Excel, Печать.</li><li>Безопасность: Добавить пароль, Удалить пароль.</li><li>Сканирование: Сканировать документ, Сканировать QR-код, Создать QR-код.</li><li>Файлы и изображения: Создать ZIP, Распаковать ZIP, Сжать изображения, Изменить размер, Конвертер изображений, Изображения в GIF, GIF в кадры.</li><li>Нажмите ☆ в углу инструмента: он появится во второй строке главного экрана и в быстром меню.</li></ul>
+</div>
+<div class="card">
+<h2>Голосовые заметки</h2>
+<ul><li>Главная › <b>Голосовые заметки</b>. Нажмите на микрофон и говорите; сказанное превращается в текст, каждая фраза — с новой строки. Текст можно править вручную.</li><li>Заметки сохраняются автоматически. 🕘 <b>Мои заметки</b> открывает прошлые заметки, ＋ <b>Новая заметка</b> начинает пустую.</li><li><b>Сохранить как</b>: Word, PDF или TXT. Также <b>Отправить по почте</b> (с вложением Word), <b>Поделиться</b> и <b>Печать</b>.</li><li>Речь в текст превращает служба распознавания речи устройства (обычно Google); AllFixDoc не записывает звук.</li></ul>
+</div>
+<div class="card">
+<h2>Отправка, почта и печать</h2>
+<ul><li>В списке «Главная» или «Файлы» меню ⋮ файла предлагает <b>Поделиться</b>, <b>Отправить по почте</b> и <b>Печать</b> — без открытия файла.</li><li>В открытом документе те же действия есть в меню ⋮.</li><li><b>Отправить по почте</b> показывает только почтовые приложения (Gmail, Outlook…) и прикрепляет файл.</li></ul>
+</div>
+<div class="card">
+<h2>ИИ-ассистент (бесплатный Gemini)</h2>
+<ul><li>Получите бесплатный ключ Google Gemini: войдите на <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> с аккаунтом Google, нажмите «Create API key» и скопируйте ключ.</li><li>Настройки › ИИ-помощник › Google Gemini › <b>Добавить ключ</b>: вставьте ключ. Он хранится в зашифрованном виде только на этом устройстве.</li><li>В открытом документе ⋮ › <b>ИИ-помощник</b>: краткое изложение, вопросы, перевод или упрощение. В ответах указаны страницы.</li><li>Можно также использовать Claude (Anthropic) или через <b>Добавить ассистента</b> — Groq, OpenRouter, Mistral либо другой сервис, совместимый с OpenAI.</li><li>Отправляется только текст выбранных страниц — с вашим ключом и только выбранному сервису. Разработчик AllFixDoc его не видит. Лимиты бесплатного использования задаёт сервис.</li></ul>
+</div>
+<div class="card">
+<h2>Настройка</h2>
+<ul><li><b>Язык</b>: 14 языков. Если языка вашего телефона нет, <b>Автоматический перевод</b> переводит интерфейс на устройстве (модель загружается один раз по Wi‑Fi).</li><li>Настройки › Оформление: Тема, Цвет, Чистый чёрный в тёмной теме, Значок приложения, Стиль значков.</li><li><b>Полукруглое быстрое меню</b>: нажмите на ручку у левого края; проводите вверх или вниз, чтобы вращать меню, нажмите за его пределами, чтобы закрыть.</li><li>Перенесите настройки на другой телефон с помощью <b>Экспорт резервной копии</b> и <b>Импорт резервной копии</b>.</li></ul>
+</div>
+<div class="card">
+<h2>Конфиденциальность</h2>
+<ul><li>Разрешение на доступ к хранилищу не запрашивается; приложение открывает только выбранные вами файлы. Аккаунт не нужен.</li><li>Документы обрабатываются на устройстве. Интернет используется только для ИИ-ассистента (с вашим ключом), рекламы и покупок.</li><li>Подробнее: <a href="privacy.html#ru">Политика конфиденциальности</a>.</li></ul>
+</div>
+<div class="card">
+<h2>Частые вопросы</h2><dl>
+<dt>Поиск ничего не находит в отсканированном PDF.</dt><dd>Сначала выполните ⋮ › Распознать текст (OCR), затем ищите.</dd>
+<dt>Микрофон сообщает, что распознавание речи недоступно.</dt><dd>Установите или обновите приложение Google; распознавание речи входит в него.</dd>
+<dt>ИИ сообщает, что ключ отклонён.</dt><dd>Проверьте, что скопировали ключ целиком; при необходимости создайте новый на aistudio.google.com.</dd>
+<dt>PDF с паролем не открывается.</dt><dd>Введите пароль при открытии; чтобы снять его навсегда, используйте Инструменты › Удалить пароль.</dd>
+<dt>Как открыть файл из Google Drive?</dt><dd><b>Открыть документ</b> или кнопка Google Drive на главном экране; выберите Drive в боковом меню окна выбора файлов.</dd>
+</dl></div>
+</section>
+<section class="lang" id="ar" lang="ar" dir="rtl" data-title="دليل استخدام AllFixDoc">
+<h1>دليل استخدام AllFixDoc</h1>
+<p class="intro">مع AllFixDoc يمكنك قراءة مستندات PDF وOffice والتعليق عليها وتحريرها ومسحها ضوئيًا ومشاركتها. يعرض هذا الدليل الميزات باختصار، والأسماء مطابقة لما في التطبيق.</p>
+<div class="card">
+<h2>البدء</h2>
+<ul><li>لفتح مستند، المس <b>فتح مستند</b> في شاشة الرئيسية، أو المس ملف PDF في تطبيق آخر (الملفات، Gmail، WhatsApp) واختر AllFixDoc.</li><li>في أعلى شاشة الرئيسية ثلاثة أزرار كبيرة: <b>مسح مستند</b> و<b>ملاحظات صوتية</b> وGoogle Drive. ويبدأ الصف الذي تحتها بأدواتك المفضلة، ثم <b>سحابة أخرى</b> و<b>هذا الجهاز</b>؛ اسحبه لرؤيتها جميعًا.</li><li><b>سحابة أخرى</b>: OneDrive وDropbox وiCloud Drive وBox وMEGA وغيرها. تظهر تطبيقات السحابة المثبتة على هاتفك في منتقي الملفات: افتح الملفات منها واحفظ فيها ملفات PDF المعدّلة.</li><li>تُفتح أيضًا ملفات Word وExcel وPowerPoint وOpenDocument وRTF وCSV وTXT، وتُحوَّل إلى PDF للقراءة.</li><li>أضف المجلدات التي تستخدمها كثيرًا من الملفات › المجلدات › <b>إضافة مجلد</b>؛ تظهر ملفات PDF فيها في قائمة واحدة.</li><li>لفتح ملفات PDF دائمًا باستخدام AllFixDoc: الإعدادات › <b>التطبيق الافتراضي</b>.</li></ul>
+</div>
+<div class="card">
+<h2>القراءة</h2>
+<ul><li>قرّب بإصبعين أو المس مرتين للتكبير، ومرّر بين الصفحات.</li><li><b>بحث</b>: يبحث في المستند كله.</li><li><b>الفهرس والصفحات</b>: الفهرس ومصغّرات الصفحات والإشارات المرجعية. لتعليم صفحة استخدم <b>إضافة إشارة مرجعية لهذه الصفحة</b>.</li><li><b>الوضع الليلي</b> و<b>إبقاء الشاشة مضاءة</b>: الإعدادات › القراءة.</li><li><b>القراءة بصوت عالٍ</b>: يقرأ المستند بصوت الجهاز ويُبرز كل كلمة.</li><li>لتحديد النص والبحث فيه داخل مستند ممسوح ضوئيًا، استخدم ⋮ › <b>التعرف على النص (OCR)</b>، واحفظ النتيجة عبر <b>حفظ كملف PDF قابل للبحث</b>.</li></ul>
+</div>
+<div class="card">
+<h2>الملاحظات والتحرير</h2>
+<ul><li>عند فتح مستند، يفتح <b>التحرير والتعليق</b> شريط الأدوات: تظليل، رسم، ملاحظة، نص، توقيع، تعتيم، ممحاة.</li><li>المس 🎤 في مربعات الملاحظة والنص لتُملي بدل الكتابة.</li><li><b>توقيع</b>: ارسم توقيعك مرة واحدة وضعه في أي صفحة.</li><li><b>تعتيم</b>: حدّد ما تريد إخفاءه؛ عند الحفظ يُحذف النص الموجود تحته من الملف نهائيًا، ولا يُغطّى فقط.</li><li>صحّح الأخطاء بالتراجع والإعادة، واحفظ في الملف نفسه أو كنسخة.</li><li>للنماذج القابلة للتعبئة استخدم ⋮ › <b>ملء النموذج</b>.</li></ul>
+</div>
+<div class="card">
+<h2>الأدوات</h2>
+<ul><li>يجمع تبويب <b>الأدوات</b> الأدوات حسب الفئة؛ استخدم مربع البحث في الأعلى للعثور عليها بسرعة.</li><li>التحرير: دمج ملفات PDF، تقسيم PDF، ضغط PDF، تنظيم الصفحات، علامة مائية، أرقام الصفحات.</li><li>التحويل: صور إلى PDF، PDF إلى صورة، Office إلى PDF، PDF إلى Word، PDF إلى Excel، طباعة.</li><li>الأمان: إضافة كلمة مرور، إزالة كلمة المرور.</li><li>المسح الضوئي: مسح مستند، مسح رمز QR، إنشاء رمز QR.</li><li>الملفات والصور: إنشاء ZIP، فك ضغط ZIP، ضغط الصور، تغيير حجم الصور، تحويل الصور، صور إلى GIF، GIF إلى إطارات.</li><li>المس ☆ في زاوية الأداة: ستظهر في الصف الثاني من الشاشة الرئيسية وفي القائمة السريعة.</li></ul>
+</div>
+<div class="card">
+<h2>الملاحظات الصوتية</h2>
+<ul><li>الرئيسية › <b>ملاحظات صوتية</b>. المس الميكروفون وتحدّث؛ تُكتب كلماتك، وكل إملاء في سطر جديد. يمكنك أيضًا تعديل النص يدويًا.</li><li>تُحفظ الملاحظات تلقائيًا. يفتح 🕘 <b>ملاحظاتي</b> الملاحظات السابقة، ويبدأ ＋ <b>ملاحظة جديدة</b> ملاحظة فارغة.</li><li><b>حفظ باسم</b>: Word أو PDF أو TXT. وكذلك <b>إرسال بالبريد الإلكتروني</b> (مع مرفق Word) و<b>مشاركة</b> و<b>طباعة</b>.</li><li>تحوّل خدمةُ التعرّف على الكلام في جهازك (غالبًا Google) الصوتَ إلى نص؛ ولا يسجّل AllFixDoc الصوت.</li></ul>
+</div>
+<div class="card">
+<h2>المشاركة والبريد والطباعة</h2>
+<ul><li>في قائمة الرئيسية أو الملفات، تقدّم قائمة ⋮ للملف خيارات <b>مشاركة</b> و<b>إرسال بالبريد الإلكتروني</b> و<b>طباعة</b> دون فتحه.</li><li>عند فتح المستند تجد الخيارات نفسها في قائمة ⋮.</li><li>يعرض <b>إرسال بالبريد الإلكتروني</b> تطبيقات البريد فقط (Gmail وOutlook…) ويُرفق الملف.</li></ul>
+</div>
+<div class="card">
+<h2>مساعد الذكاء الاصطناعي (Gemini مجانًا)</h2>
+<ul><li>احصل على مفتاح Google Gemini مجاني: سجّل الدخول في <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> بحساب Google، والمس "Create API key" وانسخ المفتاح.</li><li>الإعدادات › مساعد الذكاء الاصطناعي › Google Gemini › <b>إضافة مفتاح</b>: الصق المفتاح. يُحفظ مشفّرًا على هذا الجهاز فقط.</li><li>عند فتح مستند، ⋮ › <b>مساعد الذكاء الاصطناعي</b>: لخّص واسأل وترجم وبسّط. تذكر الإجابات أرقام الصفحات.</li><li>يمكنك أيضًا استخدام Claude (Anthropic)، أو عبر <b>إضافة مساعد</b> استخدام Groq أو OpenRouter أو Mistral أو خدمة أخرى متوافقة مع OpenAI.</li><li>يُرسَل نص الصفحات التي تختارها فقط، بمفتاحك، إلى الخدمة التي اخترتها. لا يراه مطوّر AllFixDoc أبدًا. وتحدد الخدمة حدود الاستخدام المجاني.</li></ul>
+</div>
+<div class="card">
+<h2>التخصيص</h2>
+<ul><li><b>اللغة</b>: 14 لغة. إذا لم تكن لغة هاتفك مضمّنة، فإن <b>ترجمة تلقائية</b> يترجم الواجهة على جهازك (يُنزَّل النموذج مرة واحدة عبر Wi‑Fi).</li><li>الإعدادات › المظهر: السمة، اللون، أسود خالص في السمة الداكنة، أيقونة التطبيق، نمط الأيقونات.</li><li><b>قائمة سريعة نصف دائرية</b>: المس المقبض على الحافة اليسرى؛ اسحب لأعلى أو لأسفل لتدوير القائمة، والمس خارجها لإغلاقها.</li><li>انقل إعداداتك إلى هاتف آخر عبر <b>تصدير نسخة احتياطية</b> و<b>استيراد نسخة احتياطية</b>.</li></ul>
+</div>
+<div class="card">
+<h2>الخصوصية</h2>
+<ul><li>لا يُطلب إذن التخزين؛ يفتح التطبيق الملفات التي تختارها فقط. لا حاجة إلى حساب.</li><li>تُعالَج المستندات على جهازك. يُستخدم الإنترنت فقط لمساعد الذكاء الاصطناعي (بمفتاحك) والإعلانات والمشتريات.</li><li>التفاصيل: <a href="privacy.html#ar">سياسة الخصوصية</a>.</li></ul>
+</div>
+<div class="card">
+<h2>الأسئلة الشائعة</h2><dl>
+<dt>البحث لا يجد شيئًا في ملف PDF ممسوح ضوئيًا.</dt><dd>شغّل أولًا ⋮ › التعرف على النص (OCR) ثم ابحث.</dd>
+<dt>يقول الميكروفون إن التعرّف على الكلام غير متاح.</dt><dd>ثبّت تطبيق Google أو حدّثه؛ فالتعرّف على الكلام يأتي معه.</dd>
+<dt>يقول الذكاء الاصطناعي إن المفتاح مرفوض.</dt><dd>تأكد من نسخ المفتاح كاملًا، وأنشئ مفتاحًا جديدًا في aistudio.google.com عند الحاجة.</dd>
+<dt>ملف PDF محمي بكلمة مرور لا يُفتح.</dt><dd>أدخل كلمة المرور عند الفتح؛ ولإزالتها نهائيًا استخدم الأدوات › إزالة كلمة المرور.</dd>
+<dt>كيف أفتح ملفًا من Google Drive؟</dt><dd><b>فتح مستند</b> أو زر Google Drive في الشاشة الرئيسية؛ اختر Drive من القائمة الجانبية في منتقي الملفات.</dd>
+</dl></div>
+</section>
+<section class="lang" id="hi" lang="hi" data-title="AllFixDoc उपयोग गाइड">
+<h1>AllFixDoc उपयोग गाइड</h1>
+<p class="intro">AllFixDoc से आप PDF और Office दस्तावेज़ पढ़ सकते हैं, उन पर नोट लिख सकते हैं, संपादित, स्कैन और शेयर कर सकते हैं। यह गाइड सुविधाओं को संक्षेप में बताती है; नाम ऐप जैसे ही हैं।</p>
+<div class="card">
+<h2>शुरुआत</h2>
+<ul><li>दस्तावेज़ खोलने के लिए होम स्क्रीन पर <b>दस्तावेज़ खोलें</b> पर टैप करें, या किसी दूसरे ऐप (Files, Gmail, WhatsApp) में PDF पर टैप करके AllFixDoc चुनें।</li><li>होम के सबसे ऊपर तीन बड़े बटन हैं: <b>दस्तावेज़ स्कैन करें</b>, <b>वॉइस नोट</b> और Google Drive। उनके नीचे की पंक्ति में पहले आपके पसंदीदा टूल, फिर <b>अन्य क्लाउड</b> और <b>यह डिवाइस</b> हैं; सब देखने के लिए पंक्ति को बाईं ओर स्वाइप करें।</li><li><b>अन्य क्लाउड</b>: OneDrive, Dropbox, iCloud Drive, Box, MEGA और अन्य। फ़ोन में इंस्टॉल क्लाउड ऐप फ़ाइल पिकर में दिखते हैं: फ़ाइल वहीं से खोलें और संपादित PDF वहीं सहेजें।</li><li>Word, Excel, PowerPoint, OpenDocument, RTF, CSV और TXT फ़ाइलें भी खुलती हैं; पढ़ने के लिए वे अपने-आप PDF में बदल जाती हैं।</li><li>अक्सर इस्तेमाल होने वाले फ़ोल्डर फ़ाइलें › फ़ोल्डर › <b>फ़ोल्डर जोड़ें</b> से जोड़ें; उनकी PDF एक ही सूची में दिखेंगी।</li><li>PDF हमेशा AllFixDoc में खुलें, इसके लिए: सेटिंग › <b>डिफ़ॉल्ट ऐप</b>।</li></ul>
+</div>
+<div class="card">
+<h2>पढ़ना</h2>
+<ul><li>ज़ूम करने के लिए दो उंगलियों से फैलाएँ या दो बार टैप करें; पेजों के बीच स्क्रॉल करें।</li><li><b>खोजें</b>: पूरे दस्तावेज़ में खोजता है।</li><li><b>विषय-सूची और पेज</b>: विषय-सूची, पेज थंबनेल और बुकमार्क। किसी पेज को चिह्नित करने के लिए <b>इस पेज को बुकमार्क करें</b>।</li><li><b>नाइट मोड</b> और <b>स्क्रीन चालू रखें</b>: सेटिंग › पढ़ना।</li><li><b>बोलकर पढ़ें</b>: डिवाइस की आवाज़ में दस्तावेज़ पढ़ता है और हर शब्द को हाइलाइट करता है।</li><li>स्कैन किए गए दस्तावेज़ में टेक्स्ट चुनने और खोजने के लिए ⋮ › <b>टेक्स्ट पहचानें (OCR)</b>; नतीजा <b>खोजने योग्य PDF के रूप में सहेजें</b> से सहेजें।</li></ul>
+</div>
+<div class="card">
+<h2>नोट और संपादन</h2>
+<ul><li>दस्तावेज़ खुला होने पर <b>संपादन और टिप्पणी</b> टूलबार खोलता है: हाइलाइट, ड्रॉ करें, नोट, टेक्स्ट, हस्ताक्षर, छिपाएं, इरेज़र।</li><li>नोट और टेक्स्ट बॉक्स में 🎤 पर टैप करके टाइप करने के बजाय बोलकर लिखें।</li><li><b>हस्ताक्षर</b>: अपना हस्ताक्षर एक बार बनाएँ और किसी भी पेज पर लगाएँ।</li><li><b>छिपाएं</b>: जो छिपाना है उसे चिह्नित करें; सहेजने पर नीचे का टेक्स्ट फ़ाइल से हमेशा के लिए हट जाता है, सिर्फ़ ढका नहीं जाता।</li><li>पूर्ववत / फिर से करें से गलतियाँ सुधारें; उसी फ़ाइल में या कॉपी के रूप में सहेजें।</li><li>भरने योग्य फ़ॉर्म के लिए ⋮ › <b>फ़ॉर्म भरें</b>।</li></ul>
+</div>
+<div class="card">
+<h2>टूल</h2>
+<ul><li><b>टूल</b> टैब में टूल श्रेणियों में बँटे हैं; ऊपर के खोज बॉक्स से जल्दी ढूँढें।</li><li>संपादन: PDF जोड़ें, PDF बांटें, PDF कंप्रेस करें, पेज व्यवस्थित करें, वॉटरमार्क, पेज नंबर।</li><li>रूपांतरण: इमेज से PDF, PDF से इमेज, Office से PDF, PDF से Word, PDF से Excel, प्रिंट करें।</li><li>सुरक्षा: पासवर्ड लगाएं, पासवर्ड हटाएं।</li><li>स्कैन: दस्तावेज़ स्कैन करें, QR कोड स्कैन करें, QR कोड बनाएं।</li><li>फ़ाइल और इमेज: ZIP बनाएं, ZIP निकालें, इमेज कंप्रेस करें, इमेज का आकार बदलें, इमेज कन्वर्ट करें, इमेज से GIF, GIF से फ़्रेम।</li><li>किसी टूल के कोने में ☆ पर टैप करें: वह होम स्क्रीन की दूसरी पंक्ति और क्विक मेन्यू में दिखेगा।</li></ul>
+</div>
+<div class="card">
+<h2>वॉइस नोट</h2>
+<ul><li>होम › <b>वॉइस नोट</b>। माइक्रोफ़ोन पर टैप करें और बोलें; आपके शब्द लिख दिए जाते हैं, हर बार बोला गया हिस्सा नई पंक्ति में। टेक्स्ट को हाथ से भी बदल सकते हैं।</li><li>नोट अपने-आप सहेजे जाते हैं। 🕘 <b>मेरे नोट</b> पुराने नोट खोलता है, ＋ <b>नया नोट</b> खाली नोट शुरू करता है।</li><li><b>इस रूप में सहेजें</b>: Word, PDF या TXT। साथ ही <b>ईमेल से भेजें</b> (Word अटैचमेंट के साथ), <b>शेयर करें</b> और <b>प्रिंट करें</b>।</li><li>बोली को टेक्स्ट में डिवाइस की स्पीच रिकग्निशन सेवा (आमतौर पर Google) बदलती है; AllFixDoc ऑडियो रिकॉर्ड नहीं करता।</li></ul>
+</div>
+<div class="card">
+<h2>शेयर, ईमेल और प्रिंट</h2>
+<ul><li>होम या फ़ाइलें सूची में फ़ाइल का ⋮ मेन्यू <b>शेयर करें</b>, <b>ईमेल से भेजें</b> और <b>प्रिंट करें</b> देता है, फ़ाइल खोले बिना।</li><li>दस्तावेज़ खुला होने पर यही विकल्प ⋮ मेन्यू में हैं।</li><li><b>ईमेल से भेजें</b> सिर्फ़ ईमेल ऐप (Gmail, Outlook…) दिखाता है और फ़ाइल अटैच करता है।</li></ul>
+</div>
+<div class="card">
+<h2>AI सहायक (मुफ़्त Gemini)</h2>
+<ul><li>मुफ़्त Google Gemini कुंजी पाएँ: <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> पर Google खाते से साइन इन करें, "Create API key" पर टैप करें और कुंजी कॉपी करें।</li><li>सेटिंग › AI सहायक › Google Gemini › <b>कुंजी जोड़ें</b>: कुंजी पेस्ट करें। यह केवल इसी डिवाइस पर एन्क्रिप्ट होकर रहती है।</li><li>दस्तावेज़ खुला होने पर ⋮ › <b>AI सहायक</b>: सारांश, सवाल, अनुवाद या सरल भाषा। जवाबों में पेज नंबर होते हैं।</li><li>आप Claude (Anthropic) भी इस्तेमाल कर सकते हैं, या <b>सहायक जोड़ें</b> से Groq, OpenRouter, Mistral या कोई और OpenAI-संगत सेवा।</li><li>सिर्फ़ आपके चुने पेजों का टेक्स्ट, आपकी कुंजी से, आपकी चुनी सेवा को जाता है। AllFixDoc का डेवलपर इसे कभी नहीं देखता। मुफ़्त उपयोग की सीमा सेवा तय करती है।</li></ul>
+</div>
+<div class="card">
+<h2>अपने हिसाब से</h2>
+<ul><li><b>भाषा</b>: 14 भाषाएँ। अगर आपके फ़ोन की भाषा शामिल नहीं है, तो <b>अपने-आप अनुवाद</b> इंटरफ़ेस का अनुवाद डिवाइस पर ही करता है (मॉडल एक बार Wi‑Fi पर डाउनलोड होता है)।</li><li>सेटिंग › रूप-रंग: थीम, रंग, डार्क थीम में पूरा काला, ऐप आइकन, आइकन स्टाइल।</li><li><b>अर्धवृत्त क्विक मेनू</b>: बाएँ किनारे के हैंडल पर टैप करें; मेन्यू घुमाने के लिए ऊपर या नीचे स्वाइप करें, बाहर टैप करने पर बंद होता है।</li><li><b>बैकअप एक्सपोर्ट करें</b> और <b>बैकअप इंपोर्ट करें</b> से अपनी सेटिंग दूसरे फ़ोन में ले जाएँ।</li></ul>
+</div>
+<div class="card">
+<h2>गोपनीयता</h2>
+<ul><li>स्टोरेज अनुमति नहीं माँगी जाती; ऐप केवल आपकी चुनी फ़ाइलें खोलता है। कोई खाता ज़रूरी नहीं।</li><li>दस्तावेज़ आपके डिवाइस पर प्रोसेस होते हैं। इंटरनेट केवल AI सहायक (आपकी अपनी कुंजी से), विज्ञापन और ख़रीद के लिए इस्तेमाल होता है।</li><li>विवरण: <a href="privacy.html#hi">गोपनीयता नीति</a>।</li></ul>
+</div>
+<div class="card">
+<h2>अक्सर पूछे जाने वाले सवाल</h2><dl>
+<dt>स्कैन की गई PDF में खोज कुछ नहीं ढूँढती।</dt><dd>पहले ⋮ › टेक्स्ट पहचानें (OCR) चलाएँ, फिर खोजें।</dd>
+<dt>माइक्रोफ़ोन कहता है कि स्पीच रिकग्निशन उपलब्ध नहीं है।</dt><dd>Google ऐप इंस्टॉल या अपडेट करें; स्पीच रिकग्निशन उसी के साथ आता है।</dd>
+<dt>AI कहता है कि कुंजी अस्वीकार हुई।</dt><dd>जाँचें कि पूरी कुंजी कॉपी हुई है; ज़रूरत हो तो aistudio.google.com पर नई कुंजी बनाएँ।</dd>
+<dt>पासवर्ड वाली PDF नहीं खुलती।</dt><dd>खोलते समय पासवर्ड डालें; उसे स्थायी रूप से हटाने के लिए टूल › पासवर्ड हटाएं।</dd>
+<dt>Google Drive की फ़ाइल कैसे खोलूँ?</dt><dd><b>दस्तावेज़ खोलें</b> या होम स्क्रीन पर Google Drive बटन; फ़ाइल पिकर के साइड मेन्यू में Drive चुनें।</dd>
+</dl></div>
+</section>
+<section class="lang" id="ja" lang="ja" data-title="AllFixDoc 使い方ガイド">
+<h1>AllFixDoc 使い方ガイド</h1>
+<p class="intro">AllFixDoc では PDF や Office 文書の閲覧、書き込み、編集、スキャン、共有ができます。このガイドでは機能を簡単に紹介します。名称はアプリの表示と同じです。</p>
+<div class="card">
+<h2>はじめに</h2>
+<ul><li>文書を開くには ホーム 画面の <b>文書を開く</b> をタップするか、ほかのアプリ（ファイル、Gmail、WhatsApp）で PDF をタップして AllFixDoc を選びます。</li><li>ホーム の上部には <b>文書をスキャン</b>、<b>ボイスメモ</b>、Google Drive の 3 つの大きなボタンがあります。その下の行にはお気に入りのツール、続いて <b>その他のクラウド</b> と <b>この端末</b> が並び、左にスワイプするとすべて表示されます。</li><li><b>その他のクラウド</b>：OneDrive、Dropbox、iCloud Drive、Box、MEGA など。端末にインストールしたクラウドアプリはファイル選択画面に表示され、そこからファイルを開いたり、編集した PDF を保存したりできます。</li><li>Word、Excel、PowerPoint、OpenDocument、RTF、CSV、TXT ファイルも開けます。閲覧用に自動で PDF に変換されます。</li><li>よく使うフォルダは ファイル › フォルダ › <b>フォルダを追加</b> で追加でき、中の PDF が 1 つのリストに表示されます。</li><li>PDF を常に AllFixDoc で開くには：設定 › <b>デフォルトアプリ</b>。</li></ul>
+</div>
+<div class="card">
+<h2>閲覧</h2>
+<ul><li>ピンチまたはダブルタップで拡大し、スクロールでページを移動します。</li><li><b>検索</b>：文書全体を検索します。</li><li><b>目次とページ</b>：目次、ページのサムネイル、ブックマーク。ページに印を付けるには <b>このページをブックマーク</b>。</li><li><b>ナイトモード</b> と <b>画面をオンのままにする</b>：設定 › 閲覧。</li><li><b>読み上げ</b>：端末の音声で文書を読み上げ、読んでいる単語を強調します。</li><li>スキャンした文書でテキストを選択・検索するには ⋮ › <b>文字認識（OCR）</b>。結果は <b>検索可能なPDFとして保存</b> で保存できます。</li></ul>
+</div>
+<div class="card">
+<h2>書き込みと編集</h2>
+<ul><li>文書を開いた状態で <b>編集と注釈</b> を押すとツールバーが開きます：ハイライト、手書き、メモ、テキスト、署名、墨消し、消しゴム。</li><li>メモ欄やテキスト欄の 🎤 で、入力する代わりに音声で書けます。</li><li><b>署名</b>：署名を一度描けば、どのページにも配置できます。</li><li><b>墨消し</b>：隠したい部分を指定します。保存すると下の文字はファイルから完全に削除されます（上から隠すだけではありません）。</li><li>元に戻す／やり直しで修正し、同じファイルかコピーとして保存します。</li><li>入力可能なフォームは ⋮ › <b>フォームに入力</b>。</li></ul>
+</div>
+<div class="card">
+<h2>ツール</h2>
+<ul><li><b>ツール</b> タブではツールがカテゴリ別に並び、上部の検索ですばやく見つけられます。</li><li>編集：PDFを結合、PDFを分割、PDFを圧縮、ページを整理、透かし、ページ番号。</li><li>変換：画像をPDFに、PDFを画像に、OfficeをPDFに、PDFをWordに、PDFをExcelに、印刷。</li><li>セキュリティ：パスワードを設定、パスワードを解除。</li><li>スキャン：文書をスキャン、QRコードをスキャン、QRコードを作成。</li><li>ファイルと画像：ZIPを作成、ZIPを展開、画像を圧縮、画像サイズを変更、画像を変換、画像をGIFに、GIFをコマに分解。</li><li>ツールの隅の ☆ をタップすると、ホーム画面の 2 行目とクイックメニューに表示されます。</li></ul>
+</div>
+<div class="card">
+<h2>音声メモ</h2>
+<ul><li>ホーム › <b>ボイスメモ</b>。マイクをタップして話すと文字になり、話すたびに新しい行として追加されます。テキストは手で編集することもできます。</li><li>メモは自動保存されます。🕘 <b>マイメモ</b> で以前のメモを開き、＋ <b>新しいメモ</b> で新しいメモを始めます。</li><li><b>形式を選んで保存</b>：Word、PDF、TXT。<b>メールで送信</b>（Word 添付）、<b>共有</b>、<b>印刷</b> もできます。</li><li>音声の文字化は端末の音声認識サービス（通常は Google）が行います。AllFixDoc は音声を録音しません。</li></ul>
+</div>
+<div class="card">
+<h2>共有・メール・印刷</h2>
+<ul><li>ホーム や ファイル の一覧でファイルの ⋮ メニューを開くと、ファイルを開かずに <b>共有</b>、<b>メールで送信</b>、<b>印刷</b> ができます。</li><li>文書を開いているときも ⋮ メニューに同じ項目があります。</li><li><b>メールで送信</b> はメールアプリ（Gmail、Outlook など）だけを表示し、ファイルを添付します。</li></ul>
+</div>
+<div class="card">
+<h2>AI アシスタント（無料の Gemini）</h2>
+<ul><li>無料の Google Gemini キーを取得：<a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a> に Google アカウントでログインし、「Create API key」をタップしてキーをコピーします。</li><li>設定 › AIアシスタント › Google Gemini › <b>キーを追加</b>：キーを貼り付けます。キーはこの端末にのみ暗号化して保存されます。</li><li>文書を開いて ⋮ › <b>AIアシスタント</b>：要約、質問、翻訳、やさしい言い換え。回答にはページ番号が付きます。</li><li>Claude（Anthropic）や、<b>アシスタントを追加</b> から Groq、OpenRouter、Mistral など OpenAI 互換のサービスも使えます。</li><li>選んだページのテキストだけが、あなたのキーで、選んだサービスに送信されます。AllFixDoc の開発者がそれを見ることはありません。無料枠の上限はサービス側が決めます。</li></ul>
+</div>
+<div class="card">
+<h2>カスタマイズ</h2>
+<ul><li><b>言語</b>：14 言語。端末の言語が含まれていない場合は <b>自動翻訳</b> が端末内で画面を翻訳します（モデルは Wi‑Fi で一度だけダウンロード）。</li><li>設定 › 外観：テーマ、色、ダークテーマで完全な黒、アプリアイコン、アイコンのスタイル。</li><li><b>半円クイックメニュー</b>：左端のつまみをタップします。上下にスワイプでメニューを回し、外側をタップすると閉じます。</li><li><b>バックアップを書き出す</b> と <b>バックアップを読み込む</b> で設定を別の端末に移せます。</li></ul>
+</div>
+<div class="card">
+<h2>プライバシー</h2>
+<ul><li>ストレージの権限は求めません。アプリが開くのは選んだファイルだけです。アカウントも不要です。</li><li>文書は端末内で処理されます。インターネットは AI アシスタント（ご自身のキー）、広告、購入にのみ使われます。</li><li>詳しくは <a href="privacy.html#ja">プライバシーポリシー</a>。</li></ul>
+</div>
+<div class="card">
+<h2>よくある質問</h2><dl>
+<dt>スキャンした PDF で検索しても見つからない。</dt><dd>先に ⋮ › 文字認識（OCR） を実行してから検索してください。</dd>
+<dt>マイクで「音声認識を利用できません」と表示される。</dt><dd>Google アプリをインストールまたは更新してください。音声認識はこれに含まれます。</dd>
+<dt>AI で「キーが拒否されました」と表示される。</dt><dd>キー全体をコピーしたか確認し、必要なら aistudio.google.com で新しいキーを作成してください。</dd>
+<dt>パスワード付き PDF が開けない。</dt><dd>開くときにパスワードを入力します。完全に解除するには ツール › パスワードを解除。</dd>
+<dt>Google Drive のファイルを開くには？</dt><dd><b>文書を開く</b> またはホームの Google Drive ボタンから、ファイル選択画面のサイドメニューで Drive を選びます。</dd>
+</dl></div>
+</section>
+<section class="lang" id="zh-CN" lang="zh-CN" data-title="AllFixDoc 使用指南">
+<h1>AllFixDoc 使用指南</h1>
+<p class="intro">使用 AllFixDoc，你可以阅读、批注、编辑、扫描和分享 PDF 与 Office 文档。本指南简要介绍各项功能，名称与应用中一致。</p>
+<div class="card">
+<h2>快速上手</h2>
+<ul><li>要打开文档，请在 首页 页面点按 <b>打开文档</b>，或在其他应用（文件、Gmail、WhatsApp）中点按 PDF 并选择 AllFixDoc。</li><li>首页 顶部有三个大按钮：<b>扫描文档</b>、<b>语音笔记</b> 和 Google Drive。下面一行先是你收藏的工具，然后是 <b>其他云盘</b> 和 <b>本设备</b>；向左滑动即可查看全部。</li><li><b>其他云盘</b>：OneDrive、Dropbox、iCloud Drive、Box、MEGA 等。手机上安装的云盘应用会出现在文件选择器中：从那里打开文件，也可把编辑后的 PDF 保存回去。</li><li>也可以打开 Word、Excel、PowerPoint、OpenDocument、RTF、CSV 和 TXT 文件，阅读时会自动转换为 PDF。</li><li>通过 文件 › 文件夹 › <b>添加文件夹</b> 添加常用文件夹，其中的 PDF 会显示在同一个列表里。</li><li>要始终用 AllFixDoc 打开 PDF：设置 › <b>默认应用</b>。</li></ul>
+</div>
+<div class="card">
+<h2>阅读</h2>
+<ul><li>双指缩放或双击放大；滚动切换页面。</li><li><b>搜索</b>：在整个文档中搜索。</li><li><b>目录与页面</b>：目录、页面缩略图和书签。要标记某一页，请用 <b>为此页添加书签</b>。</li><li><b>夜间模式</b> 和 <b>保持屏幕常亮</b>：设置 › 阅读。</li><li><b>朗读</b>：用设备的语音朗读文档，并高亮当前词语。</li><li>要在扫描文档中选择和搜索文字，请使用 ⋮ › <b>识别文字（OCR）</b>；可用 <b>保存为可搜索 PDF</b> 保存结果。</li></ul>
+</div>
+<div class="card">
+<h2>批注与编辑</h2>
+<ul><li>打开文档后，<b>编辑与批注</b> 会打开工具栏：高亮、手绘、备注、文字、签名、涂黑、橡皮擦。</li><li>在批注框和文本框中点按 🎤，即可用语音代替打字。</li><li><b>签名</b>：签名画一次，即可放到任意页面。</li><li><b>涂黑</b>：标出要隐藏的内容；保存后，下面的文字会从文件中永久删除，而不只是被遮住。</li><li>用撤销 / 重做修正错误；可保存到原文件或另存为副本。</li><li>可填写的表单请用 ⋮ › <b>填写表单</b>。</li></ul>
+</div>
+<div class="card">
+<h2>工具</h2>
+<ul><li><b>工具</b> 标签页按类别整理工具，可用顶部的搜索框快速查找。</li><li>编辑：合并 PDF、拆分 PDF、压缩 PDF、整理页面、水印、页码。</li><li>转换：图片转 PDF、PDF 转图片、Office 转 PDF、PDF 转 Word、PDF 转 Excel、打印。</li><li>安全：添加密码、移除密码。</li><li>扫描：扫描文档、扫描二维码、生成二维码。</li><li>文件与图片：创建 ZIP、解压 ZIP、压缩图片、调整图片大小、转换图片、图片转 GIF、GIF 拆分帧。</li><li>点按工具角上的 ☆：它会出现在主屏幕的第二行和快捷菜单中。</li></ul>
+</div>
+<div class="card">
+<h2>语音笔记</h2>
+<ul><li>首页 › <b>语音笔记</b>。点按麦克风并说话，内容会写成文字，每次听写另起一行。也可以手动修改文字。</li><li>笔记会自动保存。🕘 <b>我的笔记</b> 打开以前的笔记，＋ <b>新建笔记</b> 新建空白笔记。</li><li><b>另存为</b>：Word、PDF 或 TXT。还可以 <b>通过邮件发送</b>（附带 Word 文件）、<b>分享</b> 和 <b>打印</b>。</li><li>语音由设备的语音识别服务（通常是 Google）转为文字；AllFixDoc 不会录音。</li></ul>
+</div>
+<div class="card">
+<h2>分享、邮件与打印</h2>
+<ul><li>在 首页 或 文件 列表中，文件的 ⋮ 菜单提供 <b>分享</b>、<b>通过邮件发送</b> 和 <b>打印</b>，无需打开文件。</li><li>打开文档时，⋮ 菜单中也有相同的选项。</li><li><b>通过邮件发送</b> 只显示邮件应用（Gmail、Outlook…），并附上文件。</li></ul>
+</div>
+<div class="card">
+<h2>AI 助手（免费 Gemini）</h2>
+<ul><li>获取免费的 Google Gemini 密钥：用 Google 账号登录 <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>，点按“Create API key”并复制密钥。</li><li>设置 › AI 助手 › Google Gemini › <b>添加密钥</b>：粘贴密钥。密钥仅加密保存在本设备上。</li><li>打开文档后，⋮ › <b>AI 助手</b>：总结、提问、翻译或改写得更简单。回答会注明页码。</li><li>也可以使用 Claude（Anthropic），或通过 <b>添加助手</b> 使用 Groq、OpenRouter、Mistral 或其他兼容 OpenAI 的服务。</li><li>只有你选中页面的文字会用你的密钥发送到你选择的服务。AllFixDoc 的开发者永远看不到这些内容。免费用量上限由该服务决定。</li></ul>
+</div>
+<div class="card">
+<h2>个性化</h2>
+<ul><li><b>语言</b>：14 种语言。如果应用未内置你手机的语言，<b>自动翻译</b> 会在设备上翻译界面（模型只需通过 Wi‑Fi 下载一次）。</li><li>设置 › 外观：主题、颜色、深色主题使用纯黑、应用图标、图标样式。</li><li><b>半圆快捷菜单</b>：点按左边缘的把手；上下滑动可转动菜单，点按外部即可关闭。</li><li>用 <b>导出备份</b> 和 <b>导入备份</b> 把设置带到另一部手机。</li></ul>
+</div>
+<div class="card">
+<h2>隐私</h2>
+<ul><li>不申请存储权限；应用只打开你选择的文件。无需注册账号。</li><li>文档在你的设备上处理。只有 AI 助手（使用你自己的密钥）、广告和购买会用到网络。</li><li>详情：<a href="privacy.html#zh-CN">隐私政策</a>。</li></ul>
+</div>
+<div class="card">
+<h2>常见问题</h2><dl>
+<dt>在扫描的 PDF 中搜索不到内容。</dt><dd>请先运行 ⋮ › 识别文字（OCR），再进行搜索。</dd>
+<dt>麦克风提示语音识别不可用。</dt><dd>请安装或更新 Google 应用，语音识别随它一起提供。</dd>
+<dt>AI 提示密钥被拒绝。</dt><dd>请确认复制了完整的密钥；必要时在 aistudio.google.com 新建一个。</dd>
+<dt>有密码的 PDF 打不开。</dt><dd>打开时输入密码；如需永久移除密码，请用 工具 › 移除密码。</dd>
+<dt>如何打开 Google Drive 中的文件？</dt><dd>通过 <b>打开文档</b> 或主屏幕上的 Google Drive 按钮，在文件选择器的侧边菜单中选择 Drive。</dd>
+</dl></div>
+</section>
+<footer><a href="./">AllFixDoc</a> · <a href="privacy.html">Privacy policy</a></footer>
+</main>
+<script>
+const LANGS = ['tr', 'en', 'az', 'de', 'es', 'fr', 'id', 'it', 'pt-BR', 'ru', 'ar', 'hi', 'ja', 'zh-CN'];
+function pick() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (LANGS.includes(h)) return h;
+  for (const l of (navigator.languages || [navigator.language || "en"])) {
+    const exact = LANGS.find(x => x.toLowerCase() === l.toLowerCase());
+    if (exact) return exact;
+    const base = LANGS.find(x => x.split("-")[0] === l.split("-")[0].toLowerCase());
+    if (base) return base;
+  }
+  return "en";
+}
+function show(l) {
+  for (const s of document.querySelectorAll("section.lang")) s.hidden = s.id !== l;
+  for (const a of document.querySelectorAll("nav a")) a.classList.toggle("on", a.getAttribute("href") === "#" + l);
+  document.documentElement.lang = l;
+  const s = document.getElementById(l);
+  if (s) document.title = s.dataset.title;
+}
+window.addEventListener("hashchange", () => show(pick()));
+show(pick());
+</script>
+</body>
+</html>
