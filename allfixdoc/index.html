@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AllFixDoc</title>
+<meta name="description" content="AllFixDoc: PDF reader, editor and document scanner for Android.">
+<style>
+  :root { --bg: #f4f6fb; --surface: #ffffff; --text: #17151f; --muted: #5d5a6b; --accent: #1f6feb; --border: #e2e6ef; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11131a; --surface: #1b1e27; --text: #f1f2f6; --muted: #a6abbb; --accent: #64b5f6; --border: #2b2f3b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 32px; line-height: 1.15; margin: 0; }
+  h2 { font-size: 20px; margin: 0 0 8px; }
+  .tagline { color: var(--muted); margin: 4px 0 20px; }
+  .hero { width: 100%; height: auto; border-radius: 16px; display: block; }
+  section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 20px; }
+  ul { margin: 0; padding-left: 20px; }
+  a { color: var(--accent); }
+  .links a { display: inline-block; margin: 6px 16px 0 0; font-weight: 600; }
+  select { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 12px; }
+  .gallery img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
+  footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+<h1>AllFixDoc</h1>
+<p class="tagline">PDF, Office reader, editor &amp; scanner for Android</p>
+<img class="hero" id="hero" src="graphics/feature-en.png" alt="AllFixDoc">
+
+<section lang="tr">
+<h2>Türkçe</h2>
+<p>PDF okuma, not alma, form doldurma ve belgelerle çalışma için hızlı ve sade bir uygulama. Depolama izni istemez; yalnızca senin seçtiğin dosyaları açar.</p>
+<ul>
+<li>Vurgulama, çizim, not, imza ve kalıcı karartma</li>
+<li>Sesle yazma: notları ve metni yazmak yerine söyle</li>
+<li>28 araç: birleştir, böl, sıkıştır, PDF→Word/Excel, web→PDF, ZIP, görsel ve GIF araçları</li>
+<li>Word, Excel, PowerPoint, LibreOffice, WPS, SoftMaker, RTF, CSV açma ve PDF'e çevirme</li>
+<li>Belge tarama, kimlik kopyası, QR okuma/oluşturma, cihaz üzerinde OCR</li>
+<li>14 dil, açık/koyu tema</li>
+</ul>
+</section>
+
+<section lang="en">
+<h2>English</h2>
+<p>A fast, simple app for reading PDFs, taking notes, filling in forms and working with documents. It doesn't ask for storage permission: it only opens the files you choose.</p>
+<ul>
+<li>Highlight, draw, notes, signatures and permanent redaction</li>
+<li>Voice typing: dictate notes and text instead of typing</li>
+<li>28 tools: merge, split, compress, PDF to Word/Excel, web page to PDF, ZIP, image and GIF tools</li>
+<li>Open Word, Excel, PowerPoint, LibreOffice, WPS, SoftMaker, RTF and CSV, and convert them to PDF</li>
+<li>Document scanning, ID card copies, QR codes, on-device OCR</li>
+<li>14 languages, light and dark themes</li>
+</ul>
+<p class="links"><a href="privacy.html">Privacy policy · Gizlilik politikası</a></p>
+</section>
+
+<section>
+<h2>Screenshots</h2>
+<label>Language: <select id="lang"><option value="tr">Türkçe</option><option value="en">English</option><option value="az">Azərbaycan</option><option value="de">Deutsch</option><option value="es">Español</option><option value="fr">Français</option><option value="id">Bahasa Indonesia</option><option value="it">Italiano</option><option value="pt-BR">Português (BR)</option><option value="ru">Русский</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="ja">日本語</option><option value="zh-CN">简体中文</option></select></label>
+<div class="gallery" id="gallery"></div>
+</section>
+
+<footer>AllFixDoc · <a href="privacy.html">Privacy policy</a></footer>
+</main>
+<script>
+const SHOTS = {"tr": ["01-01-okuma.png", "02-03-duzenleme.png", "03-07-karartma.png", "04-04-araclar.png", "05-06-office-cok-dil.png", "06-08-hizli-menu-koyu.png", "07-09-diller.png", "08-05-dosyalar.png"], "en": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "az": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "de": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "es": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "fr": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "id": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "it": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "pt-BR": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ru": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ar": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "hi": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ja": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "zh-CN": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"]};
+const sel = document.getElementById("lang"), gal = document.getElementById("gallery"), hero = document.getElementById("hero");
+function show(l) {
+  gal.innerHTML = "";
+  for (const f of SHOTS[l]) {
+    const img = document.createElement("img");
+    img.src = "screenshots/" + l + "/" + f; img.alt = f; img.loading = "lazy";
+    gal.appendChild(img);
+  }
+  hero.src = "graphics/feature-" + l + ".png";
+}
+const pref = (navigator.language || "en").toLowerCase();
+const start = Object.keys(SHOTS).find(k => pref === k.toLowerCase()) || Object.keys(SHOTS).find(k => pref.startsWith(k.split("-")[0].toLowerCase())) || "en";
+sel.value = start; show(start);
+sel.addEventListener("change", () => show(sel.value));
+</script>
+</body>
+</html>
