@@ -6,14 +6,15 @@
 <title>AllFixDoc</title>
 <meta name="description" content="AllFixDoc: PDF reader, editor and document scanner for Android.">
 <style>
-  :root { --bg: #f4f6fb; --surface: #ffffff; --text: #17151f; --muted: #5d5a6b; --accent: #1f6feb; --border: #e2e6ef; }
+  :root { --bg: #f4eef0; --surface: #fffafb; --text: #221a1d; --muted: #6c5f64; --accent: #9b1f47; --accent2: #2f63c0; --border: #ead9df; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #11131a; --surface: #1b1e27; --text: #f1f2f6; --muted: #a6abbb; --accent: #64b5f6; --border: #2b2f3b; }
+    :root { --bg: #191315; --surface: #241c1f; --text: #f3e9ec; --muted: #c4b3b9; --accent: #ffb1c3; --accent2: #a9c7ff; --border: #3a2d32; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { font-size: 32px; line-height: 1.15; margin: 0; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0; background: linear-gradient(90deg, var(--accent), var(--accent2));
+       -webkit-background-clip: text; background-clip: text; color: transparent; }
   h2 { font-size: 20px; margin: 0 0 8px; }
   .tagline { color: var(--muted); margin: 4px 0 20px; }
   .hero { width: 100%; height: auto; border-radius: 16px; display: block; }
@@ -38,11 +39,13 @@
 <p>PDF okuma, not alma, form doldurma ve belgelerle çalışma için hızlı ve sade bir uygulama. Depolama izni istemez; yalnızca senin seçtiğin dosyaları açar.</p>
 <ul>
 <li>Vurgulama, çizim, not, imza ve kalıcı karartma</li>
-<li>Sesle yazma: notları ve metni yazmak yerine söyle</li>
-<li>28 araç: birleştir, böl, sıkıştır, PDF→Word/Excel, web→PDF, ZIP, görsel ve GIF araçları</li>
+<li>Sesli notlar: konuş, yazıya dönüşsün; Word, PDF ya da TXT kaydet, e-postayla gönder, yazdır</li>
+<li>Ücretsiz AI asistanı (Google Gemini): belgeyi özetle, soru sor, çevir</li>
+<li>Google Drive, OneDrive, Dropbox ve diğer bulutlarla çalışır</li>
+<li>25 araç: birleştir, böl, sıkıştır, PDF→Word/Excel, ZIP, görsel ve GIF araçları</li>
 <li>Word, Excel, PowerPoint, LibreOffice, WPS, SoftMaker, RTF, CSV açma ve PDF'e çevirme</li>
-<li>Belge tarama, kimlik kopyası, QR okuma/oluşturma, cihaz üzerinde OCR</li>
-<li>14 dil, açık/koyu tema</li>
+<li>Belge tarama, QR okuma/oluşturma, cihaz üzerinde OCR</li>
+<li>14 dil (telefonunun dili yoksa cihazda otomatik çeviri), açık/koyu tema</li>
 </ul>
 </section>
 
@@ -51,13 +54,15 @@
 <p>A fast, simple app for reading PDFs, taking notes, filling in forms and working with documents. It doesn't ask for storage permission: it only opens the files you choose.</p>
 <ul>
 <li>Highlight, draw, notes, signatures and permanent redaction</li>
-<li>Voice typing: dictate notes and text instead of typing</li>
-<li>28 tools: merge, split, compress, PDF to Word/Excel, web page to PDF, ZIP, image and GIF tools</li>
+<li>Voice notes: speak and it's written down; save as Word, PDF or TXT, email or print</li>
+<li>Free AI assistant (Google Gemini): summarize, ask questions, translate</li>
+<li>Works with Google Drive, OneDrive, Dropbox and other clouds</li>
+<li>25 tools: merge, split, compress, PDF to Word/Excel, ZIP, image and GIF tools</li>
 <li>Open Word, Excel, PowerPoint, LibreOffice, WPS, SoftMaker, RTF and CSV, and convert them to PDF</li>
-<li>Document scanning, ID card copies, QR codes, on-device OCR</li>
-<li>14 languages, light and dark themes</li>
+<li>Document scanning, QR codes, on-device OCR</li>
+<li>14 languages (automatic on-device translation for others), light and dark themes</li>
 </ul>
-<p class="links"><a href="privacy.html">Privacy policy · Gizlilik politikası</a></p>
+<p class="links"><a href="guide.html">User guide · Kullanım kılavuzu</a> <a href="privacy.html">Privacy policy · Gizlilik politikası</a></p>
 </section>
 
 <section>
@@ -66,7 +71,7 @@
 <div class="gallery" id="gallery"></div>
 </section>
 
-<footer>AllFixDoc · <a href="privacy.html">Privacy policy</a></footer>
+<footer>AllFixDoc · <a href="guide.html">User guide</a> · <a href="privacy.html">Privacy policy</a></footer>
 </main>
 <script>
 const SHOTS = {"tr": ["01-01-okuma.png", "02-03-duzenleme.png", "03-07-karartma.png", "04-04-araclar.png", "05-06-office-cok-dil.png", "06-08-hizli-menu-koyu.png", "07-09-diller.png", "08-05-dosyalar.png"], "en": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "az": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "de": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "es": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "fr": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "id": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "it": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "pt-BR": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ru": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ar": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "hi": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ja": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "zh-CN": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"]};
