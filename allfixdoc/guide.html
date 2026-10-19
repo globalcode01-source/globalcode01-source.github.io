@@ -736,8 +736,10 @@ function show(l) {
   const s = document.getElementById(l);
   if (s) document.title = s.dataset.title;
 }
-window.addEventListener("hashchange", () => show(pick()));
+window.addEventListener("hashchange", () => { show(pick()); window.scrollTo(0, 0); });
 show(pick());
+// Dil etiketi (#tr) tarayıcıyı bölüme kaydırır; başlık ve dil seçici görünsün diye en üstten başla
+window.addEventListener("load", () => window.scrollTo(0, 0));
 </script>
 </body>
 </html>
