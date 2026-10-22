@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AllFixDoc</title>
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <meta name="description" content="AllFixDoc: PDF reader, editor and document scanner for Android.">
 <style>
   :root { --bg: #f4eef0; --surface: #fffafb; --text: #221a1d; --muted: #6c5f64; --accent: #9b1f47; --accent2: #2f63c0; --border: #ead9df; }
@@ -16,6 +18,8 @@
   h1 { font-size: 34px; line-height: 1.15; margin: 0; background: linear-gradient(90deg, var(--accent), var(--accent2));
        -webkit-background-clip: text; background-clip: text; color: transparent; }
   h2 { font-size: 20px; margin: 0 0 8px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { border-radius: 16px; box-shadow: 0 6px 16px rgba(80, 20, 60, .25); }
   .tagline { color: var(--muted); margin: 4px 0 20px; }
   .hero { width: 100%; height: auto; border-radius: 16px; display: block; }
   section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 20px; }
@@ -30,9 +34,9 @@
 </head>
 <body>
 <main>
-<h1>AllFixDoc</h1>
+<div class="brand"><img src="icon.png" alt="" width="64" height="64"><h1>AllFixDoc</h1></div>
 <p class="tagline">PDF, Office reader, editor &amp; scanner for Android</p>
-<img class="hero" id="hero" src="graphics/feature-en.png" alt="AllFixDoc">
+<img class="hero" id="hero" src="graphics/feature-en.jpg" alt="AllFixDoc">
 
 <section lang="tr">
 <h2>Türkçe</h2>
@@ -74,7 +78,7 @@
 <footer>AllFixDoc · <a href="guide.html">User guide</a> · <a href="privacy.html">Privacy policy</a></footer>
 </main>
 <script>
-const SHOTS = {"tr": ["01-01-okuma.png", "02-03-duzenleme.png", "03-07-karartma.png", "04-04-araclar.png", "05-06-office-cok-dil.png", "06-08-hizli-menu-koyu.png", "07-09-diller.png", "08-05-dosyalar.png"], "en": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "az": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "de": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "es": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "fr": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "id": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "it": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "pt-BR": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ru": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ar": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "hi": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "ja": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"], "zh-CN": ["01-reading.png", "02-editing.png", "03-redaction.png", "04-tools.png", "05-office-scripts.png", "06-quick-menu-dark.png", "07-languages.png", "08-search.png"]};
+const SHOTS = {"tr": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "en": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "az": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "de": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "es": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "fr": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "id": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "it": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "pt-BR": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "ru": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "ar": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "hi": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "ja": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"], "zh-CN": ["01-overview.jpg", "02-tools.jpg", "03-edit.jpg", "04-office.jpg", "05-redact.jpg", "06-search.jpg", "07-dark.jpg", "08-languages.jpg"]};
 const sel = document.getElementById("lang"), gal = document.getElementById("gallery"), hero = document.getElementById("hero");
 function show(l) {
   gal.innerHTML = "";
@@ -83,7 +87,7 @@ function show(l) {
     img.src = "screenshots/" + l + "/" + f; img.alt = f; img.loading = "lazy";
     gal.appendChild(img);
   }
-  hero.src = "graphics/feature-" + l + ".png";
+  hero.src = "graphics/feature-" + l + ".jpg";
 }
 const pref = (navigator.language || "en").toLowerCase();
 const start = Object.keys(SHOTS).find(k => pref === k.toLowerCase()) || Object.keys(SHOTS).find(k => pref.startsWith(k.split("-")[0].toLowerCase())) || "en";
