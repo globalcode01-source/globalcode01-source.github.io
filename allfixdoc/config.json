@@ -1,0 +1,8 @@
+{
+  "ads": true,
+  "interstitial": true,
+  "interstitialMinutes": 3,
+  "interstitialFreeOps": 3,
+  "billing": false,
+  "proTools": []
+}
