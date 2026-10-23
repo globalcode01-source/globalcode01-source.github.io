@@ -21,10 +21,9 @@
     overflow-x: hidden;
   }
   #globe { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 12vh 16px 48px; }
+  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: calc(12vh + 39px) 16px 48px; }
 
   .hero { text-align: center; perspective: 900px; }
-  .kicker { margin: 0 0 18px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
   .title {
     margin: 0; font-weight: 900; font-size: clamp(52px, 16vw, 148px); line-height: .9; letter-spacing: -.02em;
     color: #f4f6ff; transform: rotateX(var(--rx, 8deg)) rotateY(var(--ry, -6deg)); transform-style: preserve-3d;
@@ -70,7 +69,6 @@
 <canvas id="globe" aria-hidden="true"></canvas>
 <main>
   <header class="hero">
-    <p class="kicker">Android apps · Android uygulamaları</p>
     <h1 class="title" id="title" aria-label="Global Code 01"><span aria-hidden="true">GLOBAL</span><span aria-hidden="true">CODE <em>01</em></span></h1>
     <p class="lede">Melodi Mix · AllFixDoc</p>
   </header>
