@@ -1,0 +1,7 @@
+# Uygulamaların okuduğu ayar dosyaları ve inceleme videoları arama sonuçlarında çıkmasın.
+# (app-ads.txt bilerek açık: AdMob tarayıcısı okuyabilmeli.)
+User-agent: *
+Disallow: /melodi-mix/config.json
+Disallow: /melodi-mix/demo.mp4
+Disallow: /demo.mp4
+Disallow: /allfixdoc/config.json

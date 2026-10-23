@@ -1,59 +1,206 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Melodi Mix</title>
-<meta name="description" content="Melodi Mix: telefonundaki ve lisanslı açık müzikle 4 deck'li DJ uygulaması.">
+<title>Global Code 01</title>
+<meta name="description" content="Global Code 01: Android apps. Melodi Mix and AllFixDoc.">
+<meta name="theme-color" content="#070914">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231e88e5'/%3E%3Cstop offset='.55' stop-color='%236a3de8'/%3E%3Cstop offset='1' stop-color='%23e0407b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='900' text-anchor='middle' fill='%23fff'%3E01%3C/text%3E%3C/svg%3E">
 <style>
-  :root { --bg: #f4f6fb; --surface: #ffffff; --text: #17151f; --muted: #5d5a6b; --accent: #1e88e5; --border: #e2e6ef; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #11131a; --surface: #1b1e27; --text: #f1f2f6; --muted: #a6abbb; --accent: #64b5f6; --border: #2b2f3b; }
+  :root {
+    color-scheme: dark;
+    --bg: #070914; --surface: rgba(18, 22, 42, .72); --border: rgba(140, 160, 255, .16);
+    --text: #eef1ff; --muted: #9aa3c7; --accent: #7cb8ff; --pink: #ff8fc2;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
-  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
-  .logo { width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #1976d2, #6a3de8 55%, #e0407b); flex: none; }
-  h1 { font-size: 32px; line-height: 1.15; margin: 0; }
-  .tagline { color: var(--muted); margin: 4px 0 0; }
-  section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 20px; }
-  h2 { font-size: 18px; margin: 0 0 8px; }
-  ul { margin: 0; padding-left: 20px; }
-  a { color: var(--accent); }
-  .links a { display: inline-block; margin: 6px 16px 0 0; font-weight: 600; }
-  footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: radial-gradient(1200px 800px at 50% 30%, #121a3a 0%, var(--bg) 60%) fixed, var(--bg);
+    color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+  #globe { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 12vh 16px 48px; }
+
+  .hero { text-align: center; perspective: 900px; }
+  .kicker { margin: 0 0 18px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+  .title {
+    margin: 0; font-weight: 900; font-size: clamp(52px, 16vw, 148px); line-height: .9; letter-spacing: -.02em;
+    color: #f4f6ff; transform: rotateX(var(--rx, 8deg)) rotateY(var(--ry, -6deg)); transform-style: preserve-3d;
+    /* JS yönü imlece göre yeniden kurar; bu varsayılan katmanlar JS'siz görünüm içindir */
+    text-shadow: 1px 2px 0 #b9c4ff, 2px 4px 0 #99a6f0, 3px 6px 0 #7b88e0, 4px 8px 0 #6170cf, 5px 10px 0 #4a59bd,
+                 6px 12px 0 #3646a8, 7px 14px 0 #283690, 8px 16px 0 #1d2878, 14px 30px 30px rgba(0, 0, 0, .6);
+    will-change: transform;
+  }
+  .title span { display: block; }
+  .title em { font-style: normal; color: #ffd6ea; }
+  .lede { margin: 34px auto 0; max-width: 520px; color: var(--muted); }
+
+  .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 9vh; perspective: 1000px; }
+  .card {
+    position: relative; padding: 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transform: rotateX(var(--cx, 0deg)) rotateY(var(--cy, 0deg)); transform-style: preserve-3d;
+    transition: transform .25s ease-out, border-color .25s, box-shadow .25s;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+  }
+  .card:hover, .card:focus-within { border-color: rgba(140, 170, 255, .45); box-shadow: 0 28px 70px rgba(40, 60, 200, .35); }
+  .card .top { display: flex; align-items: center; gap: 16px; transform: translateZ(40px); }
+  .card img { width: 64px; height: 64px; border-radius: 16px; flex: none; box-shadow: 0 10px 24px rgba(0, 0, 0, .45); }
+  .card h2 { margin: 0; font-size: 22px; line-height: 1.2; }
+  .card h2 a { color: inherit; text-decoration: none; }
+  /* Kartın tamamı ana bağlantıya tıklanır; alttaki küçük bağlantılar bunun üstünde kalır */
+  .card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 20px; }
+  .card h2 a:focus-visible { outline: none; }
+  .card:has(h2 a:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .card p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+  .card .links { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 18px; padding-top: 14px;
+                 border-top: 1px solid var(--border); transform: translateZ(20px); }
+  .card .links a { color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
+  .card .links a:hover { text-decoration: underline; }
+
+  footer { margin-top: 64px; text-align: center; color: var(--muted); font-size: 14px; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
 </style>
 </head>
 <body>
+<canvas id="globe" aria-hidden="true"></canvas>
 <main>
-  <header>
-    <div class="logo" aria-hidden="true"></div>
-    <div>
-      <h1>Melodi Mix</h1>
-      <p class="tagline">4 deck'li DJ uygulaması · 4-deck DJ app for Android</p>
-    </div>
+  <header class="hero">
+    <p class="kicker">Android apps · Android uygulamaları</p>
+    <h1 class="title" id="title" aria-label="Global Code 01"><span aria-hidden="true">GLOBAL</span><span aria-hidden="true">CODE <em>01</em></span></h1>
+    <p class="lede">Melodi Mix · AllFixDoc</p>
   </header>
 
-  <section lang="tr">
-    <h2>Türkçe</h2>
-    <p>Telefonundaki müzikle ve Creative Commons / kamu malı açık müzikle mix yap: BPM ve ton analizi, sync, loop, efektler ve mix kaydı. İnternet radyoları ve YouTube'daki müzik listeleri de uygulamada; YouTube videoları yalnızca resmi YouTube oynatıcısında izlenir.</p>
-    <p class="links"><a href="privacy.html">Gizlilik politikası</a> <a href="mailto:globalcode01@gmail.com">İletişim</a></p>
+  <section class="apps" aria-label="Apps">
+    <article class="card">
+      <div class="top">
+        <img src="melodi-mix/icon.png" alt="" width="64" height="64">
+        <div>
+          <h2><a href="melodi-mix/">Melodi Mix</a></h2>
+          <p>4-deck DJ mixer &amp; music player</p>
+        </div>
+      </div>
+      <nav class="links" aria-label="Melodi Mix">
+        <a href="melodi-mix/">Page</a>
+        <a href="melodi-mix/privacy.html">Privacy</a>
+      </nav>
+    </article>
+
+    <article class="card">
+      <div class="top">
+        <img src="allfixdoc/icon.png" alt="" width="64" height="64">
+        <div>
+          <h2><a href="allfixdoc/">AllFixDoc</a></h2>
+          <p>PDF &amp; Office reader, editor and scanner</p>
+        </div>
+      </div>
+      <nav class="links" aria-label="AllFixDoc">
+        <a href="allfixdoc/">Page</a>
+        <a href="allfixdoc/guide.html">Guide</a>
+        <a href="allfixdoc/privacy.html">Privacy</a>
+      </nav>
+    </article>
   </section>
 
-  <section lang="en">
-    <h2>English</h2>
-    <p>Mix the music on your phone and openly licensed (Creative Commons / public domain) music: BPM and key analysis, sync, loops, effects and mix recording. Internet radio and music charts on YouTube are included; YouTube videos play only in the official YouTube player.</p>
-    <p class="links"><a href="privacy.html#en">Privacy policy</a> <a href="mailto:globalcode01@gmail.com">Contact</a></p>
-  </section>
-
-  <section lang="de">
-    <h2>Deutsch</h2>
-    <p>Mische die Musik auf deinem Telefon und offen lizenzierte Musik (Creative Commons / gemeinfrei): BPM- und Tonartanalyse, Sync, Loops, Effekte und Mix-Aufnahme. Internetradio und Musikcharts auf YouTube sind enthalten; YouTube-Videos laufen nur im offiziellen YouTube-Player.</p>
-    <p class="links"><a href="privacy.html#de">Datenschutzerklärung</a> <a href="mailto:globalcode01@gmail.com">Kontakt</a></p>
-  </section>
-
-  <footer>Melodi Mix, YouTube ya da Google ile bağlantılı değildir. · Not affiliated with YouTube or Google.</footer>
+  <footer>© 2026 Global Code 01 · <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a></footer>
 </main>
+
+<script>
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Başlık: katmanlı gölgeyle oyulmuş 3D yazı; ışık yönü imlece (dokunmatikte zamana) göre döner
+  const title = document.getElementById('title');
+  const shades = ['#b9c4ff', '#a1adf4', '#8a97e8', '#7482db', '#606fcd', '#4d5dbe', '#3c4cad', '#2e3d99', '#233084', '#1a2470'];
+  let px = 0.3, py = 0.4, tx = px, ty = py, pointer = false;
+  addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    pointer = true;
+    tx = (e.clientX / innerWidth) * 2 - 1;
+    ty = (e.clientY / innerHeight) * 2 - 1;
+  });
+  function drawTitle(t) {
+    if (!pointer && !still) { tx = Math.sin(t / 2400) * 0.6; ty = 0.35 + Math.cos(t / 3100) * 0.25; }
+    px += (tx - px) * 0.08; py += (ty - py) * 0.08;
+    const dx = -px * 1.1, dy = 1.1 - py * 0.6;
+    title.style.textShadow = shades.map((c, i) => `${(dx * (i + 1)).toFixed(2)}px ${(dy * (i + 1)).toFixed(2)}px 0 ${c}`).join(',')
+      + `,${(dx * 16).toFixed(1)}px ${(dy * 26).toFixed(1)}px 34px rgba(0,0,0,.6),0 0 70px rgba(90,110,255,.28)`;
+    title.style.setProperty('--rx', `${(8 - py * 10).toFixed(2)}deg`);
+    title.style.setProperty('--ry', `${(px * 14).toFixed(2)}deg`);
+  }
+
+  // Kartlar: imlecin altında hafifçe eğilir
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      if (e.pointerType !== 'mouse' || still) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--cx', `${(((e.clientY - r.top) / r.height) - 0.5) * -10}deg`);
+      card.style.setProperty('--cy', `${(((e.clientX - r.left) / r.width) - 0.5) * 12}deg`);
+    });
+    card.addEventListener('pointerleave', () => { card.style.setProperty('--cx', '0deg'); card.style.setProperty('--cy', '0deg'); });
+  });
+
+  // Arka plan: noktalardan dönen bir küre ve çevresinde iki yörünge
+  const cv = document.getElementById('globe');
+  const ctx = cv.getContext('2d');
+  let W = 0, H = 0, R = 0;
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    R = Math.min(W, H) * (W < 640 ? 0.46 : 0.4);
+  }
+  resize();
+  addEventListener('resize', resize);
+
+  const pts = [];
+  const N = 1000, golden = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < N; i++) {
+    const y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), a = golden * i;
+    pts.push([Math.cos(a) * r, y, Math.sin(a) * r, 1]);
+  }
+  const ring = (tilt, k) => {
+    for (let i = 0; i < 180; i++) {
+      const a = i / 180 * Math.PI * 2, x = Math.cos(a) * k, z = Math.sin(a) * k;
+      pts.push([x, -z * Math.sin(tilt), z * Math.cos(tilt), 0]);
+    }
+  };
+  ring(1.15, 1.32);
+  ring(-0.5, 1.55);
+
+  const D = 3.2;
+  function drawGlobe(t) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'lighter';
+    const ay = t / 9000 + px * 0.5, ax = -0.35 + py * 0.15;
+    const sy = Math.sin(ay), cy = Math.cos(ay), sx = Math.sin(ax), cx = Math.cos(ax);
+    const ox = W / 2, oy = H * 0.42;
+    for (const [x0, y0, z0, sphere] of pts) {
+      const x1 = x0 * cy + z0 * sy, z1 = -x0 * sy + z0 * cy;
+      const y2 = y0 * cx - z1 * sx, z2 = y0 * sx + z1 * cx;
+      const s = D / (D - z2);
+      const front = (z2 + 1.6) / 3.2;
+      const hue = 210 + (y0 + 1) * 60;
+      ctx.fillStyle = `hsla(${hue}, 90%, ${sphere ? 66 : 74}%, ${(sphere ? 0.12 : 0.08) + front * (sphere ? 0.55 : 0.4)})`;
+      const size = (sphere ? 1.5 : 1.1) * s * (0.6 + front * 0.6);
+      ctx.fillRect(ox + x1 * R * s - size / 2, oy + y2 * R * s - size / 2, size, size);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  function frame(t) {
+    drawTitle(t);
+    drawGlobe(t);
+    if (!still) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  if (still) addEventListener('resize', () => drawGlobe(0));
+})();
+</script>
 </body>
 </html>
