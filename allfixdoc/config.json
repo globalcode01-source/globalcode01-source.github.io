@@ -1,5 +1,5 @@
 {
-  "ads": true,
+  "ads": false,
   "interstitial": true,
   "interstitialMinutes": 3,
   "interstitialFreeOps": 3,
