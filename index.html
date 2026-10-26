@@ -12,6 +12,8 @@
     color-scheme: dark;
     --bg: #070914; --surface: rgba(18, 22, 42, .72); --border: rgba(140, 160, 255, .16);
     --text: #eef1ff; --muted: #9aa3c7; --accent: #7cb8ff; --pink: #ff8fc2;
+    --burgundy: #a8213f; --blue: #2f8cff; --red: #f0353b; --white: #ffffff;
+    --you: #6ee7b7; --edge: #5fd4ff; --origin: #ff8fc2;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; min-height: 100%; }
@@ -26,15 +28,36 @@
   .hero { text-align: center; perspective: 900px; }
   .title {
     margin: 0; font-weight: 900; font-size: clamp(52px, 16vw, 148px); line-height: .9; letter-spacing: -.02em;
-    color: #f4f6ff; transform: rotateX(var(--rx, 8deg)) rotateY(var(--ry, -6deg)); transform-style: preserve-3d;
-    /* JS yönü imlece göre yeniden kurar; bu varsayılan katmanlar JS'siz görünüm içindir */
-    text-shadow: 1px 2px 0 #b9c4ff, 2px 4px 0 #99a6f0, 3px 6px 0 #7b88e0, 4px 8px 0 #6170cf, 5px 10px 0 #4a59bd,
-                 6px 12px 0 #3646a8, 7px 14px 0 #283690, 8px 16px 0 #1d2878, 14px 30px 30px rgba(0, 0, 0, .6);
-    will-change: transform;
+    transform: rotateX(var(--rx, 8deg)) rotateY(var(--ry, -6deg)); transform-style: preserve-3d; will-change: transform;
   }
-  .title span { display: block; }
-  .title em { font-style: normal; color: #ffd6ea; }
-  .lede { margin: 34px auto 0; max-width: 520px; color: var(--muted); }
+  .title .line { display: block; }
+  /* Kelime renkleri: Global bordo, Code mavi, 0 kırmızı, 1 beyaz. Gölge katmanları JS'siz görünüm içindir; JS ışığa göre yeniden kurar */
+  .title .w { display: inline-block; }
+  .title .g { color: var(--burgundy); text-shadow: 2px 4px 0 #7d1830, 4px 8px 0 #5c1124, 6px 12px 0 #3d0a18, 12px 26px 30px rgba(0, 0, 0, .6); }
+  .title .c { color: var(--blue); text-shadow: 2px 4px 0 #2068c4, 4px 8px 0 #164a8f, 6px 12px 0 #0d2d5c, 12px 26px 30px rgba(0, 0, 0, .6); }
+  .title .z { color: var(--red); text-shadow: 2px 4px 0 #b8262b, 4px 8px 0 #85191d, 6px 12px 0 #4d0d10, 12px 26px 30px rgba(0, 0, 0, .6); }
+  .title .o { color: var(--white); text-shadow: 2px 4px 0 #c3c9e0, 4px 8px 0 #8a91b0, 6px 12px 0 #4f5674, 12px 26px 30px rgba(0, 0, 0, .6); }
+  .lede { margin: 34px auto 0; max-width: 520px; color: #c3cbec; text-shadow: 0 1px 10px #070914, 0 0 4px #070914; }
+
+  /* Ziyaretçinin kendi bağlantısı: yalnızca bu sekmede hesaplanır, hiçbir yere gönderilmez */
+  .live {
+    margin: 28px auto 0; max-width: 560px; padding: 16px 18px; border-radius: 18px; text-align: left;
+    background: rgba(10, 16, 34, .66); border: 1px solid rgba(95, 212, 255, .22);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 14px;
+  }
+  .live-head { display: flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: .08em; font-size: 12px; color: var(--edge); }
+  .live-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--you); box-shadow: 0 0 10px var(--you); animation: blink 1.6s infinite; }
+  .live-head .off { background: var(--muted); box-shadow: none; animation: none; }
+  @keyframes blink { 50% { opacity: .3; } }
+  .live dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 12px 0 0; }
+  .live dt { color: var(--muted); }
+  .live dd { margin: 0; overflow-wrap: anywhere; }
+  .live .y { color: var(--you); font-weight: 700; } .live .e { color: var(--edge); font-weight: 700; } .live .r { color: var(--origin); font-weight: 700; }
+  .live ol { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px solid var(--border);
+             font: 12px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace; color: #c9d2f5; min-height: 5.1em; }
+  .live ol li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .live ol li:first-child { color: #fff; }
+  .live .note { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
 
   .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 9vh; perspective: 1000px; }
   .card {
@@ -61,16 +84,29 @@
 
   footer { margin-top: 64px; text-align: center; color: var(--muted); font-size: 14px; }
   footer a { color: var(--accent); text-decoration: none; }
+  footer small { display: block; margin-top: 6px; font-size: 12px; opacity: .8; }
 
-  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .live-head .dot { animation: none; } }
 </style>
 </head>
 <body>
 <canvas id="globe" aria-hidden="true"></canvas>
 <main>
   <header class="hero">
-    <h1 class="title" id="title" aria-label="Global Code 01"><span aria-hidden="true">GLOBAL</span><span aria-hidden="true">CODE <em>01</em></span></h1>
+    <h1 class="title" id="title" aria-label="Global Code 01"><span class="line" aria-hidden="true"><span class="w g">GLOBAL</span></span><span class="line" aria-hidden="true"><span class="w c">CODE</span> <span class="w z">0</span><span class="w o">1</span></span></h1>
     <p class="lede">Melodi Mix · AllFixDoc</p>
+
+    <section class="live" aria-label="Your connection">
+      <div class="live-head"><span class="dot" id="liveDot"></span>YOUR CONNECTION · LIVE</div>
+      <dl>
+        <dt>You</dt><dd><span class="y" id="you">…</span> <span id="device"></span></dd>
+        <dt>Route</dt><dd id="route">…</dd>
+        <dt>Latency</dt><dd id="ping">measuring…</dd>
+        <dt>Session</dt><dd id="session">…</dd>
+      </dl>
+      <ol id="feed" aria-live="off"></ol>
+      <p class="note">Shown only to you. Your location is estimated from your time zone; nothing is collected or sent anywhere, and session data stays in this tab.</p>
+    </section>
   </header>
 
   <section class="apps" aria-label="Apps">
@@ -102,18 +138,30 @@
         <a href="allfixdoc/privacy.html">Privacy</a>
       </nav>
     </article>
+
   </section>
 
-  <footer>© 2026 Global Code 01 · <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a></footer>
+  <footer>© 2026 Global Code 01 · <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a><small>Map data: Natural Earth (public domain)</small></footer>
 </main>
 
 <script>
 (() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
 
-  // Başlık: katmanlı gölgeyle oyulmuş 3D yazı; ışık yönü imlece (dokunmatikte zamana) göre döner
-  const title = document.getElementById('title');
-  const shades = ['#b9c4ff', '#a1adf4', '#8a97e8', '#7482db', '#606fcd', '#4d5dbe', '#3c4cad', '#2e3d99', '#233084', '#1a2470'];
+  // Başlık: her kelime kendi renginde katmanlı 3D gölge; ışık yönü imlece (dokunmatikte zamana) göre döner
+  const title = $('title');
+  const ramp = (a, b, n) => {
+    const h = s => [1, 3, 5].map(i => parseInt(s.slice(i, i + 2), 16));
+    const [x, y] = [h(a), h(b)];
+    return Array.from({ length: n }, (_, i) => 'rgb(' + x.map((v, k) => Math.round(v + (y[k] - v) * i / (n - 1))).join(',') + ')');
+  };
+  const words = [
+    ['.g', ramp('#8f1c36', '#2a0610', 10), 'rgba(168,33,63,.35)'],
+    ['.c', ramp('#2a78dc', '#0a2350', 10), 'rgba(47,140,255,.35)'],
+    ['.z', ramp('#cf2c31', '#3d0a0c', 10), 'rgba(240,53,59,.35)'],
+    ['.o', ramp('#d3d8ea', '#3a4060', 10), 'rgba(255,255,255,.25)'],
+  ].map(([sel, shades, glow]) => [title.querySelector(sel), shades, glow]);
   let px = 0.3, py = 0.4, tx = px, ty = py, pointer = false;
   addEventListener('pointermove', e => {
     if (e.pointerType !== 'mouse') return;
@@ -125,8 +173,10 @@
     if (!pointer && !still) { tx = Math.sin(t / 2400) * 0.6; ty = 0.35 + Math.cos(t / 3100) * 0.25; }
     px += (tx - px) * 0.08; py += (ty - py) * 0.08;
     const dx = -px * 1.1, dy = 1.1 - py * 0.6;
-    title.style.textShadow = shades.map((c, i) => `${(dx * (i + 1)).toFixed(2)}px ${(dy * (i + 1)).toFixed(2)}px 0 ${c}`).join(',')
-      + `,${(dx * 16).toFixed(1)}px ${(dy * 26).toFixed(1)}px 34px rgba(0,0,0,.6),0 0 70px rgba(90,110,255,.28)`;
+    for (const [el, shades, glow] of words) {
+      el.style.textShadow = shades.map((c, i) => `${(dx * (i + 1)).toFixed(2)}px ${(dy * (i + 1)).toFixed(2)}px 0 ${c}`).join(',')
+        + `,${(dx * 16).toFixed(1)}px ${(dy * 26).toFixed(1)}px 34px rgba(0,0,0,.6),0 0 60px ${glow}`;
+    }
     title.style.setProperty('--rx', `${(8 - py * 10).toFixed(2)}deg`);
     title.style.setProperty('--ry', `${(px * 14).toFixed(2)}deg`);
   }
@@ -142,53 +192,314 @@
     card.addEventListener('pointerleave', () => { card.style.setProperty('--cx', '0deg'); card.style.setProperty('--cy', '0deg'); });
   });
 
-  // Arka plan: noktalardan dönen bir küre ve çevresinde iki yörünge
-  const cv = document.getElementById('globe');
+  // ---- Ziyaretçi: konum saat diliminden (izin ve dış istek yok); cihaz bilgisi tarayıcıdan ----
+  const ZONES = {
+    'Europe/Istanbul': [41.0, 29.0], 'Europe/Berlin': [52.5, 13.4], 'Europe/London': [51.5, -0.1], 'Europe/Paris': [48.9, 2.4],
+    'Europe/Amsterdam': [52.4, 4.9], 'Europe/Madrid': [40.4, -3.7], 'Europe/Rome': [41.9, 12.5], 'Europe/Moscow': [55.8, 37.6],
+    'Europe/Kyiv': [50.5, 30.5], 'Europe/Vienna': [48.2, 16.4], 'Europe/Zurich': [47.4, 8.5], 'Europe/Stockholm': [59.3, 18.1],
+    'Europe/Warsaw': [52.2, 21.0], 'Europe/Athens': [38.0, 23.7], 'Europe/Brussels': [50.8, 4.4], 'Europe/Lisbon': [38.7, -9.1],
+    'America/New_York': [40.7, -74.0], 'America/Chicago': [41.9, -87.6], 'America/Denver': [39.7, -105.0],
+    'America/Los_Angeles': [34.1, -118.2], 'America/Toronto': [43.7, -79.4], 'America/Sao_Paulo': [-23.5, -46.6],
+    'America/Mexico_City': [19.4, -99.1], 'America/Argentina/Buenos_Aires': [-34.6, -58.4], 'Asia/Tokyo': [35.7, 139.7],
+    'Asia/Shanghai': [31.2, 121.5], 'Asia/Kolkata': [28.6, 77.2], 'Asia/Calcutta': [28.6, 77.2], 'Asia/Dubai': [25.2, 55.3],
+    'Asia/Singapore': [1.35, 103.8], 'Asia/Seoul': [37.6, 127.0], 'Asia/Hong_Kong': [22.3, 114.2], 'Asia/Jakarta': [-6.2, 106.8],
+    'Asia/Riyadh': [24.7, 46.7], 'Asia/Tehran': [35.7, 51.4], 'Asia/Baku': [40.4, 49.9], 'Australia/Sydney': [-33.9, 151.2],
+    'Africa/Cairo': [30.0, 31.2], 'Africa/Lagos': [6.5, 3.4], 'Africa/Johannesburg': [-26.2, 28.0],
+  };
+  const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+  const you = ZONES[zone] || [35, Math.max(-180, Math.min(180, (-new Date().getTimezoneOffset() / 60) * 15))];
+  const youName = (zone.split('/').pop() || 'Unknown').replace(/_/g, ' ');
+  $('you').textContent = `${youName} (time zone)`;
+  const ua = navigator.userAgent;
+  const browser = /Edg\//.test(ua) ? 'Edge' : /OPR\//.test(ua) ? 'Opera' : /Firefox\//.test(ua) ? 'Firefox'
+    : /Chrome\//.test(ua) ? 'Chrome' : /Safari\//.test(ua) ? 'Safari' : 'Browser';
+  const os = /Android/.test(ua) ? 'Android' : /iPhone|iPad|iPod/.test(ua) ? 'iOS' : /Mac OS X/.test(ua) ? 'macOS'
+    : /Windows/.test(ua) ? 'Windows' : /Linux/.test(ua) ? 'Linux' : '';
+  const net = navigator.connection && navigator.connection.effectiveType ? ` · ${navigator.connection.effectiveType}` : '';
+  $('device').textContent = `· ${browser}${os ? ' on ' + os : ''} · ${navigator.language}${net}`;
+
+  // Oturum: yalnızca bu sekmede (sessionStorage); sekme kapanınca silinir
+  const S = (() => { try { return JSON.parse(sessionStorage.getItem('gc01') || 'null'); } catch { return null; } })()
+    || { start: Date.now(), pages: 0, bytes: 0, pings: 0 };
+  S.pages += 1;
+  const save = () => { try { sessionStorage.setItem('gc01', JSON.stringify(S)); } catch {} };
+  const kb = b => b < 1024 ? `${b} B` : `${(b / 1024).toFixed(1)} KB`;
+  function showSession() {
+    const m = Math.floor((Date.now() - S.start) / 60000);
+    $('session').textContent = `${m < 1 ? '<1' : m} min · ${S.pages} page${S.pages > 1 ? 's' : ''} · ${kb(S.bytes)} · ${S.pings} pings`;
+  }
+
+  // ---- Gerçek yol: GitHub Pages her yanıtta CDN sunucusunu (x-served-by) ve kaynak bölgesini bildirir ----
+  const POPS = {
+    ist: ['Istanbul', 41.0, 28.8], fra: ['Frankfurt', 50.1, 8.7], ams: ['Amsterdam', 52.3, 4.8], lhr: ['London', 51.5, -0.45],
+    lcy: ['London', 51.5, 0.05], cdg: ['Paris', 49.0, 2.55], mad: ['Madrid', 40.5, -3.6], mxp: ['Milan', 45.6, 8.7],
+    arn: ['Stockholm', 59.6, 17.9], bma: ['Stockholm', 59.35, 17.9], cph: ['Copenhagen', 55.6, 12.6], vie: ['Vienna', 48.1, 16.6],
+    dub: ['Dublin', 53.4, -6.3], hel: ['Helsinki', 60.3, 25.0], osl: ['Oslo', 60.2, 11.1], waw: ['Warsaw', 52.2, 21.0],
+    ham: ['Hamburg', 53.6, 10.0], dus: ['Düsseldorf', 51.3, 6.8], muc: ['Munich', 48.35, 11.8], zrh: ['Zurich', 47.45, 8.55],
+    bru: ['Brussels', 50.9, 4.5], lis: ['Lisbon', 38.8, -9.1], ath: ['Athens', 37.9, 23.9], sof: ['Sofia', 42.7, 23.4],
+    otp: ['Bucharest', 44.6, 26.1], prg: ['Prague', 50.1, 14.3], bud: ['Budapest', 47.4, 19.3], fjr: ['Fujairah', 25.1, 56.3],
+    dxb: ['Dubai', 25.25, 55.4], iad: ['Ashburn', 38.95, -77.45], ewr: ['Newark', 40.7, -74.2], lga: ['New York', 40.8, -73.9],
+    jfk: ['New York', 40.6, -73.8], bos: ['Boston', 42.4, -71.0], chi: ['Chicago', 41.9, -87.6], ord: ['Chicago', 42.0, -87.9],
+    mdw: ['Chicago', 41.8, -87.75], dfw: ['Dallas', 32.9, -97.0], atl: ['Atlanta', 33.6, -84.4], mia: ['Miami', 25.8, -80.3],
+    lax: ['Los Angeles', 33.9, -118.4], bur: ['Burbank', 34.2, -118.4], sjc: ['San Jose', 37.4, -121.9], pao: ['Palo Alto', 37.5, -122.1],
+    sea: ['Seattle', 47.4, -122.3], den: ['Denver', 39.9, -104.7], phx: ['Phoenix', 33.4, -112.0], yyz: ['Toronto', 43.7, -79.6],
+    yul: ['Montreal', 45.5, -73.7], yvr: ['Vancouver', 49.2, -123.2], gru: ['São Paulo', -23.4, -46.5], gig: ['Rio de Janeiro', -22.8, -43.25],
+    scl: ['Santiago', -33.4, -70.8], bog: ['Bogotá', 4.7, -74.1], eze: ['Buenos Aires', -34.8, -58.5], nrt: ['Tokyo', 35.8, 140.4],
+    hnd: ['Tokyo', 35.55, 139.8], tyo: ['Tokyo', 35.7, 139.7], itm: ['Osaka', 34.8, 135.4], kix: ['Osaka', 34.4, 135.2],
+    sin: ['Singapore', 1.36, 104.0], qpg: ['Singapore', 1.35, 103.9], hkg: ['Hong Kong', 22.3, 113.9], bom: ['Mumbai', 19.1, 72.9],
+    del: ['Delhi', 28.6, 77.1], maa: ['Chennai', 13.0, 80.2], ccu: ['Kolkata', 22.65, 88.45], syd: ['Sydney', -33.95, 151.2],
+    mel: ['Melbourne', -37.7, 144.8], bne: ['Brisbane', -27.4, 153.1], per: ['Perth', -31.9, 116.0], akl: ['Auckland', -37.0, 174.8],
+    wlg: ['Wellington', -41.3, 174.8], jnb: ['Johannesburg', -26.1, 28.2], cpt: ['Cape Town', -34.0, 18.6], icn: ['Seoul', 37.46, 126.4],
+    tpe: ['Taipei', 25.1, 121.2], mnl: ['Manila', 14.5, 121.0], kul: ['Kuala Lumpur', 2.75, 101.7], bkk: ['Bangkok', 13.7, 100.75],
+    cgk: ['Jakarta', -6.1, 106.65],
+  };
+  const REGIONS = {
+    switzerlandnorth: ['Zurich', 47.45, 8.56], westeurope: ['Amsterdam', 52.37, 4.9], northeurope: ['Dublin', 53.35, -6.26],
+    uksouth: ['London', 51.5, -0.1], francecentral: ['Paris', 48.86, 2.35], germanywestcentral: ['Frankfurt', 50.1, 8.68],
+    swedencentral: ['Gävle', 60.67, 17.14], norwayeast: ['Oslo', 59.9, 10.75], polandcentral: ['Warsaw', 52.23, 21.0],
+    italynorth: ['Milan', 45.46, 9.19], spaincentral: ['Madrid', 40.4, -3.7], eastus: ['Virginia', 37.4, -79.8],
+    eastus2: ['Virginia', 36.7, -78.4], centralus: ['Iowa', 41.6, -93.6], northcentralus: ['Illinois', 41.9, -87.6],
+    southcentralus: ['Texas', 29.4, -98.5], westus: ['California', 37.8, -122.4], westus2: ['Washington', 47.2, -119.9],
+    westus3: ['Arizona', 33.45, -112.1], canadacentral: ['Toronto', 43.65, -79.4], brazilsouth: ['São Paulo', -23.55, -46.6],
+    japaneast: ['Tokyo', 35.7, 139.7], southeastasia: ['Singapore', 1.3, 103.8], eastasia: ['Hong Kong', 22.3, 114.2],
+    australiaeast: ['Sydney', -33.9, 151.2], centralindia: ['Pune', 18.6, 73.9], koreacentral: ['Seoul', 37.57, 126.98],
+    uaenorth: ['Dubai', 25.27, 55.3], southafricanorth: ['Johannesburg', -26.2, 28.05],
+  };
+  const path = { edge: null, edgeCode: '', origin: null };
+  const flows = [];   // { from, to, color, born, dur }
+  const feed = [];
+  const hhmmss = () => new Date().toTimeString().slice(0, 8);
+  function log(text) {
+    feed.unshift(text);
+    feed.length = Math.min(feed.length, 5);
+    $('feed').replaceChildren(...feed.map(t => Object.assign(document.createElement('li'), { textContent: t })));
+  }
+  function showRoute() {
+    const r = $('route');
+    r.replaceChildren();
+    const add = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; r.append(s); };
+    add('y', 'You');
+    if (path.edge) { r.append(' → '); add('e', `${path.edge[0]} (CDN, ${path.edgeCode.toUpperCase()})`); }
+    if (path.origin) { r.append(' → '); add('r', `${path.origin[0]} (GitHub)`); }
+    if (!path.edge) r.append(' → GitHub Pages');
+  }
+  const VIA = (lat, lon) => [lat, lon];
+  function send(hit) {
+    const now = performance.now();
+    const youP = VIA(you[0], you[1]);
+    if (path.edge) {
+      const e = VIA(path.edge[1], path.edge[2]);
+      flows.push({ from: youP, to: e, color: 'edge', born: now, dur: 1100 });
+      if (!hit && path.origin) flows.push({ from: e, to: VIA(path.origin[1], path.origin[2]), color: 'origin', born: now + 900, dur: 1100 });
+    }
+    if (flows.length > 30) flows.splice(0, flows.length - 30);
+  }
+
+  // İlk yükleme: tarayıcının kendi ölçtüğü gerçek aktarımlar
+  addEventListener('load', () => {
+    const nav = performance.getEntriesByType('navigation')[0];
+    const res = performance.getEntriesByType('resource');
+    let total = nav ? nav.transferSize || 0 : 0;
+    if (nav) log(`${hhmmss()}  page          ${(nav.transferSize ? kb(nav.transferSize) : 'cache').padStart(8)}  ${Math.round(nav.duration)} ms`);
+    for (const r of res.slice(0, 4)) {
+      total += r.transferSize || 0;
+      log(`${hhmmss()}  ${r.name.split('/').slice(-2).join('/').slice(0, 13).padEnd(13)} ${(r.transferSize ? kb(r.transferSize) : 'cache').padStart(8)}  ${Math.round(r.duration)} ms`);
+    }
+    S.bytes += total; save(); showSession();
+  });
+
+  // Canlı ölçüm: sekme açıkken birkaç saniyede bir küçük bir istek (robots.txt) ve yanıt başlıkları
+  async function ping() {
+    if (document.hidden) return;
+    const t0 = performance.now();
+    try {
+      const r = await fetch('robots.txt?ping=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
+      const ms = Math.round(performance.now() - t0);
+      const served = r.headers.get('x-served-by') || '';
+      const codes = [...served.matchAll(/cache-([a-z]{3})/g)].map(m => m[1]);
+      const code = codes[codes.length - 1];
+      if (code && POPS[code]) { path.edge = POPS[code]; path.edgeCode = code; }
+      const region = r.headers.get('x-github-edge-region');
+      if (region && REGIONS[region]) path.origin = REGIONS[region];
+      const hit = /HIT/.test(r.headers.get('x-cache') || '');
+      const size = Number(r.headers.get('content-length') || 0);
+      S.pings += 1; S.bytes += size; save();
+      showRoute(); showSession();
+      $('ping').textContent = `${ms} ms · ${hit ? 'served from CDN cache' : 'fetched from GitHub origin'}`;
+      $('liveDot').classList.remove('off');
+      log(`${hhmmss()}  ping → ${(code || 'cdn').toUpperCase()}${hit ? ' HIT ' : ' MISS'}  ${String(ms).padStart(5)} ms`);
+      send(hit);
+    } catch {
+      $('ping').textContent = 'offline';
+      $('liveDot').classList.add('off');
+    }
+  }
+  showRoute(); showSession();
+  ping();
+  if (!still) setInterval(ping, 4000);
+  setInterval(showSession, 30000);
+
+  // ---- Hologram dünya: Natural Earth (kamu malı) 1,5° kara ızgarası ----
+  const LAND_B64 = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8////44AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPx/n/////AAAA/AAYAAAAfAAAAAAAAAAAAAAAAEO3v4f////+AAAPgAAAAAAAAcAAAAAAAAAAAAAADAAAfgP////+AAAHAAAAAAAAAMAAAAAAAAAAAAAAA9jjCAAP///+AAAAAAAAHgAAP/8AAPAAAAAAAAAAcAAAAAAD///8AAAAAAAAYAAD//gAAAAAAAAAAAAAe6zs/AAB///4AAAAAAABgDA/////wGAAAAwAEAAAI/wM//AAf//4AAAAAAABwHf/////z/+AABAB//wPI/+sEP4A///wAAAAf8AACHf////////8B8wH/////ww3mB4Af/8AAAAD//xjf7v///////////7A////////+B/g//gAAAAH//4///f///////////GH////////0P5Af4AH4AAPx+H///////////////AAf///////Ng+AP4ADAAA/n////////////////+AD///////8COMAHwAAAAD/P///////////////v8AD/7/////4APwABgAAAAH/P//////////////wfAAA+AH////4APzAAAAAAAD/D/////////////JhgAAAFAAf///8AH/gAAAAAIAOD////////////4AHAAAAQAAP////wH/gAAAAAMBuP////////////wAPgAACAAAH////+f/8AAAAAWAhf////////////AAPAAAAAAAT////+f/+AAAAA3H//////////////+AOAAAAAAAB/////f/8AAAAAHn//////////////+AIAAAAAAAB//////8wAAAAAMf//////////////9AAAAAAAAAA//////2HAAAAAF///////////////4AAAAAAAAAAf/////+AgAAAAD///////////////4AAAAAAAAAAf//////wAAAAAB///yfx/////////wAAAAAAAAAAf/////yAAAAAAB/z/gPj/////////jAAAAAAAAAAf/////gAAAAAA/wY/gDx////////8HAAAAAAAAAAf/////AAAAAAA/gGfnn4////////wAAAAAAAAAAAf////+AAAAAAA/ACY//4///////1gGAAAAAAAAAAP////8AAAAAAA/ACM//4///////hwEAAAAAAAAAAH////4AAAAAAAOLgA//////////4wcAAAAAAAAAAH////4AAAAAAAN/gDC/////////wz8AAAAAAAAAAB////wAAAAAAAf/gAA/////////wDgAAAAAAAAAAA////AAAAAAAA//8YB/////////4EAAAAAAAAAAAAX///AAAAAAAA///f//////////4AAAAAAAAAAAAAX/5BAAAAAAAB//////z///////4AAAAAAAAAAAAAb/gBAAAAAAAH////8/5///////4AAAAAAAAAAAAAF/gBoAAAAAAP////+/4f//////wAAAAAAAAAAAAAE/gAAAAAAAAP////+f8wH/////gAAAAAAAAAAAAAAfgAAAAAAAAf/////P/4D/////IAAAAAAAAAAAAAAPgAQAAAAAAf/////v/8D/+f/4AAAAAAAAAAAAAAAPgwOAAAAAAf/////n/4Af8P+AAAAAAAAAAAAAAAAHxwAwAAAAAf/////n/wAfwH+wAAAAAAAAAAAAAAAB/gAAAAAAAf/////z/gAfgH+AMAAAAAAAAAAAAAAAT8AAAAAAAf/////z+AAfAF/AIAAAAAAAAAAAAAAAB+AAAAAAAf/////94AAOAB/gIAAAAAAAAAAAAAAAAMAAAAAAAf//////AAAOAA/gCAAAAAAAAAAAAAAAAEBQAAAAAP/////+MAAGAAHAFAAAAAAAAAAAAAAAACDfgAAAAH//////8AAGAACAAAAAAAAAAAAAAAAAABP/wAAAAH//////4AABABgADAAAAAAAAAAAAAAAAAP/4AAAAD//////4AABAAQABAAAAAAAAAAAAAAAAAP//gAAAA/H////wAAAACYBgAAAAAAAAAAAAAAAAAH//wAAAAAA////wAAAADYDAAAAAAAAAAAAAAAAAAP//wAAAAAA////gAAAABoPgAAAAAAAAAAAAAAAAAf//4AAAAAA///+AAAAAA4fuQAAAAAAAAAAAAAAAA///+AAAAAA///8AAAAAAYfASAAAAAAAAAAAAAAAA////AAAAAA///4AAAAAAcfYBYAAAAAAAAAAAAAAA////8AAAAAf//4AAAAAAOCEh/AAAAAAAAAAAAAAA/////AAAAAP//wAAAAAAGAAAPgAAAAAAAAAAAAAA/////gAAAAP//wAAAAAADIABPwIAAAAAAAAAAAAAf////gAAAAH//wAAAAAAAOAAPYCAAAAAAAAAAAAAP////AAAAAH//4AAAAAAAACAAMAAAAAAAAAAAAAAP///+AAAAAH//4AAAAAAAAAAAAAAAAAAAAAAAAAAH///+AAAAAH//4AAAAAAAAAHhAAAAAAAAAAAAAAAH///8AAAAAP//4IAAAAAAAAvjAAAAAAAAAAAAAAAD///8AAAAAP//4cAAAAAAAB/jgAAAAAAAAAAAAAAA///8AAAAAP//h4AAAAAAAD/7gAAAAAAAAAAAAAAAf//8AAAAAP//B4AAAAAAAH//wAAAAAAAAAAAAAAAf//4AAAAAH/+AwAAAAAAAf//4AQAAAAAAAAAAAAAf//4AAAAAH//BwAAAAAAB///8AIAAAAAAAAAAAAAf//gAAAAAD//BwAAAAAAD///+AAAAAAAAAAAAAAAf/8AAAAAAD/+BgAAAAAAD////AAAAAAAAAAAAAAAf/8AAAAAAD/8AAAAAAAAD////AAAAAAAAAAAAAAAf/8AAAAAAD/8AAAAAAAAD////AAAAAAAAAAAAAAA//4AAAAAAB/4AAAAAAAAB////AAAAAAAAAAAAAAA//wAAAAAAA/wAAAAAAAAB////AAAAAAAAAAAAAAA//gAAAAAAA/gAAAAAAAAB/h//AAAAAAAAAAAAAAA//AAAAAAAA+AAAAAAAAAB+Av+AAAAAAAAAAAAAAA/8AAAAAAAAAAAAAAAAAAAAAP8AAQAAAAAAAAAAAB/8AAAAAAAAAAAAAAAAAAAAAH8AAIAAAAAAAAAAAB/4AAAAAAAAAAAAAAAAAAAAADQAAOAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAB+AAAAAAAAAAAAAAAAAAAAAAAYAAIAAAAAAAAAAAB+AAAAAAAAAAAAAAAAAAAAAAAYAAwAAAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAADwAACAefH/gAAAAAAAAAAAAAAAAEAAAAAAAAAAAB//8B///////4AAAAAAAAAAAAAAA/AAAAAAAAAAH///8P////////8AAAAAAAAAAAAAB3gAAAAATf//////8//////////+AAAAAAAAAAAgAHgAAAAH////////////////////AAAAAAAB4B////gAAAAP///////////////////4AAAAD////////4AAAAD////////////////////gAAALP///////8AAAAD/////////////////////gAABj////////wAAHg//////////////////////4AAAAD///////8AQ/AB////////////////////+AAAAB//////////AGP//////////////////////AAAAA///////////////////////////////////8A/8AAf///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////';
+  const RAD = Math.PI / 180;
+  const land = (() => {
+    const raw = atob(LAND_B64), out = [];
+    for (let r = 0; r < 120; r++) {
+      const lat = 90 - 1.5 * r - 0.75;
+      if (lat < -58) continue;   // Antarktika kalabalık yapmasın
+      for (let c = 0; c < 240; c++) {
+        const i = r * 240 + c;
+        if ((raw.charCodeAt(i >> 3) >> (7 - (i & 7))) & 1) {
+          const p = lat * RAD, l = (-180 + 1.5 * c + 0.75) * RAD;
+          out.push(Math.sin(p), Math.cos(p), Math.sin(l), Math.cos(l));
+        }
+      }
+    }
+    return new Float32Array(out);
+  })();
+
+  const cv = $('globe');
   const ctx = cv.getContext('2d');
-  let W = 0, H = 0, R = 0;
+  let W = 0, H = 0, R = 0, ox = 0, oy = 0;
   function resize() {
     const dpr = Math.min(devicePixelRatio || 1, 2);
     W = innerWidth; H = innerHeight;
     cv.width = W * dpr; cv.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     R = Math.min(W, H) * (W < 640 ? 0.46 : 0.4);
+    ox = W / 2; oy = H * 0.42;
   }
   resize();
   addEventListener('resize', resize);
 
-  const pts = [];
-  const N = 1000, golden = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < N; i++) {
-    const y = 1 - 2 * (i + 0.5) / N, r = Math.sqrt(1 - y * y), a = golden * i;
-    pts.push([Math.cos(a) * r, y, Math.sin(a) * r, 1]);
+  // Ortografik izdüşüm; z > 0 ön yüz. lift: yayların yerden yüksekliği
+  let lon0 = you[1], tilt = 20;
+  let sl0 = 0, cl0 = 1, st = 0, ct = 1;
+  function view() { sl0 = Math.sin(lon0 * RAD); cl0 = Math.cos(lon0 * RAD); st = Math.sin(tilt * RAD); ct = Math.cos(tilt * RAD); }
+  function proj(lat, lon, lift = 1) {
+    const p = lat * RAD, l = lon * RAD, sp = Math.sin(p), cp = Math.cos(p), sl = Math.sin(l), cl = Math.cos(l);
+    const sd = sl * cl0 - cl * sl0, cd = cl * cl0 + sl * sl0;
+    return [ox + cp * sd * lift * R, oy - (ct * sp - st * cp * cd) * lift * R, st * sp + ct * cp * cd];
   }
-  const ring = (tilt, k) => {
-    for (let i = 0; i < 180; i++) {
-      const a = i / 180 * Math.PI * 2, x = Math.cos(a) * k, z = Math.sin(a) * k;
-      pts.push([x, -z * Math.sin(tilt), z * Math.cos(tilt), 0]);
-    }
-  };
-  ring(1.15, 1.32);
-  ring(-0.5, 1.55);
+  const toV = (lat, lon) => [Math.cos(lat * RAD) * Math.cos(lon * RAD), Math.cos(lat * RAD) * Math.sin(lon * RAD), Math.sin(lat * RAD)];
+  function arcPoint(a, b, t) {
+    const A = toV(a[0], a[1]), B = toV(b[0], b[1]);
+    const d = Math.max(-1, Math.min(1, A[0] * B[0] + A[1] * B[1] + A[2] * B[2])), w = Math.acos(d);
+    let v = A;
+    if (w > 1e-6) { const s = Math.sin(w), k1 = Math.sin((1 - t) * w) / s, k2 = Math.sin(t * w) / s; v = A.map((x, i) => x * k1 + B[i] * k2); }
+    const lat = Math.asin(Math.max(-1, Math.min(1, v[2]))) / RAD, lon = Math.atan2(v[1], v[0]) / RAD;
+    return proj(lat, lon, 1 + Math.min(0.3, 0.12 + w * 0.15) * Math.sin(Math.PI * t));
+  }
+  const COLORS = { edge: [95, 212, 255], origin: [255, 143, 194], you: [110, 231, 183] };
+  const rgba = (c, a) => `rgba(${c[0]},${c[1]},${c[2]},${a})`;
 
-  const D = 3.2;
+  function marker(lat, lon, c, label, t) {
+    const [x, y, z] = proj(lat, lon);
+    if (z < -0.05) return;
+    const a = z > 0 ? 1 : 0.35;
+    const pulse = still ? 0.5 : (t / 1400) % 1;
+    ctx.strokeStyle = rgba(c, a * (1 - pulse));
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(x, y, 4 + pulse * 16, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = rgba(c, a);
+    ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fill();
+    ctx.font = '700 11px system-ui, sans-serif';
+    ctx.fillText(label, x + 9, y - 7);
+  }
+
   function drawGlobe(t) {
     ctx.clearRect(0, 0, W, H);
+    // Ziyaretçinin bölgesi önde kalır; dünya hafifçe sallanarak döner, imleç de çevirir
+    const target = you[1] + (still ? 0 : 40 * Math.sin(t / 9000)) + px * 30;
+    lon0 += (target - lon0) * 0.03;
+    tilt = Math.max(-10, Math.min(35, you[0] * 0.6)) + py * 6;
+    view();
+
+    // Parlama ve küre gövdesi
+    const glow = ctx.createRadialGradient(ox, oy, R * 0.9, ox, oy, R * 1.25);
+    glow.addColorStop(0, 'rgba(70,170,255,.14)'); glow.addColorStop(1, 'rgba(70,170,255,0)');
+    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(ox, oy, R * 1.25, 0, Math.PI * 2); ctx.fill();
+    const body = ctx.createRadialGradient(ox - R * .35, oy - R * .4, R * .1, ox, oy, R);
+    body.addColorStop(0, 'rgba(60,140,255,.10)'); body.addColorStop(1, 'rgba(10,20,50,.35)');
+    ctx.fillStyle = body; ctx.beginPath(); ctx.arc(ox, oy, R, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = 'rgba(110,200,255,.35)'; ctx.lineWidth = 1.2; ctx.stroke();
+
+    // Paraleller ve meridyenler
+    ctx.strokeStyle = 'rgba(110,190,255,.09)'; ctx.lineWidth = 1;
+    const line = (fn, from, to, step) => {
+      ctx.beginPath(); let pen = false;
+      for (let v = from; v <= to; v += step) {
+        const [x, y, z] = fn(v);
+        if (z <= 0) { pen = false; continue; }
+        pen ? ctx.lineTo(x, y) : ctx.moveTo(x, y); pen = true;
+      }
+      ctx.stroke();
+    };
+    for (let lon = -180; lon < 180; lon += 30) line(lat => proj(lat, lon), -80, 80, 5);
+    for (let lat = -60; lat <= 60; lat += 30) line(lon => proj(lat, lon), -180, 180, 5);
+
+    // Kara noktaları: arka yüz soluk (hologram şeffaflığı), ön yüz kenara doğru söner
+    const s0 = R / 320;
+    for (let i = 0; i < land.length; i += 4) {
+      const sp = land[i], cp = land[i + 1], sl = land[i + 2], cl = land[i + 3];
+      const sd = sl * cl0 - cl * sl0, cd = cl * cl0 + sl * sl0;
+      const z = st * sp + ct * cp * cd;
+      const x = ox + cp * sd * R, y = oy - (ct * sp - st * cp * cd) * R;
+      if (z > 0) {
+        ctx.fillStyle = `rgba(95,212,255,${(0.14 + 0.42 * z).toFixed(2)})`;
+        const s = (1.1 + 1.6 * z) * s0 + 0.6;
+        ctx.fillRect(x - s / 2, y - s / 2, s, s);
+      } else {
+        ctx.fillStyle = 'rgba(120,150,255,.07)';
+        ctx.fillRect(x - 0.8, y - 0.8, 1.6, 1.6);
+      }
+    }
+
+    // Tarama çizgisi
+    if (!still) {
+      const sy = oy - R + ((t / 5000) % 1) * 2 * R;
+      ctx.save(); ctx.beginPath(); ctx.arc(ox, oy, R, 0, Math.PI * 2); ctx.clip();
+      const band = ctx.createLinearGradient(0, sy - R * .12, 0, sy + R * .12);
+      band.addColorStop(0, 'rgba(95,212,255,0)'); band.addColorStop(.5, 'rgba(95,212,255,.10)'); band.addColorStop(1, 'rgba(95,212,255,0)');
+      ctx.fillStyle = band; ctx.fillRect(ox - R, sy - R * .12, 2 * R, R * .24);
+      ctx.restore();
+    }
+
+    // Kalıcı rota yayları (soluk) ve canlı paketler
+    const route = [];
+    if (path.edge) route.push([[you[0], you[1]], [path.edge[1], path.edge[2]], COLORS.edge]);
+    if (path.edge && path.origin) route.push([[path.edge[1], path.edge[2]], [path.origin[1], path.origin[2]], COLORS.origin]);
+    ctx.lineWidth = 1.4;
+    for (const [a, b, c] of route) {
+      ctx.beginPath(); let pen = false;
+      for (let k = 0; k <= 40; k++) {
+        const [x, y, z] = arcPoint(a, b, k / 40);
+        if (z < -0.05) { pen = false; continue; }
+        pen ? ctx.lineTo(x, y) : ctx.moveTo(x, y); pen = true;
+      }
+      ctx.strokeStyle = rgba(c, 0.35); ctx.stroke();
+    }
+    const now = performance.now();
     ctx.globalCompositeOperation = 'lighter';
-    const ay = t / 9000 + px * 0.5, ax = -0.35 + py * 0.15;
-    const sy = Math.sin(ay), cy = Math.cos(ay), sx = Math.sin(ax), cx = Math.cos(ax);
-    const ox = W / 2, oy = H * 0.42;
-    for (const [x0, y0, z0, sphere] of pts) {
-      const x1 = x0 * cy + z0 * sy, z1 = -x0 * sy + z0 * cy;
-      const y2 = y0 * cx - z1 * sx, z2 = y0 * sx + z1 * cx;
-      const s = D / (D - z2);
-      const front = (z2 + 1.6) / 3.2;
-      const hue = 210 + (y0 + 1) * 60;
-      ctx.fillStyle = `hsla(${hue}, 90%, ${sphere ? 66 : 74}%, ${(sphere ? 0.12 : 0.08) + front * (sphere ? 0.55 : 0.4)})`;
-      const size = (sphere ? 1.5 : 1.1) * s * (0.6 + front * 0.6);
-      ctx.fillRect(ox + x1 * R * s - size / 2, oy + y2 * R * s - size / 2, size, size);
+    for (let i = flows.length - 1; i >= 0; i--) {
+      const f = flows[i], p = (now - f.born) / f.dur;
+      if (p < 0) continue;
+      if (p > 1) { flows.splice(i, 1); continue; }
+      const c = COLORS[f.color];
+      for (let k = 0; k < 8; k++) {
+        const q = p - k * 0.025;
+        if (q < 0) break;
+        const [x, y, z] = arcPoint(f.from, f.to, q);
+        if (z < -0.05) continue;
+        ctx.fillStyle = rgba(c, (1 - k / 8) * 0.9);
+        ctx.beginPath(); ctx.arc(x, y, 3.2 - k * 0.3, 0, Math.PI * 2); ctx.fill();
+      }
     }
     ctx.globalCompositeOperation = 'source-over';
+
+    if (path.origin) marker(path.origin[1], path.origin[2], COLORS.origin, 'GitHub', t);
+    if (path.edge) marker(path.edge[1], path.edge[2], COLORS.edge, path.edgeCode.toUpperCase(), t);
+    marker(you[0], you[1], COLORS.you, 'YOU', t);
   }
 
   function frame(t) {
@@ -197,7 +508,7 @@
     if (!still) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
-  if (still) addEventListener('resize', () => drawGlobe(0));
+  if (still) { addEventListener('resize', () => drawGlobe(0)); setInterval(() => drawGlobe(0), 4000); }
 })();
 </script>
 </body>
