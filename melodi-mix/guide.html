@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melodi Mix · Kılavuz</title>
+<link rel="icon" href="icon.png">
+<meta name="description" content="Melodi Mix kullanım kılavuzu: YouTube listeleri, radyo, telefon müziği, 4 deck DJ, efektler, Auto DJ, parti sırası ve mix kaydı.">
+<style>
+  :root { --bg: #f4f6fb; --surface: #ffffff; --text: #17151f; --muted: #5d5a6b; --accent: #1e88e5; --border: #e2e6ef; --chip: #e8eefb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11131a; --surface: #1b1e27; --text: #f1f2f6; --muted: #a6abbb; --accent: #64b5f6; --border: #2b2f3b; --chip: #252a37; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
+  .home { color: var(--muted); text-decoration: none; font-size: 14px; }
+  header { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+  header img { width: 56px; height: 56px; border-radius: 14px; }
+  .brand { margin: 0; font-size: 28px; }
+  nav { display: flex; gap: 6px; margin: 16px 0 4px; }
+  nav a { font-size: 13px; padding: 4px 12px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; }
+  nav a.on { background: var(--accent); color: #fff; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 18px 0 4px; }
+  .intro { color: var(--muted); margin: 0 0 8px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; margin-top: 14px; }
+  h2 { font-size: 18px; margin: 0 0 6px; color: var(--accent); }
+  ul { margin: 0; padding-inline-start: 22px; }
+  li { margin: 4px 0; }
+  dt { font-weight: 600; margin-top: 10px; }
+  dd { margin: 2px 0 0; color: var(--muted); }
+  .lang { display: none; }
+  .lang.on { display: block; }
+  footer { margin-top: 28px; font-size: 13px; color: var(--muted); text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <a class="home" href="./">← Melodi Mix</a>
+  <header><img src="icon.png" alt=""><p class="brand"><b>Melodi Mix</b></p></header>
+  <nav><a href="#tr" data-l="tr">Türkçe</a><a href="#en" data-l="en">English</a><a href="#de" data-l="de">Deutsch</a></nav>
+
+<section class="lang" id="tr" lang="tr" data-title="Melodi Mix · Kullanım kılavuzu">
+  <h1>Kullanım kılavuzu</h1>
+  <p class="intro">Uygulamada dört sekme var: <b>Ana sayfa</b>, <b>Ara</b>, <b>Müziğim</b> ve <b>DJ</b>. Ayarlar sağ üstteki dişli simgesinde.</p>
+  <div class="card"><h2>Ana sayfa ve YouTube</h2><ul>
+    <li>Trend, Radyo, Shorts'ta bu hafta, Günün klipleri, Top 100 Klip ve Top 100 Şarkı listeleri; ülke düğmeleriyle (Türkiye, Dünya, ABD…) değişir.</li>
+    <li><b>Filtrele</b>: tür, çıkış tarihi ve sıralama. <b>Tümünü çal</b>: listeyi sırayla oynatır.</li>
+    <li>Her videoda: oynat, tam ekran, müzik modu ve <b>Çalma listesine ekle</b>. Çalma listeleri yalnızca telefonda saklanır.</li>
+    <li>Alttaki oynatıcı çubuğu: <b>nota</b> düğmesi müzik modu (küçük video), <b>kamera</b> düğmesi videoyu tam genişlikte büyütür.</li>
+    <li>YouTube kuralları gereği video ekran kilitliyken ya da arka planda çalmaz, indirilemez ve kaydedilemez.</li>
+  </ul></div>
+  <div class="card"><h2>Ara</h2><ul>
+    <li>YouTube'da arama ve Creative Commons / kamu malı müzik (Audius, Internet Archive, Openverse).</li>
+    <li>Lisansı izin veren parçaları <b>İNDİR</b> ile telefona kaydedebilir, DJ'de çalabilirsin.</li>
+    <li>14 ülkenin ve dünyanın radyoları; ekran kapalıyken de çalar, kilit ekranından yönetilir.</li>
+  </ul></div>
+  <div class="card"><h2>Müziğim</h2><ul>
+    <li><b>Telefonum</b>: telefondaki şarkılar; arama, çalma, “Sıradaki olarak çal” ve “DJ kitaplığına ekle”.</li>
+    <li>Çalma listeleri, indirilenler ve mix kayıtların burada.</li>
+  </ul></div>
+  <div class="card"><h2>DJ: deck'ler</h2><ul>
+    <li>4 deck: Deck 1–2 <b>Main Mix</b>, Deck 3–4 <b>Creative Mix</b>; ikisi de Master'a gider. Tablette 4 deck yan yana.</li>
+    <li><b>MÜZİK EKLE</b> ile kitaplığa parça ekle, deck'e dokunarak yükle. Parçalar otomatik analiz edilir: BPM, ton (Camelot), enerji.</li>
+    <li><b>CUE</b>: başlangıç noktası, <b>▶</b>: çal/duraklat, <b>SYNC</b>: tempoyu ve vuruşu öbür deck'e eşitler. Tempo kaydırıcısı hızı değiştirir.</li>
+    <li>Dalga formuna dokun ya da sürükle: o konuma atlar. Çizgiler 16 vuruşluk bölümleri gösterir.</li>
+    <li><b>Hot cue</b>: boşken dokun = kaydet, doluyken = atla, basılı tut = sil. <b>Loop</b>: 1–32 vuruş, vuruşa kilitli.</li>
+  </ul></div>
+  <div class="card"><h2>Mikser ve efektler</h2><ul>
+    <li><b>Mikser</b>: crossfader, kanal seviyeleri, 3 bantlı EQ (bas, orta, tiz) ve filtre. Düğmeleri yukarı/aşağı sürükle, çift dokunma sıfırlar.</li>
+    <li><b>FX</b>: echo (zamanı vuruşa bağlı: 1/4–1), reverb, flanger, phaser ve <b>beat repeat</b> (1/8–1 vuruşluk dilimi tekrarlar; tekrar dokununca kapanır).</li>
+    <li><b>Padler</b> ve <b>Ritim</b> (ritim makinesi): tempoya uyan ses padleri ve davul kalıpları.</li>
+    <li>Tüm efektler gerçek ses işler ve kayda girer.</li>
+  </ul></div>
+  <div class="card"><h2>Manuel, Asistan ve Auto DJ</h2><ul>
+    <li><b>Manuel</b>: her şey sende. <b>Asistan</b>: <b>Öneri</b> sekmesinde ton, tempo ve enerjiye göre uyumlu sıradaki parçaları gösterir.</li>
+    <li><b>Auto DJ</b>: Main Mix'te (Deck 1+2) parçaları kendisi seçer, vuruşları eşler ve bas geçişiyle mixler. Creative Mix (Deck 3+4) sende kalır.</li>
+  </ul></div>
+  <div class="card"><h2>Parti sırası</h2><ul>
+    <li>DJ ekranında <b>🎉 Parti sırası</b>'na dokun; bir QR kodu çıkar.</li>
+    <li>Aynı Wi-Fi'deki (ya da telefonunun açtığı erişim noktasındaki) misafirler QR'ı okutur, tarayıcıda açılan sayfadan kitaplığındaki şarkıları ister.</li>
+    <li>Auto DJ açıkken istekler sırayla çalar. İstekleri pencereden silebilir, <b>Partiyi bitir</b> ile kapatabilirsin.</li>
+    <li>Sayfa yalnızca yerel ağda ve rastgele bir kodla açılır; misafirler yalnızca şarkı adlarını görür, hiçbir şey kaydedilmez.</li>
+  </ul></div>
+  <div class="card"><h2>Mix kaydı</h2><ul>
+    <li>DJ ekranındaki <b>REC</b>: mix'i olduğu gibi kaydeder (deck'ler, crossfader, efektler, padler). Kayıt sırasında mikslemeye devam et.</li>
+    <li>Biçim: MP3, M4A, OGG ya da WAV. Ses doğrudan uygulamanın oynatıcılarından alınır; mikrofon ve ekran kaydı yok.</li>
+    <li>YouTube sesi kayda girmez. Kayıtlar Müziğim'de; paylaşabilirsin.</li>
+  </ul></div>
+  <div class="card"><h2>Ayarlar</h2><ul>
+    <li>Tema (Klasik mavi, Klasik gece, Gün ışığı, Gece, Plak), dil (Türkçe, English, Deutsch), kaynaklar ve hesaplar, geri bildirim.</li>
+    <li>Bazı DJ özellikleri (Auto DJ, Asistan, gelişmiş efektler, kayıt) Pro'dur; reklamlar açıkken ödüllü reklam izleyerek süreli açılır.</li>
+  </ul></div>
+  <div class="card"><h2>Sık sorulanlar</h2><dl>
+    <dt>Ekran kilitlenince YouTube neden duruyor?</dt><dd>YouTube kuralları videonun görünür olmasını şart koşuyor. Telefon müziği, radyo ve DJ kilitliyken de çalar.</dd>
+    <dt>YouTube'dan indirme ya da DJ'e yükleme var mı?</dt><dd>Hayır, YouTube buna izin vermiyor. DJ'de telefon müziğini ve lisanslı (CC) parçaları kullan.</dd>
+    <dt>Parti sırası açılmıyor.</dt><dd>Telefonun Wi-Fi'ye bağlı olmalı ya da erişim noktası açık olmalı; misafirler aynı ağda olmalı.</dd>
+  </dl></div>
+</section>
+
+<section class="lang" id="en" lang="en" data-title="Melodi Mix · User guide">
+  <h1>User guide</h1>
+  <p class="intro">The app has four tabs: <b>Home</b>, <b>Search</b>, <b>My music</b> and <b>DJ</b>. Settings are under the gear icon at the top right.</p>
+  <div class="card"><h2>Home and YouTube</h2><ul>
+    <li>Trending, Radio, Shorts this week, Today's videos, Top 100 videos and Top 100 songs; the country buttons (Turkey, World, USA…) switch the charts.</li>
+    <li><b>Filter</b>: genre, release date and sorting. <b>Play all</b>: plays the list in order.</li>
+    <li>Each video: play, full screen, music mode and <b>Add to playlist</b>. Playlists are stored only on your phone.</li>
+    <li>Player bar at the bottom: the <b>note</b> button is music mode (small video), the <b>camera</b> button enlarges the video to full width.</li>
+    <li>Under YouTube's rules, videos don't play with the screen locked or in the background, and can't be downloaded or recorded.</li>
+  </ul></div>
+  <div class="card"><h2>Search</h2><ul>
+    <li>Search YouTube and Creative Commons / public domain music (Audius, Internet Archive, Openverse).</li>
+    <li>Tracks whose license allows it can be saved with <b>DOWNLOAD</b> and played in the DJ.</li>
+    <li>Radio stations from 14 countries and the world; they keep playing with the screen off and are controlled from the lock screen.</li>
+  </ul></div>
+  <div class="card"><h2>My music</h2><ul>
+    <li><b>My phone</b>: the songs on your phone; search, play, “Play next” and “Add to DJ library”.</li>
+    <li>Your playlists, downloads and mix recordings are here.</li>
+  </ul></div>
+  <div class="card"><h2>DJ: decks</h2><ul>
+    <li>4 decks: Deck 1–2 <b>Main Mix</b>, Deck 3–4 <b>Creative Mix</b>, both routed to the master. All 4 decks side by side on tablets.</li>
+    <li>Add tracks with <b>ADD MUSIC</b> and tap a deck to load them. Tracks are analysed automatically: BPM, key (Camelot), energy.</li>
+    <li><b>CUE</b>: cue point, <b>▶</b>: play/pause, <b>SYNC</b>: matches tempo and beat to the other deck. The tempo slider changes speed.</li>
+    <li>Tap or drag the waveform to jump. Lines mark 16-beat sections.</li>
+    <li><b>Hot cue</b>: tap when empty = save, when set = jump, long press = delete. <b>Loop</b>: 1–32 beats, beat-locked.</li>
+  </ul></div>
+  <div class="card"><h2>Mixer and effects</h2><ul>
+    <li><b>Mixer</b>: crossfader, channel levels, 3-band EQ (low, mid, high) and filter. Drag knobs up/down; double tap resets.</li>
+    <li><b>FX</b>: echo (beat-synced time: 1/4–1), reverb, flanger, phaser and <b>beat repeat</b> (repeats a 1/8–1 beat slice; tap again to stop).</li>
+    <li><b>Pads</b> and <b>Beats</b> (drum machine): tempo-matched sound pads and drum patterns.</li>
+    <li>All effects are real audio processing and are recorded.</li>
+  </ul></div>
+  <div class="card"><h2>Manual, Assist and Auto DJ</h2><ul>
+    <li><b>Manual</b>: you're in control. <b>Assist</b>: the <b>Idea</b> tab shows compatible next tracks by key, tempo and energy.</li>
+    <li><b>Auto DJ</b>: picks tracks on the Main Mix (Deck 1+2), matches beats and mixes with a bass swap. The Creative Mix (Deck 3+4) stays yours.</li>
+  </ul></div>
+  <div class="card"><h2>Party queue</h2><ul>
+    <li>Tap <b>🎉 Party queue</b> on the DJ screen; a QR code appears.</li>
+    <li>Guests on the same Wi-Fi (or your phone's hotspot) scan it and request songs from your library in their browser.</li>
+    <li>With Auto DJ on, requests play in order. Remove requests in the window, or close it with <b>End party</b>.</li>
+    <li>The page works only on the local network with a random code; guests see only song titles and nothing is stored.</li>
+  </ul></div>
+  <div class="card"><h2>Mix recording</h2><ul>
+    <li><b>REC</b> on the DJ screen records the mix as you hear it (decks, crossfader, effects, pads). Keep mixing while recording.</li>
+    <li>Formats: MP3, M4A, OGG or WAV. Audio comes straight from the app's players; no microphone or screen recording.</li>
+    <li>YouTube audio is never recorded. Recordings are in My music and can be shared.</li>
+  </ul></div>
+  <div class="card"><h2>Settings</h2><ul>
+    <li>Theme (Classic blue, Classic night, Daylight, Night, Vinyl), language (Türkçe, English, Deutsch), sources and accounts, feedback.</li>
+    <li>Some DJ features (Auto DJ, Assist, advanced effects, recording) are Pro; while ads are on they unlock for a while after rewarded ads.</li>
+  </ul></div>
+  <div class="card"><h2>FAQ</h2><dl>
+    <dt>Why does YouTube stop when the screen locks?</dt><dd>YouTube's rules require the video to stay visible. Phone music, radio and the DJ keep playing.</dd>
+    <dt>Can I download YouTube videos or load them into the DJ?</dt><dd>No, YouTube doesn't allow it. Use your phone's music and licensed (CC) tracks in the DJ.</dd>
+    <dt>The party queue doesn't open.</dt><dd>Your phone must be on Wi-Fi or have its hotspot on, and guests must be on the same network.</dd>
+  </dl></div>
+</section>
+
+<section class="lang" id="de" lang="de" data-title="Melodi Mix · Benutzerhandbuch">
+  <h1>Benutzerhandbuch</h1>
+  <p class="intro">Die App hat vier Tabs: <b>Start</b>, <b>Suche</b>, <b>Meine Musik</b> und <b>DJ</b>. Die Einstellungen findest du oben rechts unter dem Zahnrad.</p>
+  <div class="card"><h2>Start und YouTube</h2><ul>
+    <li>Trends, Radio, Shorts der Woche, Videos des Tages, Top 100 Videos und Top 100 Songs; die Länderknöpfe (Türkei, Welt, USA…) wechseln die Charts.</li>
+    <li><b>Filtern</b>: Genre, Erscheinungsdatum und Sortierung. <b>Alle abspielen</b>: spielt die Liste der Reihe nach.</li>
+    <li>Bei jedem Video: abspielen, Vollbild, Musikmodus und <b>Zur Playlist hinzufügen</b>. Playlists bleiben nur auf deinem Handy.</li>
+    <li>Player-Leiste unten: Die <b>Noten</b>-Taste ist der Musikmodus (kleines Video), die <b>Kamera</b>-Taste vergrößert das Video auf volle Breite.</li>
+    <li>Nach den YouTube-Regeln laufen Videos nicht bei gesperrtem Bildschirm oder im Hintergrund und können nicht heruntergeladen oder aufgenommen werden.</li>
+  </ul></div>
+  <div class="card"><h2>Suche</h2><ul>
+    <li>Suche auf YouTube und nach Creative-Commons- / gemeinfreier Musik (Audius, Internet Archive, Openverse).</li>
+    <li>Titel, deren Lizenz es erlaubt, speicherst du mit <b>LADEN</b> und spielst sie im DJ.</li>
+    <li>Radiosender aus 14 Ländern und der Welt; sie laufen auch bei ausgeschaltetem Bildschirm und lassen sich vom Sperrbildschirm steuern.</li>
+  </ul></div>
+  <div class="card"><h2>Meine Musik</h2><ul>
+    <li><b>Mein Telefon</b>: die Songs auf deinem Handy; suchen, abspielen, „Als Nächstes abspielen“ und „Zur DJ-Bibliothek hinzufügen“.</li>
+    <li>Hier sind deine Playlists, Downloads und Mix-Aufnahmen.</li>
+  </ul></div>
+  <div class="card"><h2>DJ: Decks</h2><ul>
+    <li>4 Decks: Deck 1–2 <b>Main Mix</b>, Deck 3–4 <b>Creative Mix</b>, beide gehen auf den Master. Auf Tablets alle 4 Decks nebeneinander.</li>
+    <li>Mit <b>MUSIK HINZUFÜGEN</b> Titel hinzufügen, durch Tippen auf ein Deck laden. Titel werden automatisch analysiert: BPM, Tonart (Camelot), Energie.</li>
+    <li><b>CUE</b>: Cue-Punkt, <b>▶</b>: Play/Pause, <b>SYNC</b>: gleicht Tempo und Beat an das andere Deck an. Der Tempo-Regler ändert die Geschwindigkeit.</li>
+    <li>Wellenform antippen oder ziehen: springt zu dieser Stelle. Linien markieren 16-Takt-Abschnitte.</li>
+    <li><b>Hot Cue</b>: leer antippen = speichern, belegt = springen, lange drücken = löschen. <b>Loop</b>: 1–32 Schläge, taktgenau.</li>
+  </ul></div>
+  <div class="card"><h2>Mixer und Effekte</h2><ul>
+    <li><b>Mixer</b>: Crossfader, Kanalpegel, 3-Band-EQ (Bass, Mitten, Höhen) und Filter. Regler nach oben/unten ziehen; Doppeltippen setzt zurück.</li>
+    <li><b>FX</b>: Echo (taktgenaue Zeit: 1/4–1), Hall, Flanger, Phaser und <b>Beat Repeat</b> (wiederholt ein Stück von 1/8–1 Schlag; erneut tippen beendet).</li>
+    <li><b>Pads</b> und <b>Beats</b> (Drumcomputer): tempopassende Sound-Pads und Drum-Patterns.</li>
+    <li>Alle Effekte sind echte Audiobearbeitung und werden mit aufgenommen.</li>
+  </ul></div>
+  <div class="card"><h2>Manuell, Assistent und Auto DJ</h2><ul>
+    <li><b>Manuell</b>: du hast alles in der Hand. <b>Assistent</b>: Der Tab <b>Idee</b> zeigt passende nächste Titel nach Tonart, Tempo und Energie.</li>
+    <li><b>Auto DJ</b>: wählt im Main Mix (Deck 1+2) die Titel, gleicht die Beats an und mischt mit Bass-Swap. Der Creative Mix (Deck 3+4) bleibt bei dir.</li>
+  </ul></div>
+  <div class="card"><h2>Party-Warteschlange</h2><ul>
+    <li>Tippe im DJ-Bildschirm auf <b>🎉 Party-Warteschlange</b>; ein QR-Code erscheint.</li>
+    <li>Gäste im selben WLAN (oder in deinem Hotspot) scannen ihn und wünschen sich im Browser Songs aus deiner Bibliothek.</li>
+    <li>Mit Auto DJ laufen die Wünsche der Reihe nach. Wünsche im Fenster entfernen oder mit <b>Party beenden</b> schließen.</li>
+    <li>Die Seite funktioniert nur im lokalen Netz mit einem Zufallscode; Gäste sehen nur Songtitel, nichts wird gespeichert.</li>
+  </ul></div>
+  <div class="card"><h2>Mix-Aufnahme</h2><ul>
+    <li><b>REC</b> im DJ-Bildschirm nimmt den Mix so auf, wie du ihn hörst (Decks, Crossfader, Effekte, Pads). Während der Aufnahme weitermischen.</li>
+    <li>Formate: MP3, M4A, OGG oder WAV. Der Ton kommt direkt aus den Playern der App; kein Mikrofon, keine Bildschirmaufnahme.</li>
+    <li>YouTube-Ton wird nie aufgenommen. Aufnahmen findest du unter Meine Musik und kannst sie teilen.</li>
+  </ul></div>
+  <div class="card"><h2>Einstellungen</h2><ul>
+    <li>Design (Klassisch Blau, Klassisch Nacht, Tageslicht, Nacht, Vinyl), Sprache (Türkçe, English, Deutsch), Quellen und Konten, Feedback.</li>
+    <li>Einige DJ-Funktionen (Auto DJ, Assistent, erweiterte Effekte, Aufnahme) sind Pro; solange Werbung aktiv ist, werden sie nach Werbung mit Belohnung zeitweise freigeschaltet.</li>
+  </ul></div>
+  <div class="card"><h2>Häufige Fragen</h2><dl>
+    <dt>Warum stoppt YouTube, wenn der Bildschirm sperrt?</dt><dd>Die YouTube-Regeln verlangen, dass das Video sichtbar bleibt. Handymusik, Radio und der DJ laufen weiter.</dd>
+    <dt>Kann ich YouTube-Videos herunterladen oder in den DJ laden?</dt><dd>Nein, YouTube erlaubt das nicht. Nutze im DJ deine Handymusik und lizenzierte (CC) Titel.</dd>
+    <dt>Die Party-Warteschlange öffnet sich nicht.</dt><dd>Dein Handy muss im WLAN sein oder den Hotspot eingeschaltet haben, und die Gäste müssen im selben Netz sein.</dd>
+  </dl></div>
+</section>
+
+  <footer>Melodi Mix, YouTube ya da Google ile bağlantılı değildir. · Not affiliated with YouTube or Google. · <a href="privacy.html">Gizlilik / Privacy</a></footer>
+</main>
+<script>
+(() => {
+  const langs = ["tr", "en", "de"];
+  function show(l) {
+    if (!langs.includes(l)) l = "tr";
+    document.querySelectorAll(".lang").forEach(s => s.classList.toggle("on", s.id === l));
+    document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.l === l));
+    const s = document.getElementById(l);
+    document.documentElement.lang = l;
+    document.title = s.dataset.title;
+  }
+  const fromHash = location.hash.slice(1);
+  const fromBrowser = (navigator.language || "tr").slice(0, 2);
+  show(fromHash || fromBrowser);
+  addEventListener("hashchange", () => show(location.hash.slice(1)));
+})();
+</script>
+</body>
+</html>
