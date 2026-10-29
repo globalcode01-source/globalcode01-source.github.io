@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneWall Firewall — A safer you on every device</title>
+<meta name="description" content="OneWall: firewall and privacy monitor for Android, iOS, macOS and Windows. No servers, no account. Coming soon.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="OneWall Firewall">
+<meta property="og:description" content="A safer you on every device, every platform. No servers, no account. Coming soon.">
+<meta property="og:image" content="https://globalcode01-source.github.io/onewall/img/og-en.jpg">
+<meta property="og:url" content="https://globalcode01-source.github.io/onewall/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/montserrat.css">
+<style>
+  :root { --navy: #1a2550; --ink: #3b4466; --muted: #6b7393; --red: #a41d34; --blue: #1f4fd1; --line: #e3e7f1; --card: #ffffff; --bg: #f5f7fb; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font: 16px/1.6 Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--navy); background: var(--bg); }
+  a { color: var(--blue); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  header.top { position: sticky; top: 0; z-index: 5; background: rgba(255, 255, 255, .86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 18px; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 34px; height: 34px; }
+  .wm { font-weight: 900; font-size: 22px; letter-spacing: -.01em; line-height: 1; }
+  .wm .one { color: #9b1b30; } .wm .wall { color: var(--blue); }
+  nav.links { margin-left: auto; display: flex; gap: 18px; align-items: center; }
+  nav.links a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; }
+  nav.links a.cta { color: #fff; background: var(--red); padding: 8px 16px; border-radius: 999px; }
+  #lang { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 8px; padding: 6px 10px; font: 600 13px Montserrat, sans-serif; cursor: pointer; }
+  @media (max-width: 760px) { nav.links a:not(.cta) { display: none; } }
+  @media (max-width: 420px) { .wm { font-size: 18px; } nav.links { gap: 10px; } nav.links a.cta { padding: 7px 12px; font-size: 13px; } }
+
+  .hero { background: radial-gradient(60% 90% at 0% 30%, rgba(214, 22, 34, .9), rgba(232, 60, 70, .45) 40%, rgba(255, 255, 255, 0) 75%), linear-gradient(#fff, #f5f7fb); padding: 36px 0 20px; text-align: center; }
+  .hero img.art { width: 100%; max-width: 1100px; height: auto; border-radius: 18px; box-shadow: 0 24px 60px rgba(20, 30, 80, .18); }
+  .hero h1 { font-size: clamp(26px, 4vw, 40px); margin: 28px 0 6px; line-height: 1.2; }
+  .hero p.lede { color: var(--ink); max-width: 720px; margin: 0 auto; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 24px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid transparent; }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn.ghost { border-color: var(--navy); color: var(--navy); background: #fff; }
+  .btn.love { background: #fff0f3; color: var(--red); border-color: #ffd0da; }
+
+  .trust { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 28px 0 0; }
+  .trust div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-weight: 700; text-align: center; }
+  .trust div span { display: block; font-weight: 500; color: var(--muted); font-size: 13px; }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: clamp(24px, 3vw, 32px); margin: 0 0 8px; }
+  .lead2 { color: var(--ink); margin: 0 0 24px; max-width: 760px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--ink); font-size: 15px; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .shots img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
+
+  .plat { display: flex; flex-direction: column; gap: 8px; }
+  .plat .name { font-weight: 800; font-size: 20px; }
+  .plat .state { font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px; align-self: flex-start; }
+  .state.ready { background: #dcfce7; color: #166534; } .state.soon { background: #fef3c7; color: #92400e; }
+  .plat a.btn { align-self: flex-start; padding: 9px 18px; font-size: 14px; }
+
+  #destek .card.big { background: linear-gradient(135deg, #fff, #fff4f6); border-color: #ffd5de; }
+  .heart { font-size: 40px; line-height: 1; }
+  .ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 16px; }
+  .ways .card { padding: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #f0f3fa; }
+  tr.mine td { background: #fff7e6; font-weight: 600; }
+  .tablewrap { overflow-x: auto; margin-top: 14px; }
+
+  details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  summary { font-weight: 700; cursor: pointer; }
+  details p { color: var(--ink); margin: 10px 0 0; }
+  footer { margin-top: 56px; padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  footer a { color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="logo.svg" alt=""><span class="wm"><span class="one">ONE</span><span class="wall">WALL</span></span></a>
+    <nav class="links">
+      <a href="#ozellikler" data-t="navFeatures"></a>
+      <a href="#indir" data-t="navDownload"></a>
+      <a class="cta" href="#destek" data-t="navSupport"></a>
+      <button id="lang" type="button" aria-label="Language"></button>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img class="art" id="heroImg" src="img/hero-en.jpg" width="1920" height="1080" alt="OneWall Firewall on Android, iOS, macOS and Windows">
+    <h1 data-t="heroTitle"></h1>
+    <p class="lede" data-t="heroLede"></p>
+    <div class="btns">
+      <a class="btn primary" href="#indir" data-t="ctaDownload"></a>
+      <a class="btn love" href="#destek" data-t="ctaSupport"></a>
+    </div>
+    <div class="trust">
+      <div data-t="trust1"></div><div data-t="trust2"></div><div data-t="trust3"></div><div data-t="trust4"></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="ozellikler">
+    <h2 data-t="featTitle"></h2>
+    <p class="lead2" data-t="featLead"></p>
+    <div class="grid" id="features"></div>
+  </section>
+
+  <section>
+    <h2 data-t="shotsTitle"></h2>
+    <div class="shots">
+      <img data-img="android" width="1280" height="720" alt="">
+      <img data-img="map" width="1280" height="720" alt="">
+      <img data-img="desktop" width="1280" height="720" alt="">
+    </div>
+  </section>
+
+  <section id="indir">
+    <h2 data-t="dlTitle"></h2>
+    <p class="lead2" data-t="dlLead"></p>
+    <div class="grid" id="platforms"></div>
+  </section>
+
+  <section id="destek">
+    <div class="card big">
+      <div class="heart">💙</div>
+      <h2 data-t="supTitle"></h2>
+      <p class="lead2" data-t="supLead"></p>
+      <div class="ways" id="ways"></div>
+      <h3 style="margin:26px 0 4px" data-t="payTitle"></h3>
+      <p style="margin:0;color:var(--ink)" data-t="payLead"></p>
+      <div class="tablewrap"><table id="pay"></table></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="faqTitle"></h2>
+    <div id="faq"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="privacy.html" data-t="privacy"></a> · <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a> · <a href="../">Global Code 01</a></p>
+    <p data-t="legal"></p>
+    <p>© 2026 Global Code 01</p>
+  </div>
+</footer>
+
+<script>
+// Kod şimdilik gizli depoda; indirme bağlantıları mağazalara çıkınca platforms dizisine eklenir.
+
+const T = {
+  tr: {
+    navFeatures: "Özellikler", navDownload: "Platformlar", navSupport: "Bizi destekle 💙",
+    heroTitle: "Her cihazda, her platformda daha güvenli bir sen.",
+    heroLede: "OneWall, uygulamalarının internette kiminle konuştuğunu sade bir dille gösteren bir güvenlik duvarı ve gizlilik izleyicisidir. Trafiğin bizim sunucumuza gitmez, çünkü sunucumuz yok. Çok yakında.",
+    ctaDownload: "Ne zaman çıkıyor?", ctaSupport: "Bizi destekle 💙",
+    trust1: "Kök gerekmez<span>Android'de normal kurulum</span>", trust2: "Sunucu yok<span>veriler cihazında kalır</span>",
+    trust3: "Hesap yok<span>kayıt olmadan çalışır</span>", trust4: "Korkutma yok<span>sahte tarama, sahte uyarı yok</span>",
+    featTitle: "Neler yapar?", featLead: "Telefonda ve bilgisayarda aynı amaç: ne olup bittiğini görmen ve karar verenin sen olman.",
+    features: [
+      ["Uygulama başına kural", "Android'de her uygulama için Wi-Fi ve mobil veriyi ayrı ayrı aç ya da kapat. Kök (root) gerekmez."],
+      ["İzleyici şirketleri", "Hangi uygulama hangi reklam ya da izleme şirketiyle, ne zaman konuştu; teknik terim olmadan."],
+      ["Karantina", "Yeni yüklenen uygulama, sen izin verene kadar internete çıkamaz."],
+      ["Canlı harita", "Bağlantılar düz haritada ya da 3D kürede: ülke ve ağ sahibiyle. Çevrimdışı konum veritabanı."],
+      ["Gece kalkanı ve özet", "Seçtiğin saatlerde ağ engeli, seçtiğin saatte ve günlerde günlük gizlilik özeti."],
+      ["Bilgisayar için panel", "Mac ve Windows'ta açıklamalı güvenlik puanı, açık kapılar, başlangıç öğeleri ve ücretsiz yerel virüs taraması (macOS'ta ClamAV)."],
+    ],
+    shotsTitle: "Görüntüler",
+    dlTitle: "Platformlar", dlLead: "OneWall son testlerden geçiyor. Mağazalara çıktığında indirme bağlantıları bu sayfada olacak.",
+    platforms: [
+      ["Android", "soon", "Google Play'de yakında. Uygulama başına kural, karantina, izleyici şirketleri.", "", ""],
+      ["iOS", "soon", "App Store'da yakında. Cihaz genelinde izleyici engelleme.", "", ""],
+      ["macOS", "soon", "Yakında. Güvenlik puanı, açık kapılar, yerel virüs taraması.", "", ""],
+      ["Windows", "soon", "Yakında. Güvenlik puanı, açık kapılar, Microsoft Defender ile tarama.", "", ""],
+    ],
+    stateReady: "Hazır", stateSoon: "Yakında",
+    supTitle: "Bu tür projeleri seviyorsan bizi destekle",
+    supLead: "OneWall bağımsız bir proje. Sunucu yok, veri satışı yok, yatırımcı yok. Küçük bir bağış hiçbir özelliği açmaz; projenin yaşamasını sağlar.",
+    ways: [
+      ["Uygulama içinden", "Android: Ayarlar › Bizi destekle (Google Play ödemesi). iOS: Ayarlar › bahşiş (App Store ödemesi)."],
+      ["Ücretsiz destek", "Arkadaşlarınla paylaş, fikir ve hata bildir ya da çeviriye yardım et: globalcode01@gmail.com."],
+    ],
+    payTitle: "Ülkene göre ödeme yöntemleri",
+    payLead: "Uygulama içi bağışta Google Play ve App Store, ülkende geçerli yöntemleri kendisi gösterir. Kart bilgin bize hiç gelmez. Senin bölgen sarıyla işaretli.",
+    payHead: ["Ülke / bölge", "Google Play", "App Store"],
+    faqTitle: "Sık sorulanlar",
+    faq: [
+      ["Verilerim nereye gidiyor?", "Hiçbir yere. Bağlantı kayıtları yalnızca cihazında tutulur. OneWall'un sunucusu yok; DNS sorguları Android'de ağının kendi DNS sunucusuna, iOS'ta seçtiğin sunucuya (Quad9 ya da Cloudflare) gider."],
+      ["Google Play sürümünde neden reklam var?", "Projenin masrafı için. Banner yalnızca Etkinlik ekranında. İstersen ödüllü reklam izleyerek ya da ömür boyu Pro alarak kapatabilirsin."],
+      ["VPN mi kullanıyor?", "Android ve iOS'ta, trafiği cihazın içinde süzmek için sistemin yerel VPN arayüzünü kullanır. Trafik dışarıda bir VPN sunucusuna gitmez."],
+      ["Ne zaman çıkıyor?", "Android sürümü Google Play'e hazırlanıyor; iOS, macOS ve Windows ardından gelecek. Haber almak için globalcode01@gmail.com adresine yazabilirsin."],
+    ],
+    privacy: "Gizlilik politikası",
+    legal: "Android ve Google Play, Google LLC'nin; Apple, iOS, macOS ve App Store, Apple Inc.'in; Windows, Microsoft Corporation'ın ticari markalarıdır.",
+  },
+  en: {
+    navFeatures: "Features", navDownload: "Platforms", navSupport: "Support us 💙",
+    heroTitle: "A safer you on every device, every platform.",
+    heroLede: "OneWall is a firewall and privacy monitor that shows, in plain language, who your apps talk to on the internet. Your traffic never reaches our servers, because we don't have any. Coming soon.",
+    ctaDownload: "When is it out?", ctaSupport: "Support us 💙",
+    trust1: "No root<span>normal install on Android</span>", trust2: "No servers<span>data stays on your device</span>",
+    trust3: "No account<span>works without signing up</span>", trust4: "No scare tactics<span>no fake scans or alerts</span>",
+    featTitle: "What it does", featLead: "Same goal on phone and computer: you see what is going on, and you decide.",
+    features: [
+      ["Per-app rules", "On Android, allow or block Wi-Fi and mobile data for each app separately. No root needed."],
+      ["Tracker companies", "Which app talked to which advertising or tracking company, and when, without jargon."],
+      ["Quarantine", "A newly installed app stays offline until you allow it."],
+      ["Live map", "Connections on a flat map or 3D globe, with country and network owner. Offline location database."],
+      ["Night shield & summary", "Block the network during your chosen hours; daily privacy summary at the time and days you pick."],
+      ["Computer dashboard", "On Mac and Windows: explained security score, open ports, startup items and a free local virus scan (ClamAV on macOS)."],
+    ],
+    shotsTitle: "Screenshots",
+    dlTitle: "Platforms", dlLead: "OneWall is in final testing. Download links will appear on this page when it reaches the stores.",
+    platforms: [
+      ["Android", "soon", "Coming soon to Google Play. Per-app rules, quarantine, tracker companies.", "", ""],
+      ["iOS", "soon", "Coming soon to the App Store. Device-wide tracker blocking.", "", ""],
+      ["macOS", "soon", "Coming soon. Security score, open ports, local virus scan.", "", ""],
+      ["Windows", "soon", "Coming soon. Security score, open ports, Microsoft Defender scan.", "", ""],
+    ],
+    stateReady: "Available", stateSoon: "Coming soon",
+    supTitle: "If you like projects like this, support us",
+    supLead: "OneWall is an independent project. No servers, no data sales, no investors. A small donation unlocks nothing; it keeps the project alive.",
+    ways: [
+      ["In the app", "Android: Settings › Support us (Google Play payment). iOS: Settings › tip jar (App Store payment)."],
+      ["Free ways", "Share with friends, send ideas and bug reports or help with translations: globalcode01@gmail.com."],
+    ],
+    payTitle: "Payment methods in your country",
+    payLead: "For in-app donations, Google Play and the App Store show the methods available in your country. Your card details never reach us. Your region is highlighted.",
+    payHead: ["Country / region", "Google Play", "App Store"],
+    faqTitle: "FAQ",
+    faq: [
+      ["Where does my data go?", "Nowhere. Connection records stay on your device only. OneWall has no servers; DNS lookups go to your network's own DNS server on Android, and to the server you choose (Quad9 or Cloudflare) on iOS."],
+      ["Why are there ads in the Google Play version?", "To cover the project's costs. The banner is only on the Activity screen. You can turn it off by watching a rewarded ad or buying lifetime Pro."],
+      ["Does it use a VPN?", "On Android and iOS it uses the system's local VPN interface to filter traffic on the device itself. Your traffic does not go to an outside VPN server."],
+      ["When is it out?", "The Android version is being prepared for Google Play; iOS, macOS and Windows will follow. Write to globalcode01@gmail.com to hear when it launches."],
+    ],
+    privacy: "Privacy policy",
+    legal: "Android and Google Play are trademarks of Google LLC; Apple, iOS, macOS and App Store are trademarks of Apple Inc.; Windows is a trademark of Microsoft Corporation.",
+  },
+};
+
+// Ülkelere göre ödeme yöntemleri (Google Play ve Apple yardım sayfaları, Ekim 2026)
+const PAY = [
+  [["TR"], { tr: "Türkiye", en: "Türkiye" }, "Visa, Mastercard, Amex, Troy; Türk Telekom, Turkcell, Vodafone; Play bakiyesi / hediye kartı", "Kart; Paycell, Türk Telekom, Vodafone; Apple hesap bakiyesi"],
+  [["DE", "FR", "ES", "IT", "GB"], { tr: "Almanya, Fransa, İspanya, İtalya, İngiltere", en: "Germany, France, Spain, Italy, UK" }, "Card, PayPal, carrier billing, Play balance", "Card, Apple Pay, PayPal, carrier billing, balance"],
+  [["US"], { tr: "ABD", en: "United States" }, "Card, PayPal, Play balance", "Card, Apple Pay, Apple Card/Cash, PayPal, balance"],
+  [["BR"], { tr: "Brezilya", en: "Brazil" }, "Card, Play gift card", "Credit card, Apple Pay, balance"],
+  [["SA", "AE"], { tr: "Suudi Arabistan, BAE", en: "Saudi Arabia, UAE" }, "Card, carrier billing", "Card; STC, Mobily, Zain / du, Etisalat"],
+  [["IN"], { tr: "Hindistan", en: "India" }, "UPI, card", "UPI, Visa, Mastercard"],
+  [["JP"], { tr: "Japonya", en: "Japan" }, "Card, carrier billing, Play balance", "Card, Apple Pay, PayPay, Merpay; au, NTT DOCOMO, SoftBank"],
+];
+
+let lang = "en";
+try { lang = localStorage.getItem("ow-lang") || ""; } catch (e) {}
+if (!lang) lang = (navigator.language || "en").toLowerCase().startsWith("tr") ? "tr" : "en";
+const region = ((navigator.language || "").split("-")[1] || "").toUpperCase() || (lang === "tr" ? "TR" : "");
+
+// Tablodaki genel yöntem adlarının Türkçesi
+const TR_PAY = [["Credit card", "Kredi kartı"], ["Card", "Kart"], ["carrier billing", "operatör faturası"], ["Play gift card", "Play hediye kartı"],
+  ["Play balance", "Play bakiyesi"], ["balance", "bakiye"]];
+const payText = (x) => lang === "tr" ? TR_PAY.reduce((a, [en, tr]) => a.replaceAll(en, tr), x) : x;
+function esc(s) { return s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
+function render() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.title = lang === "tr" ? "OneWall Firewall — Her cihazda daha güvenli bir sen" : "OneWall Firewall — A safer you on every device";
+  document.querySelectorAll("[data-t]").forEach((n) => { n.innerHTML = t[n.dataset.t]; });
+  document.getElementById("lang").textContent = lang === "tr" ? "EN" : "TR";
+  document.getElementById("heroImg").src = `img/hero-${lang}.jpg`;
+  document.querySelectorAll("[data-img]").forEach((n) => { n.src = `img/${n.dataset.img}-${lang}.jpg`; });
+  document.getElementById("features").innerHTML = t.features.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join("");
+  document.getElementById("platforms").innerHTML = t.platforms.map(([n, st, d, label, url]) =>
+    `<div class="card plat"><span class="name">${n}</span><span class="state ${st}">${st === "ready" ? t.stateReady : t.stateSoon}</span><p>${d}</p>${url ? `<a class="btn primary" href="${url}">${label}</a>` : ""}</div>`).join("");
+  let ways = t.ways.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${esc(p)}</p></div>`).join("");
+  document.getElementById("ways").innerHTML = ways;
+  document.getElementById("pay").innerHTML = `<tr>${t.payHead.map((h) => `<th>${h}</th>`).join("")}</tr>` +
+    PAY.map(([codes, name, play, apple]) => `<tr class="${codes.includes(region) ? "mine" : ""}"><td>${name[lang]}</td><td>${payText(play)}</td><td>${payText(apple)}</td></tr>`).join("");
+  document.getElementById("faq").innerHTML = t.faq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
+}
+document.getElementById("lang").addEventListener("click", () => {
+  lang = lang === "tr" ? "en" : "tr";
+  try { localStorage.setItem("ow-lang", lang); } catch (e) {}
+  render();
+});
+render();
+</script>
+</body>
+</html>
