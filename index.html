@@ -23,7 +23,7 @@
     overflow-x: hidden;
   }
   #globe { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: calc(12vh + 39px) 16px 48px; }
+  main { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 16px 48px; }
 
   .hero { text-align: center; perspective: 900px; }
   .title {
