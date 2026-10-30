@@ -26,7 +26,7 @@
 
   <article id="en">
     <h1>Privacy Policy</h1>
-    <p>Effective date: 26 October 2026. Applies to the OneWall apps for Android, iOS, macOS and Windows, published by Global Code 01.</p>
+    <p>Effective date: 30 October 2026. Applies to the OneWall apps for Android, iOS, macOS and Windows, published by Global Code 01.</p>
 
     <h2>The short version</h2>
     <p>OneWall has no servers and no user accounts. We, the developer, do not collect, store, sell or share your personal data. Everything OneWall records stays on your device.</p>
@@ -36,10 +36,12 @@
       <li><b>Connection records:</b> which app looked up which domain, when, whether it was a known tracker and whether it was blocked. Stored only on your device (Android: kept for 7 days, 30 days with Pro), never uploaded. You can delete them in Settings at any time. They leave the device only if you export them yourself (CSV).</li>
       <li><b>List of installed apps</b> (Android): used only to show per-app rules and quarantine new apps. It is not sent anywhere.</li>
       <li><b>Approximate map positions:</b> computed offline from a built-in database (DB-IP Lite). Your location permission is never used.</li>
+      <li><b>Parental controls</b> (Android): the parent PIN and recovery code are stored only as salted hashes. The parental event log keeps only the time and type of each event (wrong PIN, recovery code used, protection or uninstall protection turned off), at most 50 entries. All of it stays on the device and is excluded from cloud backups. Uninstall protection uses Android's device admin only to keep OneWall from being uninstalled or reset; no other admin rights are used.</li>
+      <li><b>Settings file:</b> if you export your settings (filters, lists, app rules), the file is saved only where you choose.</li>
     </ul>
 
     <h2>Network traffic</h2>
-    <p>On Android and iOS, OneWall uses the system's local VPN interface to filter traffic on the device itself. Your traffic is not routed through any OneWall server. DNS lookups are forwarded to your network's own DNS server (Android) or to the resolver you choose (Quad9 or Cloudflare, iOS). Those resolvers process your lookups under their own privacy policies.</p>
+    <p>On Android and iOS, OneWall uses the system's local VPN interface to filter traffic on the device itself. Your traffic is not routed through any OneWall server. On Android, DNS lookups go to your network's own DNS server. If you turn on encrypted DNS or the malware or adult-content filter, they go over HTTPS to the provider you choose: Quad9 (Switzerland) or Cloudflare (USA; the adult filter uses Cloudflare for Families). On iOS they go to the resolver you choose (Quad9 or Cloudflare); on macOS, only if you install OneWall's DNS profile. These providers see the domain names you look up and your IP address and process them under their own privacy policies. Safe search only changes the answer on your device.</p>
 
     <h2>Google Play version: ads and purchases</h2>
     <ul>
@@ -54,6 +56,7 @@
     <h2>macOS and Windows</h2>
     <ul>
       <li><b>Virus scan:</b> runs locally with ClamAV (macOS) or Microsoft Defender (Windows). Updating the ClamAV database downloads it from ClamAV's servers (database.clamav.net). Files are never uploaded.</li>
+      <li><b>DNS and filters (macOS):</b> block lists and safe search are written to the OneWall section of /etc/hosts on your Mac. The encrypted DNS profile is installed only with your approval in System Settings and sends lookups to the provider you chose.</li>
       <li><b>VirusTotal check:</b> only when you click it, OneWall opens VirusTotal in your browser with the file's SHA-256 hash. The file itself is not uploaded.</li>
     </ul>
 
@@ -65,7 +68,7 @@
 
     <h2 id="gdpr">GDPR and KVKK</h2>
     <p><b>Data controller:</b> Global Code 01 (<a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a>). OneWall's traffic data stays on your device; the developer receives only e-mails you send.</p>
-    <p><b>Transfers abroad:</b> Google (AdMob, Play), Apple (App Store), the DNS server you choose on iOS (Quad9 or Cloudflare), ClamAV database servers and GitHub run servers outside your country. When you use these features your IP address (and, for DNS, the domain names you look up) is transferred to that service.</p>
+    <p><b>Transfers abroad:</b> Google (AdMob, Play), Apple (App Store), the DNS provider you choose for encrypted DNS or filters (Quad9 in Switzerland or Cloudflare in the USA), ClamAV database servers and GitHub run servers outside your country. When you use these features your IP address (and, for DNS, the domain names you look up) is transferred to that service.</p>
     <p><b>Your rights:</b> access, rectification, erasure and objection. Write to <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a>; you will get an answer within 30 days. You may also complain to your data protection authority.</p>
 
     <h2>Children</h2>
@@ -77,7 +80,7 @@
 
   <article id="tr">
     <h1>Gizlilik Politikası</h1>
-    <p>Yürürlük tarihi: 26 Ekim 2026. Global Code 01 tarafından yayınlanan Android, iOS, macOS ve Windows için OneWall uygulamalarını kapsar.</p>
+    <p>Yürürlük tarihi: 30 Ekim 2026. Global Code 01 tarafından yayınlanan Android, iOS, macOS ve Windows için OneWall uygulamalarını kapsar.</p>
 
     <h2>Kısaca</h2>
     <p>OneWall'un sunucusu ve kullanıcı hesabı yoktur. Geliştirici olarak kişisel verilerini toplamayız, saklamayız, satmayız, paylaşmayız. OneWall'un kaydettiği her şey cihazında kalır.</p>
@@ -87,10 +90,12 @@
       <li><b>Bağlantı kayıtları:</b> hangi uygulamanın hangi alan adını ne zaman sorguladığı, bunun bilinen bir izleyici olup olmadığı ve engellenip engellenmediği. Yalnızca cihazında tutulur (Android'de 7 gün, Pro'da 30 gün), hiçbir yere yüklenmez. Ayarlar'dan istediğin zaman silebilirsin. Cihazdan yalnızca sen dışa aktarırsan (CSV) çıkar.</li>
       <li><b>Yüklü uygulamalar listesi</b> (Android): yalnızca uygulama başına kuralları göstermek ve yeni uygulamaları karantinaya almak için kullanılır. Hiçbir yere gönderilmez.</li>
       <li><b>Haritadaki yaklaşık konumlar:</b> uygulamadaki çevrimdışı veritabanıyla (DB-IP Lite) hesaplanır. Konum izni hiç kullanılmaz.</li>
+      <li><b>Ebeveyn denetimi</b> (Android): ebeveyn PIN'i ve kurtarma kodu yalnızca tuzlanmış karma (hash) olarak saklanır. Ebeveyn olay kaydı yalnızca olayın saatini ve türünü tutar (yanlış PIN, kurtarma kodu kullanımı, korumanın ya da kaldırma korumasının kapatılması), en fazla 50 kayıt. Hepsi cihazda kalır, bulut yedeğine girmez. Kaldırma koruması Android'in cihaz yöneticisi özelliğini yalnızca OneWall'un kaldırılmasını ve sıfırlanmasını önlemek için kullanır; başka yönetici yetkisi kullanılmaz.</li>
+      <li><b>Ayar dosyası:</b> ayarlarını (filtreler, listeler, uygulama kuralları) dışa aktarırsan dosya yalnızca senin seçtiğin yere kaydedilir.</li>
     </ul>
 
     <h2>Ağ trafiği</h2>
-    <p>Android ve iOS'ta OneWall, trafiği cihazın içinde süzmek için sistemin yerel VPN arayüzünü kullanır. Trafiğin hiçbir OneWall sunucusundan geçmez. DNS sorguları ağının kendi DNS sunucusuna (Android) ya da seçtiğin sunucuya (Quad9 veya Cloudflare, iOS) iletilir. Bu sunucular sorguları kendi gizlilik politikalarına göre işler.</p>
+    <p>Android ve iOS'ta OneWall, trafiği cihazın içinde süzmek için sistemin yerel VPN arayüzünü kullanır. Trafiğin hiçbir OneWall sunucusundan geçmez. Android'de DNS sorguları ağının kendi DNS sunucusuna gider. Şifreli DNS'i ya da kötü amaçlı site veya yetişkin içerik filtresini açarsan HTTPS ile seçtiğin sağlayıcıya gider: Quad9 (İsviçre) ya da Cloudflare (ABD; yetişkin içerik filtresi Cloudflare for Families kullanır). iOS'ta seçtiğin sunucuya (Quad9 veya Cloudflare), macOS'ta yalnızca OneWall'un DNS profilini kurarsan o sağlayıcıya gider. Bu sağlayıcılar sorguladığın alan adlarını ve IP adresini görür ve kendi gizlilik politikalarına göre işler. Güvenli arama yalnızca cihazındaki yanıtı değiştirir.</p>
 
     <h2>Google Play sürümü: reklam ve satın almalar</h2>
     <ul>
@@ -105,6 +110,7 @@
     <h2>macOS ve Windows</h2>
     <ul>
       <li><b>Virüs taraması:</b> ClamAV (macOS) ya da Microsoft Defender (Windows) ile cihazında yapılır. ClamAV veritabanı güncellenirken ClamAV sunucularından (database.clamav.net) indirilir. Dosyalar asla yüklenmez.</li>
+      <li><b>DNS ve filtreler (macOS):</b> engelleme listeleri ve güvenli arama Mac'indeki /etc/hosts dosyasının OneWall bölümüne yazılır. Şifreli DNS profili yalnızca senin Sistem Ayarları'ndaki onayınla kurulur ve sorguları seçtiğin sağlayıcıya gönderir.</li>
       <li><b>VirusTotal kontrolü:</b> yalnızca sen tıklarsan, OneWall tarayıcında VirusTotal'ı dosyanın SHA-256 özetiyle açar. Dosyanın kendisi yüklenmez.</li>
     </ul>
 
@@ -116,7 +122,7 @@
 
     <h2 id="kvkk">KVKK ve GDPR</h2>
     <p><b>Veri sorumlusu:</b> Global Code 01 (<a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a>). OneWall'un trafik verileri cihazında kalır; geliştiriciye yalnızca senin gönderdiğin e-postalar ulaşır.</p>
-    <p><b>Yurt dışına aktarım (KVKK m.9):</b> Google (AdMob, Play), Apple (App Store), iOS'ta seçtiğin DNS sunucusu (Quad9 veya Cloudflare), ClamAV veritabanı sunucuları ve GitHub yurt dışındaki sunucularda çalışır. Bu özellikleri kullandığında IP adresin (DNS'te ayrıca sorguladığın alan adları) o hizmete yurt dışına aktarılır.</p>
+    <p><b>Yurt dışına aktarım (KVKK m.9):</b> Google (AdMob, Play), Apple (App Store), şifreli DNS ya da filtreler için seçtiğin DNS sağlayıcısı (İsviçre'de Quad9 veya ABD'de Cloudflare), ClamAV veritabanı sunucuları ve GitHub yurt dışındaki sunucularda çalışır. Bu özellikleri kullandığında IP adresin (DNS'te ayrıca sorguladığın alan adları) o hizmete yurt dışına aktarılır.</p>
     <p><b>Hakların (KVKK m.11, GDPR):</b> Verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, düzeltme, silme ve itiraz etme hakların vardır. Başvurunu <a href="mailto:globalcode01@gmail.com">globalcode01@gmail.com</a> adresine yazabilirsin; en geç 30 gün içinde yanıtlanır. Yanıttan memnun kalmazsan Kişisel Verileri Koruma Kurulu'na (AB'de kendi veri koruma otoritene) şikâyette bulunabilirsin.</p>
 
     <h2>Çocuklar</h2>
