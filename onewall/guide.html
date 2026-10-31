@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneWall — Kullanım kılavuzu / User guide</title>
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/montserrat.css">
+<style>
+  body { margin: 0; font: 16px/1.65 Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1a2550; background: #f5f7fb; }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 20px 56px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; }
+  .brand img { width: 36px; height: 36px; }
+  .one { color: #9b1b30; } .wall { color: #1f4fd1; }
+  article { background: #fff; border: 1px solid #e3e7f1; border-radius: 16px; padding: 8px 24px 20px; margin-top: 22px; }
+  h1 { font-size: 26px; } h2 { font-size: 19px; margin-top: 30px; color: #1f4fd1; } h3 { font-size: 16px; margin-top: 18px; }
+  p, li { color: #3b4466; }
+  a { color: #1f4fd1; }
+  .toc { margin-top: 14px; font-weight: 600; }
+  .tip { background: #eef3ff; border-left: 4px solid #1f4fd1; padding: 10px 14px; border-radius: 8px; }
+  .warn { background: #fdf0f2; border-left: 4px solid #9b1b30; padding: 10px 14px; border-radius: 8px; }
+  ol.contents { columns: 2; column-gap: 28px; }
+  @media (max-width: 600px) { ol.contents { columns: 1; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="brand" href="./"><img src="logo.svg" alt=""><span><span class="one">ONE</span><span class="wall">WALL</span></span></a>
+  <p class="toc"><a href="#tr">Türkçe</a> · <a href="#en">English</a> · <a href="#de">Deutsch</a></p>
+
+  <article id="tr">
+    <h1>OneWall kullanım kılavuzu (Android)</h1>
+    <ol class="contents">
+      <li><a href="#tr-baslarken">Başlarken</a></li>
+      <li><a href="#tr-durum">Durum ekranı</a></li>
+      <li><a href="#tr-uygulamalar">Uygulamalar</a></li>
+      <li><a href="#tr-dns">DNS ve filtreler</a></li>
+      <li><a href="#tr-pin">PIN kilidi</a></li>
+      <li><a href="#tr-ebeveyn">Ebeveyn denetimi</a></li>
+      <li><a href="#tr-kapatma">Kapatılmaya karşı koruma</a></li>
+      <li><a href="#tr-kayit">Kayıtlar ve gizlilik</a></li>
+      <li><a href="#tr-sss">Sık sorulanlar</a></li>
+    </ol>
+
+    <h2 id="tr-baslarken">1. Başlarken</h2>
+    <ol>
+      <li>OneWall'u aç, <b>Korumayı başlat</b>'a dokun.</li>
+      <li>Android "VPN bağlantısı" izni ister: <b>Tamam</b> de. OneWall bu bağlantıyı yalnızca telefonun içinde kullanır; trafiğin hiçbir sunucudan geçmez.</li>
+      <li>Bildirimlere izin ver: yeni kurulan uygulamalar ve korumanın durması bildirimle haber verilir.</li>
+    </ol>
+    <p class="tip">Üst çubukta anahtar simgesi görünüyorsa koruma çalışıyordur.</p>
+
+    <h2 id="tr-durum">2. Durum ekranı</h2>
+    <ul>
+      <li><b>Korunuyor / Koruma kapalı:</b> korumanın durumu. Durdurmak için <b>Korumayı durdur</b> ve 10 saniye bekleyip onayla (yanlışlıkla kapanmasın diye).</li>
+      <li><b>Etkinlik ve rapor:</b> grafik, dünya haritası, en çok izleyen şirketler, gece konuşan uygulamalar.</li>
+      <li><b>Şu an internette:</b> telefonun anlık hızı, bugünün sayıları (sorgu, uygulama, izleyici, engellenen) ve bugün en çok veri kullanan uygulamalar. Her birinin yanında <b>İnterneti kapat</b> ve <b>Kilitle</b> var. Bunun için bir kez <b>Kullanım erişimi</b> izni verilir.</li>
+      <li><b>Saatlik veri kullanımı:</b> bugünün saat saat veri kullanımı; en çok kullanan uygulamalar renkli gösterilir.</li>
+    </ul>
+
+    <h2 id="tr-uygulamalar">3. Uygulamalar</h2>
+    <p>Telefondaki her uygulamanın gizlilik puanı, izinleri ve bağlandığı yerler. Satırdaki Wi-Fi ve mobil düğmeleri interneti açıp kapatır; uygulamaya dokununca daha ayrıntılı seçenekler açılır. Her satırda ayrıca ebeveyn düğmeleri var:</p>
+    <ul>
+      <li><b>Saatli kısıt:</b> yalnızca kısıtlı saatlerde internete çıkamaz.</li>
+      <li><b>Kilitle:</b> uygulama hiç açılmaz.</li>
+      <li><b>Günlük süre:</b> ör. YouTube'a günde 1 saat. Süre dolunca uygulama o gün açılmaz; gece yarısı sıfırlanır. Satırda "Bugün 23 dk / 1 sa" görünür.</li>
+    </ul>
+    <ul>
+      <li><b>Karantina:</b> yeni kurulan uygulama sen izin verene kadar internete çıkamaz. Bildirimden ya da Durum ekranından karar verirsin.</li>
+      <li><b>Akıllı mod</b> (önerilen) uygulamaların nereye bağlandığını gösterir ve engellediğin uygulamanın adres sorgularını keser. <b>Sıkı mod</b> engellenen uygulamanın bütün trafiğini keser.</li>
+    </ul>
+
+    <h2 id="tr-dns">4. DNS ve filtreler</h2>
+    <ul>
+      <li><b>Şifreli DNS:</b> hangi sitelere girdiğini Wi-Fi sahibi ya da operatör göremez. Sağlayıcı: Quad9 (İsviçre) ya da Cloudflare (ABD). Açarken yurt dışına aktarım için onayın sorulur.</li>
+      <li><b>Reklamlar ve izleyiciler:</b> uygulama içi reklamları ve takibi keser (GitHub sürümünde).</li>
+      <li><b>Kötü amaçlı ve oltalama siteleri:</b> sahte kargo SMS'i gibi dolandırıcılık bağlantıları açılmaz.</li>
+      <li><b>Gelişmiş ayarlar › Kendi kuralların:</b> bir siteyi elle engelle ya da serbest bırak.</li>
+    </ul>
+
+    <h2 id="tr-pin">5. PIN kilidi</h2>
+    <ol>
+      <li>Ayarlar › <b>PIN kilidi</b> › <b>PIN belirle</b> (4–8 rakam).</li>
+      <li>Ekranda çıkan <b>12 karakterli kurtarma kodunu</b> bir kâğıda yaz ve telefondan ayrı sakla. Kod bir daha gösterilmez.</li>
+      <li>Artık OneWall açılırken PIN ister; koruma bildirimden durdurulamaz.</li>
+    </ol>
+    <p class="tip">Yanlış PIN denemeleri sayılır; 5 yanlıştan sonra bekleme süresi başlar (30 saniyeden 15 dakikaya kadar artar). Kilitliyken olanlar <b>Olay kaydı</b>nda görünür.</p>
+
+    <h2 id="tr-ebeveyn">6. Ebeveyn denetimi</h2>
+    <p>Ayarlar › <b>Ebeveyn denetimi</b>. Sayfa yalnızca PIN girilince açılır; PIN yoksa önce PIN belirlemen istenir.</p>
+    <h3>Onay bekleyen yeni uygulamalar</h3>
+    <p>PIN varken yeni kurulan her uygulama sen <b>Onayla</b> diyene kadar açılmaz ve internete çıkamaz.</p>
+    <h3>1. Uygulamalar</h3>
+    <p>Uygulama kısıtları (internet, saatli kısıt, kilit, günlük süre) <b>Uygulamalar</b> sekmesinde, her uygulamanın satırındadır. Bu bölümde ayrıca <b>VPN uygulamalarını engelle</b> var: başka VPN uygulamaları OneWall'u atlatmak için kullanılamaz.</p>
+    <p class="tip">Kilit ve günlük süre için OneWall iki izin ister: <b>Kullanım erişimi</b> ve <b>Diğer uygulamaların üzerinde gösterme</b>. Sayfadaki kart seni ilgili ayara götürür.</p>
+    <h3>2. Kısıtlı saatler</h3>
+    <p>Bir ya da daha çok saat aralığı ekle ve günlerini seç. Hazır seçenekler: <b>Gece 23:00–07:00</b> ve <b>Okul saatleri</b> (hafta içi 08:00–15:00).</p>
+    <h3>3. İçerik filtreleri</h3>
+    <ul>
+      <li><b>Yetişkin içerik:</b> yetişkin siteleri açılmaz (Cloudflare for Families).</li>
+      <li><b>Güvenli arama:</b> Google, YouTube, Bing ve DuckDuckGo'da müstehcen sonuçlar gizlenir. Tarayıcının kendi "Güvenli DNS" ayarı kapalı olmalı.</li>
+      <li><b>Site kategorileri:</b> kumar ve bahis, sosyal medya, oyun siteleri, şiddet içeriği. Listeler en yaygın siteleri kapsar; bir uygulamayı tamamen durdurmak için onu kilitle.</li>
+    </ul>
+
+    <h2 id="tr-kapatma">7. Kapatılmaya karşı koruma</h2>
+    <p>Ebeveyn sayfasının sonundaki listede her madde yeşil olmalı:</p>
+    <ul>
+      <li><b>Her zaman açık VPN:</b> Android Ayarlar › Ağ › VPN › OneWall'un yanındaki dişli: "Her zaman açık VPN" ve "VPN olmadan bağlantıları engelle"yi aç. OneWall kapatılırsa internet de kesilir.</li>
+      <li><b>Silinmeye karşı koruma:</b> OneWall kolayca silinemez, verileri temizlenemez, zorla durdurulamaz.</li>
+      <li><b>Xiaomi, Redmi, POCO:</b> Otomatik başlatma açık, Pil tasarrufu "Kısıtlama yok", son uygulamalarda OneWall'a kilit.</li>
+      <li><b>Tam kilit (yalnızca GitHub sürümü):</b> sıfırlanmış, hesapsız telefonda bilgisayardan tek komutla kurulur. OneWall silinemez; VPN, saat, güvenli mod, yeni kullanıcı ve fabrika ayarlarına dönüş kilitlenir.</li>
+    </ul>
+
+    <h2 id="tr-kayit">8. Kayıtlar ve gizlilik</h2>
+    <ul>
+      <li>OneWall'un sunucusu ve hesabı yoktur. Kayıtlar yalnızca telefonda kalır: bağlantı kayıtları 7 gün (Pro 30 gün), ebeveyn olay kaydı son 50 olay.</li>
+      <li>Ayarlar › Gelişmiş › Kayıtlar: <b>Bağlantı kayıtlarını tut</b> kapatılırsa hiçbir şey kaydedilmez, eskileri silinir.</li>
+      <li>Root'lu telefonda güvenlik için hiç kayıt tutulmaz.</li>
+      <li>Ayrıntı: <a href="privacy.html#kvkk">Gizlilik ve KVKK aydınlatma metni</a>.</li>
+    </ul>
+
+    <h2 id="tr-sss">9. Sık sorulanlar</h2>
+    <h3>PIN'i unuttum</h3>
+    <p>Kilit ekranında <b>PIN'i unuttum</b>'a dokun ve kurtarma kodunu gir; yeni PIN belirlersin.</p>
+    <h3>Kurtarma kodunu da kaybettim</h3>
+    <p>Kilit ekranında <b>PIN'i unuttum › Kodum yok › 12 saatlik sıfırlamayı başlat</b>. 12 saat boyunca koruma ve kuralların çalışmaya devam eder; kaydırılamayan bir bildirim ve olay kaydı talebi gösterir. Süre dolunca PIN ve tam kilit kalkar, kurallar korunur. Doğru PIN girilirse talep iptal olur.</p>
+    <p class="warn">Telefonun kurtarma (recovery) menüsünden tek bir uygulama silinemez; orada yalnızca telefonu tamamen sıfırlama vardır. Kurtarma kodunu yine de sakla.</p>
+    <h3>Bir uygulama çalışmıyor</h3>
+    <p>Uygulamalar sekmesinde o uygulamayı aç; engelli ya da karantinadaysa izin ver. Reklam engelleme bazı uygulamaları bozabilir: Ayarlar › DNS ve filtreler › Reklamlar ve izleyiciler'i kapatıp dene.</p>
+    <h3>Koruma kendiliğinden kapanıyor</h3>
+    <p>Xiaomi ve benzeri telefonlarda pil tasarrufu OneWall'u kapatabilir: "Kapatılmaya karşı koruma" listesindeki Xiaomi adımlarını yap ve "Her zaman açık VPN"i aç.</p>
+  </article>
+
+  <article id="en">
+    <h1>OneWall user guide (Android)</h1>
+    <ol class="contents">
+      <li><a href="#en-start">Getting started</a></li>
+      <li><a href="#en-status">Status screen</a></li>
+      <li><a href="#en-apps">Apps</a></li>
+      <li><a href="#en-dns">DNS &amp; filters</a></li>
+      <li><a href="#en-pin">PIN lock</a></li>
+      <li><a href="#en-parent">Parental controls</a></li>
+      <li><a href="#en-off">Protection against turning off</a></li>
+      <li><a href="#en-logs">Records and privacy</a></li>
+      <li><a href="#en-faq">FAQ</a></li>
+    </ol>
+
+    <h2 id="en-start">1. Getting started</h2>
+    <ol>
+      <li>Open OneWall and tap <b>Start protection</b>.</li>
+      <li>Android asks for the "VPN connection" permission: tap <b>OK</b>. OneWall uses it only inside the phone; your traffic doesn't pass through any server.</li>
+      <li>Allow notifications: new apps and protection stopping are reported by notification.</li>
+    </ol>
+    <p class="tip">If the key icon shows in the status bar, protection is running.</p>
+
+    <h2 id="en-status">2. Status screen</h2>
+    <ul>
+      <li><b>Protected / Protection is off:</b> to stop, tap <b>Stop protection</b> and confirm after 10 seconds (so it isn't turned off by accident).</li>
+      <li><b>Activity and report:</b> chart, world map, top trackers, apps that talked at night.</li>
+      <li><b>Online now:</b> the phone's live speed, today's numbers (lookups, apps, trackers, blocked) and the apps that used the most data today, each with <b>Block internet</b> and <b>Lock</b>. Needs <b>Usage access</b> once.</li>
+      <li><b>Data by hour:</b> today's data use hour by hour, top apps in colour.</li>
+    </ul>
+
+    <h2 id="en-apps">3. Apps</h2>
+    <p>Every app's privacy score, permissions and destinations. The Wi-Fi and mobile buttons on the row switch internet; tap the app for more options. Each row also has parental buttons:</p>
+    <ul>
+      <li><b>Time limit:</b> offline during the restricted hours.</li>
+      <li><b>Lock:</b> the app doesn't open.</li>
+      <li><b>Daily time:</b> e.g. YouTube 1 hour a day; when used up the app doesn't open that day. Resets at midnight.</li>
+    </ul>
+    <ul>
+      <li><b>Quarantine:</b> a newly installed app stays offline until you allow it, from the notification or the Status screen.</li>
+      <li><b>Smart mode</b> (recommended) shows where apps connect and stops lookups from apps you block. <b>Strict mode</b> cuts all traffic of blocked apps.</li>
+    </ul>
+
+    <h2 id="en-dns">4. DNS &amp; filters</h2>
+    <ul>
+      <li><b>Encrypted DNS:</b> the Wi-Fi owner or your carrier can't see which sites you visit. Provider: Quad9 (Switzerland) or Cloudflare (USA). You're asked to consent to the transfer abroad when turning it on.</li>
+      <li><b>Ads and trackers:</b> blocks in-app ads and tracking (GitHub version).</li>
+      <li><b>Malware and phishing:</b> scam links such as fake parcel SMS don't open.</li>
+      <li><b>Advanced settings › Own rules:</b> block or allow a site yourself.</li>
+    </ul>
+
+    <h2 id="en-pin">5. PIN lock</h2>
+    <ol>
+      <li>Settings › <b>PIN lock</b> › <b>Set PIN</b> (4–8 digits).</li>
+      <li>Write down the <b>12-character recovery code</b> shown and keep it away from the phone. It isn't shown again.</li>
+      <li>OneWall now asks for the PIN when opened; protection can't be stopped from the notification.</li>
+    </ol>
+    <p class="tip">Wrong PINs are counted; after 5, a waiting time starts (30 seconds up to 15 minutes). What happened while locked shows in the <b>Event log</b>.</p>
+
+    <h2 id="en-parent">6. Parental controls</h2>
+    <p>Settings › <b>Parental controls</b>. The page opens only with the PIN; without a PIN you're asked to set one first.</p>
+    <h3>New apps waiting for approval</h3>
+    <p>While a PIN is set, every newly installed app won't open or go online until you tap <b>Approve</b>.</p>
+    <h3>1. Apps</h3>
+    <p>App limits (internet, time limit, lock, daily time) are on each app's row in the <b>Apps</b> tab. This section also has <b>Block VPN apps</b>: other VPN apps can't be used to get around OneWall.</p>
+    <p class="tip">Lock and daily time need two permissions: <b>Usage access</b> and <b>Display over other apps</b>. The card on the page takes you there.</p>
+    <h3>2. Restricted hours</h3>
+    <p>Add one or more time ranges and pick the days. Presets: <b>Night 23:00–07:00</b> and <b>School hours</b> (weekdays 08:00–15:00).</p>
+    <h3>3. Content filters</h3>
+    <ul>
+      <li><b>Adult content</b> (Cloudflare for Families), <b>Safe search</b> (Google, YouTube, Bing, DuckDuckGo; the browser's own "Secure DNS" must be off).</li>
+      <li><b>Site categories:</b> gambling and betting, social media, game sites, violence. Lists cover the most common sites; lock an app to stop it entirely.</li>
+    </ul>
+
+    <h2 id="en-off">7. Protection against turning off</h2>
+    <ul>
+      <li><b>Always-on VPN:</b> Android Settings › Network › VPN › gear next to OneWall: turn on "Always-on VPN" and "Block connections without VPN". If OneWall is closed, the internet stops too.</li>
+      <li><b>Protection against deleting:</b> OneWall can't simply be deleted, wiped or force-stopped.</li>
+      <li><b>Xiaomi, Redmi, POCO:</b> Autostart on, Battery saver "No restrictions", lock OneWall in recent apps.</li>
+      <li><b>Full lock (GitHub version only):</b> set up with one command from a computer on a freshly reset phone without accounts. OneWall can't be deleted; VPN, clock, safe mode, new users and factory reset are locked.</li>
+    </ul>
+
+    <h2 id="en-logs">8. Records and privacy</h2>
+    <ul>
+      <li>No servers, no account. Records stay on the phone: connection records 7 days (Pro 30), parental event log the last 50 events.</li>
+      <li>Settings › Advanced › Records: turn off <b>Keep connection records</b> to record nothing and delete old records.</li>
+      <li>On a rooted phone nothing is recorded, for safety.</li>
+      <li>Details: <a href="privacy.html#gdpr">Privacy policy</a>.</li>
+    </ul>
+
+    <h2 id="en-faq">9. FAQ</h2>
+    <h3>I forgot the PIN</h3>
+    <p>On the lock screen tap <b>Forgot PIN</b> and enter the recovery code; then set a new PIN.</p>
+    <h3>I lost the recovery code too</h3>
+    <p>On the lock screen: <b>Forgot PIN › I don't have the code › Start 12-hour reset</b>. Protection and rules keep working for 12 hours; a persistent notification and the event log show the request. Then the PIN and full lock are removed, rules are kept. Entering the correct PIN cancels it.</p>
+    <p class="warn">A phone's recovery menu can't remove a single app; it only offers a full reset. Keep the recovery code safe anyway.</p>
+    <h3>An app doesn't work</h3>
+    <p>Open it in the Apps tab and allow it if it's blocked or in quarantine. Ad blocking can break some apps: try turning off Ads and trackers.</p>
+    <h3>Protection keeps stopping</h3>
+    <p>On Xiaomi and similar phones battery saving can close OneWall: follow the Xiaomi steps and turn on Always-on VPN.</p>
+  </article>
+
+  <article id="de">
+    <h1>OneWall Bedienungsanleitung (Android)</h1>
+
+    <h2>1. Erste Schritte</h2>
+    <ol>
+      <li>Öffne OneWall und tippe auf <b>Schutz starten</b>.</li>
+      <li>Android fragt nach der Berechtigung „VPN-Verbindung“: tippe auf <b>OK</b>. OneWall nutzt sie nur im Handy; dein Verkehr läuft über keinen Server.</li>
+      <li>Erlaube Benachrichtigungen: neue Apps und ein gestoppter Schutz werden gemeldet.</li>
+    </ol>
+
+    <h2>2. Status</h2>
+    <ul>
+      <li><b>Geschützt / Schutz aus:</b> zum Beenden <b>Schutz beenden</b> tippen und nach 10 Sekunden bestätigen.</li>
+      <li><b>Gerade online:</b> Live-Geschwindigkeit, heutige Zahlen und die Apps mit den meisten Daten, je mit <b>Internet sperren</b> und <b>Sperren</b> (einmalig Nutzungszugriff nötig).</li>
+      <li><b>Aktivität und Bericht</b> und <b>Daten pro Stunde</b>: Diagramme, Karte, häufigste Tracker.</li>
+    </ul>
+
+    <h2>3. Apps</h2>
+    <p>Datenschutz-Bewertung, Berechtigungen und Ziele jeder App. Die WLAN- und Mobil-Tasten schalten das Internet; jede Zeile hat außerdem <b>Zeitlimit</b>, <b>Sperren</b> und <b>Tageszeit</b> (z. B. YouTube 1 Stunde pro Tag). Neu installierte Apps bleiben offline, bis du sie erlaubst (Quarantäne).</p>
+
+    <h2>4. DNS &amp; Filter</h2>
+    <ul>
+      <li><b>Verschlüsseltes DNS:</b> WLAN-Betreiber und Anbieter sehen nicht, welche Seiten du öffnest. Anbieter Quad9 (Schweiz) oder Cloudflare (USA); vor der Übermittlung ins Ausland wird um Einwilligung gebeten.</li>
+      <li><b>Werbung und Tracker</b> (GitHub-Version), <b>Schadseiten und Phishing</b>, eigene Regeln unter Erweitert.</li>
+    </ul>
+
+    <h2>5. PIN-Sperre</h2>
+    <ol>
+      <li>Einstellungen › <b>PIN-Sperre</b> › <b>PIN festlegen</b> (4–8 Ziffern).</li>
+      <li>Notiere den <b>12-stelligen Wiederherstellungscode</b> und bewahre ihn getrennt vom Handy auf.</li>
+      <li>OneWall fragt beim Öffnen nach der PIN; nach 5 Fehlversuchen beginnt eine Wartezeit.</li>
+    </ol>
+
+    <h2>6. Elternkontrolle</h2>
+    <p>Einstellungen › <b>Elternkontrolle</b> (öffnet nur mit PIN). Neue Apps warten auf deine Freigabe; <b>VPN-Apps blockieren</b>; <b>Gesperrte Zeiten</b> (z. B. Nacht 23:00–07:00, Schulzeit werktags 08:00–15:00); <b>Inhaltsfilter</b>: Inhalte für Erwachsene, SafeSearch, Glücksspiel, soziale Medien, Spieleseiten, Gewalt.</p>
+
+    <h2>7. Schutz vor dem Ausschalten</h2>
+    <ul>
+      <li><b>Durchgehend aktives VPN</b> und „Verbindungen ohne VPN blockieren“ in den Android-VPN-Einstellungen: wird OneWall beendet, stoppt auch das Internet.</li>
+      <li><b>Schutz vor dem Löschen</b>; bei Xiaomi/Redmi/POCO Autostart an und Akku „Keine Einschränkungen“.</li>
+      <li><b>Vollsperre</b> (nur GitHub-Version, frisch zurückgesetztes Handy ohne Konten): OneWall nicht löschbar; VPN, Uhrzeit, abgesicherter Modus, neue Nutzer und Zurücksetzen gesperrt.</li>
+    </ul>
+
+    <h2>8. Protokolle und Datenschutz</h2>
+    <p>Keine Server, kein Konto. Protokolle bleiben auf dem Handy (7 Tage, Pro 30); abschaltbar unter Erweitert › Protokolle; auf gerooteten Handys wird nichts protokolliert. <a href="privacy.html#gdpr">Datenschutz</a>.</p>
+
+    <h2>9. Häufige Fragen</h2>
+    <h3>PIN vergessen</h3>
+    <p>Auf dem Sperrbildschirm <b>PIN vergessen</b> tippen und den Wiederherstellungscode eingeben.</p>
+    <h3>Auch den Code verloren</h3>
+    <p><b>PIN vergessen › Code fehlt › 12-Stunden-Zurücksetzen starten</b>. Schutz und Regeln laufen 12 Stunden weiter, eine Benachrichtigung zeigt die Anfrage; danach werden PIN und Vollsperre entfernt. Die richtige PIN bricht ab.</p>
+    <h3>Eine App funktioniert nicht</h3>
+    <p>Im Tab Apps erlauben bzw. aus der Quarantäne holen; ggf. „Werbung und Tracker“ ausschalten.</p>
+  </article>
+</main>
+</body>
+</html>
