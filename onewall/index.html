@@ -70,8 +70,6 @@
   table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border-radius: 12px; overflow: hidden; }
   th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { background: #f0f3fa; }
-  tr.mine td { background: #fff7e6; font-weight: 600; }
-  .tablewrap { overflow-x: auto; margin-top: 14px; }
 
   details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
   summary { font-weight: 700; cursor: pointer; }
@@ -136,9 +134,6 @@
       <h2 data-t="supTitle"></h2>
       <p class="lead2" data-t="supLead"></p>
       <div class="ways" id="ways"></div>
-      <h3 style="margin:26px 0 4px" data-t="payTitle"></h3>
-      <p style="margin:0;color:var(--ink)" data-t="payLead"></p>
-      <div class="tablewrap"><table id="pay"></table></div>
     </div>
   </section>
 
@@ -191,9 +186,6 @@ const T = {
       ["Uygulama içinden", "Android: Ayarlar › Bizi destekle (Google Play ödemesi). iOS: Ayarlar › bahşiş (App Store ödemesi)."],
       ["Ücretsiz destek", "Arkadaşlarınla paylaş, fikir ve hata bildir ya da çeviriye yardım et: globalcode01@gmail.com."],
     ],
-    payTitle: "Ülkene göre ödeme yöntemleri",
-    payLead: "Uygulama içi bağışta Google Play ve App Store, ülkende geçerli yöntemleri kendisi gösterir. Kart bilgin bize hiç gelmez. Senin bölgen sarıyla işaretli.",
-    payHead: ["Ülke / bölge", "Google Play", "App Store"],
     faqTitle: "Sık sorulanlar",
     faq: [
       ["Verilerim nereye gidiyor?", "Hiçbir yere. Bağlantı kayıtları yalnızca cihazında tutulur. OneWall'un sunucusu yok; DNS sorguları Android'de ağının kendi DNS sunucusuna, iOS'ta seçtiğin sunucuya (Quad9 ya da Cloudflare) gider."],
@@ -235,9 +227,6 @@ const T = {
       ["In the app", "Android: Settings › Support us (Google Play payment). iOS: Settings › tip jar (App Store payment)."],
       ["Free ways", "Share with friends, send ideas and bug reports or help with translations: globalcode01@gmail.com."],
     ],
-    payTitle: "Payment methods in your country",
-    payLead: "For in-app donations, Google Play and the App Store show the methods available in your country. Your card details never reach us. Your region is highlighted.",
-    payHead: ["Country / region", "Google Play", "App Store"],
     faqTitle: "FAQ",
     faq: [
       ["Where does my data go?", "Nowhere. Connection records stay on your device only. OneWall has no servers; DNS lookups go to your network's own DNS server on Android, and to the server you choose (Quad9 or Cloudflare) on iOS."],
@@ -250,26 +239,10 @@ const T = {
   },
 };
 
-// Ülkelere göre ödeme yöntemleri (Google Play ve Apple yardım sayfaları, Ekim 2026)
-const PAY = [
-  [["TR"], { tr: "Türkiye", en: "Türkiye" }, "Visa, Mastercard, Amex, Troy; Türk Telekom, Turkcell, Vodafone; Play bakiyesi / hediye kartı", "Kart; Paycell, Türk Telekom, Vodafone; Apple hesap bakiyesi"],
-  [["DE", "FR", "ES", "IT", "GB"], { tr: "Almanya, Fransa, İspanya, İtalya, İngiltere", en: "Germany, France, Spain, Italy, UK" }, "Card, PayPal, carrier billing, Play balance", "Card, Apple Pay, PayPal, carrier billing, balance"],
-  [["US"], { tr: "ABD", en: "United States" }, "Card, PayPal, Play balance", "Card, Apple Pay, Apple Card/Cash, PayPal, balance"],
-  [["BR"], { tr: "Brezilya", en: "Brazil" }, "Card, Play gift card", "Credit card, Apple Pay, balance"],
-  [["SA", "AE"], { tr: "Suudi Arabistan, BAE", en: "Saudi Arabia, UAE" }, "Card, carrier billing", "Card; STC, Mobily, Zain / du, Etisalat"],
-  [["IN"], { tr: "Hindistan", en: "India" }, "UPI, card", "UPI, Visa, Mastercard"],
-  [["JP"], { tr: "Japonya", en: "Japan" }, "Card, carrier billing, Play balance", "Card, Apple Pay, PayPay, Merpay; au, NTT DOCOMO, SoftBank"],
-];
-
 let lang = "en";
 try { lang = localStorage.getItem("ow-lang") || ""; } catch (e) {}
 if (!lang) lang = (navigator.language || "en").toLowerCase().startsWith("tr") ? "tr" : "en";
-const region = ((navigator.language || "").split("-")[1] || "").toUpperCase() || (lang === "tr" ? "TR" : "");
 
-// Tablodaki genel yöntem adlarının Türkçesi
-const TR_PAY = [["Credit card", "Kredi kartı"], ["Card", "Kart"], ["carrier billing", "operatör faturası"], ["Play gift card", "Play hediye kartı"],
-  ["Play balance", "Play bakiyesi"], ["balance", "bakiye"]];
-const payText = (x) => lang === "tr" ? TR_PAY.reduce((a, [en, tr]) => a.replaceAll(en, tr), x) : x;
 function esc(s) { return s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
 function render() {
   const t = T[lang];
@@ -284,8 +257,6 @@ function render() {
     `<div class="card plat"><span class="name">${n}</span><span class="state ${st}">${st === "ready" ? t.stateReady : t.stateSoon}</span><p>${d}</p>${url ? `<a class="btn primary" href="${url}">${label}</a>` : ""}</div>`).join("");
   let ways = t.ways.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${esc(p)}</p></div>`).join("");
   document.getElementById("ways").innerHTML = ways;
-  document.getElementById("pay").innerHTML = `<tr>${t.payHead.map((h) => `<th>${h}</th>`).join("")}</tr>` +
-    PAY.map(([codes, name, play, apple]) => `<tr class="${codes.includes(region) ? "mine" : ""}"><td>${name[lang]}</td><td>${payText(play)}</td><td>${payText(apple)}</td></tr>`).join("");
   document.getElementById("faq").innerHTML = t.faq.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
 }
 document.getElementById("lang").addEventListener("click", () => {
