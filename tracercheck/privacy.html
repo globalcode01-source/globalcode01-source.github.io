@@ -3,17 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TRacerCheck — Gizlilik Politikası / Privacy Policy</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>TRacerCheck — Gizlilik, KVKK ve Güvenlik / Privacy and Security</title>
+<meta name="description" content="TRacerCheck gizlilik politikası, KVKK aydınlatma metni, başvuru ve güvenlik prosedürü.">
+<link rel="icon" href="icon.png" type="image/png">
 <style>
   body { margin: 0; font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1a1b1f; background: #f7f6f3; }
-  main { max-width: 820px; margin: 0 auto; padding: 32px 20px 56px; }
-  .logo { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; border-radius: 24px; background: #000; }
+  main { max-width: 820px; margin: 0 auto; padding: 28px 20px 56px; }
+  .logo { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
   article { background: #fff; border: 1px solid #e4e2dc; border-radius: 16px; padding: 8px 24px 20px; margin-top: 22px; }
-  h1 { font-size: 24px; } h2 { font-size: 17px; margin-top: 24px; }
+  h1 { font-size: 24px; margin-bottom: 4px; } h2 { font-size: 17px; margin-top: 26px; scroll-margin-top: 12px; }
   p, li { color: #3f4148; }
   a { color: #4f46e5; }
-  .toc { margin-top: 14px; font-weight: 600; }
+  .meta { margin-top: 0; font-size: 14px; }
+  .lang { margin-top: 14px; text-align: center; font-weight: 600; }
+  nav ol { margin: 10px 0 0; padding-left: 20px; columns: 2; font-size: 14px; }
+  @media (max-width: 560px) { nav ol { columns: 1; } }
   @media (prefers-color-scheme: dark) {
     body { background: #16171b; color: #ececef; }
     article { background: #1c1d22; border-color: #2c2d33; } p, li { color: #a3a5ad; } a { color: #8f88ff; }
@@ -22,52 +26,199 @@
 </head>
 <body>
 <main>
-  <img class="logo" src="badge.webp" alt="TimeRC: Mesai Kayıt ve Kontrol Sistemi" width="1280" height="640">
-  <p class="toc"><a href="#tr">Türkçe</a> · <a href="#en">English</a></p>
+  <picture>
+    <source srcset="badge-dark.webp" media="(prefers-color-scheme: dark)">
+    <img class="logo" src="badge.webp" alt="TimeRC: Mesai Kayıt ve Kontrol Sistemi" width="888" height="398">
+  </picture>
+  <p class="lang"><a href="#tr">Türkçe</a> · <a href="#en">English</a></p>
 
   <article id="tr">
-    <h1>Gizlilik Politikası ve KVKK Aydınlatma Metni</h1>
-    <p>Yürürlük: 3 Kasım 2026. TRacerCheck web ve Android uygulamaları için geçerlidir. Yayımlayan: Global Code 01 (globalcode01@gmail.com).</p>
-    <h2>1. Verilerin sende kalır</h2>
-    <p>TRacerCheck yerel öncelikli çalışır. Mesai kayıtların, görevlerin, notların, çalışma günlüğün, takvim kayıtların ve ayarların yalnızca kendi cihazında tutulur. Uygulamanın sunucusu, hesabı ya da veritabanı yoktur. Reklam, analiz ve izleme kullanılmaz. Yazı tipleri ve uygulama dosyaları uygulamayla birlikte gelir; üçüncü taraf CDN kullanılmaz.</p>
-    <h2>2. İşlenen veriler ve toplama yöntemi</h2>
+    <h1>Gizlilik, KVKK ve Güvenlik</h1>
+    <p class="meta">Son güncelleme: 8 Kasım 2026. TRacerCheck Android ve web uygulamaları için geçerlidir. Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve AB Genel Veri Koruma Tüzüğü (GDPR) kapsamındaki aydınlatma metnidir; aynısı uygulamanın içinde de internetsiz okunur (Ayarlar › Gizlilik).</p>
+    <nav aria-label="İçindekiler"><ol>
+      <li><a href="#tr-1">Veri sorumlusu</a></li><li><a href="#tr-2">Temel ilke</a></li><li><a href="#tr-3">İşlenen veriler ve toplama yöntemi</a></li>
+      <li><a href="#tr-4">Amaç ve hukuki sebep</a></li><li><a href="#tr-5">Aktarılan taraflar ve yurt dışına aktarım</a></li><li><a href="#tr-6">Android uygulaması ve izinler</a></li>
+      <li><a href="#tr-7">Saklama süresi ve silme</a></li><li><a href="#tr-8">Güvenlik prosedürü</a></li><li><a href="#tr-9">Hakların ve KVKK başvuru prosedürü</a></li>
+      <li><a href="#tr-10">Değişiklikler</a></li>
+    </ol></nav>
+
+    <h2 id="tr-1">1. Veri sorumlusu</h2>
+    <p>Veri sorumlusu: <b>Global Code 01</b> · <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20KVKK">globalcode01@gmail.com</a>. TRacerCheck’in sunucusu, hesabı ya da veritabanı yoktur; Global Code 01 uygulamadaki kayıtlarını görmez, toplamaz ve saklamaz. Cihazında tutulan veriler senin kontrolündedir. Global Code 01’in işlediği tek kişisel veri, ona e-posta yazarsan e-posta adresin ve yazdıklarındır (bkz. 4 ve 7).</p>
+
+    <h2 id="tr-2">2. Temel ilke: verilerin sende kalır</h2>
+    <p>TRacerCheck yerel öncelikli çalışır: mesai kayıtların, görevlerin, notların, çalışma günlüğün, takvim kayıtların ve ayarların yalnızca kullandığın cihazda tutulur (Android’de uygulamanın korumalı alanında, web’de tarayıcının IndexedDB alanında). Hesap açman gerekmez. Reklam, analiz, izleme ya da çerez tabanlı takip yoktur. Yazı tipleri ve tüm uygulama dosyaları uygulamayla birlikte gelir; üçüncü taraf bir içerik dağıtım ağından (CDN) yüklenmez. Uygulama 18 yaş altındakilere yönelik değildir.</p>
+
+    <h2 id="tr-3">3. İşlenen veriler ve toplama yöntemi</h2>
     <ul>
-      <li>Senin girdiğin içerik: görevler, notlar, günlükler, etkinlikler, ekler, kategoriler, etiketler.</li>
-      <li>Senin başlattığın ölçümler: mesai başlangıç/bitiş saatleri, molalar, odak oturumları, saat dilimi.</li>
-      <li>Rastgele bir cihaz kimliği (yalnızca yedekleri birleştirirken hangi cihazdan geldiğini ayırt etmek için).</li>
+      <li>Girdiğin içerik: görevler ve alt görevler, notlar, çalışma günlüğü, etkinlikler, hatırlatmalar, ekler, kategoriler ve etiketler.</li>
+      <li>Zaman kayıtları: mesai başlangıç ve bitişleri, molalar, odak (pomodoro) oturumları, saat dilimi. Saat koruması için uygulama açıkken 15 saniyede bir cihaz saati kontrol edilir ve yalnızca son kontrolün zamanı saklanır.</li>
+      <li>Ayarların ve rıza tercihlerin.</li>
+      <li>Rastgele bir cihaz kimliği: yalnızca yedekleri birleştirirken kaydın hangi cihazdan geldiğini ayırt etmek için; kimliğinle ilişkili değildir.</li>
+      <li>Yalnızca sen açarsan: telefondaki takvimlerden okunan etkinlikler, ICS adresinden indirilen etkinlikler, Google ya da Microsoft takvimlerinden eşitlenen etkinlikler (web) ve sesle yazmada konuşman (yalnızca yazıya çevrilirken; ses kaydedilmez).</li>
     </ul>
-    <p>Bu veriler yalnızca senin uygulamayı kullanmanla, cihazının içinde oluşur. Yayımlayan taraf bu verilere erişemez.</p>
-    <h2>3. Amaç ve hukuki sebep</h2>
-    <p>Veriler, sana kendi çalışma kayıtlarını tutma, analiz etme ve hatırlatma hizmeti vermek için yalnızca cihazında işlenir.</p>
-    <h2>4. Android uygulaması</h2>
-    <p>Uygulama her gün telefonun Belgeler/TRacerCheck klasörüne bir yedek dosyası yazar (son 5 kopya); bu dosyalar telefonundan çıkmaz. “Google telefon yedeği” varsayılan olarak kapalıdır; yalnızca açık rızanla açılır ve o zaman uygulamanın yedek dosyası Android yedekleme hizmetiyle kendi Google hesabına kopyalanır (Google sunucuları yurt dışında olabilir; hukuki sebep açık rıza). Kapatınca dosya silinir. İzinler: Bildirim (hatırlatma ve pomodoro bitişi, isteğe bağlı) ve İnternet (yalnızca senin başlattığın ICS takvim aboneliği gibi bağlantılar; Google Takvim’in gizli iCal adresi dahil) ve Mikrofon (yalnızca Notlar’da sesle yazma düğmesine bastığında, ilk kullanımda sorulur) ve Takvim (yalnızca Ayarlar › Takvim’de telefondaki takvimleri seçtiğinde; seçtiğin takvimlerin etkinlikleri telefonun takvim veritabanından okunur, burada eklediğin ya da düzenlediğin etkinlikler oraya yazılır, uygulama bunları internete göndermez; takvim bir Google hesabına bağlıysa Google’a eşitlemeyi Android’in kendi hesap eşitlemesi yapar). Konum, kişiler, kamera ya da dosyalara toplu erişim istenmez.</p>
-    <p><b>Sesle yazma:</b> Notlar’daki mikrofon düğmesine bastığında ses, yazıya çevrilmek üzere telefonunun ses tanıma hizmetine (çoğu cihazda Google LLC, ABD; web sürümünde tarayıcının hizmeti, Google ya da Microsoft) gönderilir. Türkçe ses paketi telefonda yüklüyse işlem cihazda kalabilir. Bu, yurt dışına aktarım olabileceği için ilk kullanımdan önce açık rızan istenir (kabul ve ret eşit; hukuki sebep KVKK m. 5/1, m. 9); Ayarlar › Gizlilik’ten geri alabilirsin. Uygulama ses kaydı tutmaz; yalnızca ortaya çıkan metin notuna yazılır. Yedek dosyası yalnızca sistem paylaşım menüsünde senin seçtiğin yere gider.</p>
-    <h2>5. İsteğe bağlı bulut bağlantıları ve yurt dışına aktarım</h2>
-    <p>Web sürümünde Google Drive / Google Takvim (Google LLC, ABD) ve OneDrive / Outlook Takvim (Microsoft Corporation, ABD/AB) bağlantıları isteğe bağlıdır ve varsayılan olarak kapalıdır. Kullanmadan önce açık rızan istenir; kabul ve ret eşit sunulur. Bağlantıda veriler senin hesabınla doğrudan cihazından sağlayıcıya gider; IP adresin ve hesap bilgilerin sağlayıcı tarafından işlenir. Hukuki sebep: açık rıza (KVKK m. 5/1, m. 9). Rızanı Ayarlar › Gizlilik’ten istediğin an geri alabilirsin. ICS aboneliğinde girdiğin adresin sunucusu IP adresini görür.</p>
-    <h2>6. Saklama ve silme</h2>
-    <p>Veriler sen silene kadar cihazında kalır. Silinen kayıtlar Arşiv’den geri alınabilir ya da kalıcı silinebilir. Ayarlar › Gizlilik › “Tüm verileri sil” cihazdaki her şeyi siler. Uygulamayı kaldırmak da tüm verileri siler.</p>
-    <h2>7. Güvenlik</h2>
-    <p>Şifreli yedekler AES-256-GCM ile şifrelenir; anahtar parolandan PBKDF2-SHA256 (600.000 tur) ile türetilir ve bir kez gösterilen kurtarma anahtarıyla da açılabilir. Parola ve kurtarma anahtarı hiçbir yere kaydedilmez ya da gönderilmez.</p>
-    <h2>8. Hakların</h2>
-    <p>KVKK m. 11 kapsamındaki haklarını, verilerin senin cihazında olduğu için uygulama içinden doğrudan kullanabilirsin (dışa aktarma, düzeltme, silme). Sorular: globalcode01@gmail.com</p>
+    <p>Toplama yöntemi: veriler senin girişinle ve düğmelere basmanla, kısmen de otomatik olarak (sayaçlar, saat koruması, günlük yedek) cihazının içinde oluşur. Hiçbir veri kendiliğinden internete gönderilmez; 5. bölümdeki bağlantılar yalnızca sen başlatınca çalışır.</p>
+
+    <h2 id="tr-4">4. Amaç ve hukuki sebep</h2>
+    <ul>
+      <li>Cihazındaki kayıtlar: kendi çalışma kayıtlarını tutma, analiz etme, hatırlatma ve yedekleme amacıyla senin cihazında ve kontrolünde işlenir; Global Code 01 bu verilere erişmez.</li>
+      <li>İsteğe bağlı aktarımlar (bulut bağlantıları, sesle yazma, Google telefon yedeği): açık rızan (KVKK m. 5/1). Yurt dışına aktarım için KVKK m. 9 uyarınca, olası riskler hakkında bilgilendirilmen şartıyla açık rızan (bkz. 5).</li>
+      <li>Bize yazdığın e-postalar: KVKK başvurularını yanıtlama yükümlülüğü (m. 5/2-ç) ve destek taleplerini yanıtlamadaki meşru menfaat (m. 5/2-f).</li>
+    </ul>
+    <p>Rıza vermezsen ya da geri alırsan uygulamanın diğer bütün özellikleri çalışmaya devam eder.</p>
+
+    <h2 id="tr-5">5. Aktarılan taraflar ve yurt dışına aktarım</h2>
+    <p>Aşağıdakiler varsayılan olarak kapalıdır ve yalnızca sen açarsan çalışır. Açık rıza gerekenlerde kabul ve ret seçenekleri eşit şekilde sunulur:</p>
+    <ul>
+      <li><b>Google LLC: Google Drive ve Google Takvim</b> (yalnızca web, açık rıza): seçtiğin yedek dosyası ve okuma ya da yazma izni verdiğin takvimlerin etkinlikleri, senin hesabınla. Sunucular ABD’de ve Google’ın veri merkezlerinin bulunduğu diğer ülkelerde olabilir.</li>
+      <li><b>Microsoft Corporation: OneDrive ve Outlook Takvim</b> (yalnızca web, açık rıza): aynı şekilde; sunucular ABD, AB ve diğer ülkelerde olabilir.</li>
+      <li><b>Ses tanıma hizmeti: sesle yazma</b> (açık rıza): konuşman, yazıya çevrilmek üzere telefonunun ses tanıma hizmetine (Android’de çoğunlukla Google LLC) ya da tarayıcının hizmetine (Chrome’da Google, Edge’de Microsoft) gider. Türkçe ses paketi telefonda yüklüyse işlem cihazda kalabilir. TRacerCheck ses kaydı tutmaz.</li>
+      <li><b>Google telefon yedeği</b> (Android, açık rıza): uygulamanın yedek dosyası, Android’in yedekleme hizmetiyle kendi Google hesabına kopyalanır. Telefonunda ekran kilidi varsa Android bu yedeği uçtan uca şifreler.</li>
+      <li><b>ICS aboneliği</b>: girdiğin takvim adresine cihazından doğrudan istek gönderilir; adresin sunucusu bu sırada IP adresini görür.</li>
+      <li><b>Telefondaki takvimler</b> (Android): TRacerCheck bu etkinlikleri internete göndermez. Takvim bir Google hesabına bağlıysa eşitlemeyi Android’in kendi hesap eşitlemesi yapar (telefonundaki hesap ayarlarına göre).</li>
+    </ul>
+    <p>Bu bağlantılarda veriler senin hesabın üzerinden doğrudan cihazından sağlayıcıya gider; arada Global Code 01’e ait bir sunucu yoktur. Sağlayıcılar IP adresini ve hesap bilgilerini kendi gizlilik politikalarına göre işler. <b>Olası riskler:</b> bu ülkelerde Türkiye’deki kadar koruma sağlanmayabilir ve verilere o ülkenin yetkili makamları kendi yasalarına göre erişebilir; Global Code 01 sağlayıcının işlemlerini denetleyemez. Şifreli yedek seçersen dosyanın içeriği sağlayıcı tarafından okunamaz. Rızanı Ayarlar › Gizlilik’ten istediğin an geri alabilirsin; geri alınca oturum kapatılır ve yeni aktarım yapılmaz. Daha önce yüklenen dosyaları kendi hesabından silebilirsin.</p>
+
+    <h2 id="tr-6">6. Android uygulaması ve izinler</h2>
+    <p>Veriler telefonun uygulamaya ayrılmış korumalı alanında tutulur; diğer uygulamalar erişemez. Uygulama her gün Belgeler/TRacerCheck klasörüne bir yedek dosyası yazar (son 5 kopya); bu dosyalar telefonundan çıkmaz. Yedek dosyası “Kaydet / paylaş” ile yalnızca senin seçtiğin yere gider. Google ve Microsoft girişleri Android sürümünde yoktur. İzinler:</p>
+    <ul>
+      <li><b>Bildirim</b>: hatırlatmalar ve pomodoro bitişi (isteğe bağlı).</li>
+      <li><b>Açılışta başlatma ve uyandırma</b>: telefon yeniden başlayınca hatırlatmaları yeniden kurmak için.</li>
+      <li><b>İnternet</b>: yalnızca senin başlattığın bağlantılar (ICS adresi, Google Takvim’in gizli iCal adresi).</li>
+      <li><b>Mikrofon</b>: yalnızca sesle yazma düğmesine bastığında; ilk kullanımda sorulur.</li>
+      <li><b>Takvim</b>: yalnızca Ayarlar › Takvim’de telefondaki takvimleri seçtiğinde. Seçtiğin takvimler okunur; uygulamada eklediğin ya da düzenlediğin etkinlikler oraya yazılır.</li>
+      <li><b>Depolama</b> (yalnızca Android 10 ve öncesi): Belgeler klasörüne günlük yedek için.</li>
+    </ul>
+    <p>Konum, kişiler, kamera, tüm dosyalara erişim, tam zamanlı alarm ve reklam kimliği istenmez. İzinleri Android’de Ayarlar › Uygulamalar › TRacerCheck › İzinler’den istediğin an kapatabilirsin.</p>
+
+    <h2 id="tr-7">7. Saklama süresi ve silme</h2>
+    <ul>
+      <li>Uygulamadaki veriler sen silene kadar cihazında kalır. Silinen kayıtlar önce Arşiv’e gider; oradan geri alınabilir ya da kalıcı silinebilir.</li>
+      <li>Geri yüklemeden önce alınan otomatik kopyalar (son 5) ve yedek geçmişi de cihazında tutulur.</li>
+      <li>Ayarlar › Gizlilik › “Tüm verileri sil” bu cihazdaki her şeyi kalıcı olarak siler. Uygulamayı kaldırmak da uygulama verilerini siler; Belgeler/TRacerCheck klasöründeki yedek dosyaları ise telefonda kalır, onları dosya yöneticisinden silebilirsin.</li>
+      <li>Bulut hesaplarına yüklediğin yedekleri kendi hesabından silersin.</li>
+      <li>Global Code 01’e yazdığın e-postalar, talebin sonuçlandıktan sonra yasal bir saklama yükümlülüğü yoksa en geç 1 yıl içinde silinir.</li>
+    </ul>
+
+    <h2 id="tr-8">8. Güvenlik prosedürü</h2>
+    <p>Alınan önlemler:</p>
+    <ul>
+      <li>Sunucu yok: kayıtlar merkezi bir yerde toplanmadığı için toplu sızıntı riski yoktur.</li>
+      <li>Ağ: yalnızca şifreli (HTTPS) bağlantılar; şifresiz bağlantı ve karışık içerik kapalı. Reklam, analiz ya da izleme kütüphanesi kullanılmaz.</li>
+      <li>Şifreli yedek: AES-256-GCM. Rastgele bir ana anahtar, parolandan PBKDF2-SHA256 (600.000 tur) ve sana bir kez gösterilen kurtarma anahtarından HKDF-SHA256 ile türetilen anahtarlarla iki kez sarılır. Parolan ve kurtarma anahtarın hiçbir yere kaydedilmez ya da gönderilmez; cihazda ana anahtar dışa aktarılamaz biçimde tutulur.</li>
+      <li>Bütünlük: değiştirilmiş ya da bozuk yedek dosyaları reddedilir; geri yüklemeden önce mevcut verilerin otomatik kopyası alınır.</li>
+      <li>Parolamı unuttum: sıfırlama 12 saat bekletilir ve bu sürede iptal edilebilir; böylece telefonu eline geçiren biri yedek parolanı sessizce değiştiremez. Eski şifreli yedekler yalnızca eski parola ya da kurtarma anahtarıyla açılır.</li>
+      <li>Oturumlar (web): Google erişim anahtarı yalnızca açık oturum boyunca tutulur, Microsoft oturumu tarayıcıda saklanır; rızanı geri aldığında oturumlar kapatılır.</li>
+      <li>Saat koruması: cihaz saatinin geri alınması mesai kaydına uyarı olarak işlenir.</li>
+    </ul>
+    <p>Senin için öneriler: telefonunda ekran kilidi kullan, şifreli yedek kur ve kurtarma anahtarını güvenli bir yerde sakla, yedek dosyalarını güvendiğin yere kaydet, uygulamayı güncel tut.</p>
+    <p><b>Güvenlik açığı bildirimi:</b> Bir açık bulursan <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20g%C3%BCvenlik">globalcode01@gmail.com</a> adresine “TRacerCheck güvenlik” konusuyla yaz. En geç 7 gün içinde yanıt verilir; doğrulanan açıklar düzeltme sürümüyle kapatılır ve sürüm notunda belirtilir.</p>
+    <p><b>İhlal durumunda:</b> Kullanıcı verilerini etkileyebilecek bir açık tespit edilirse açık kapatılır, güncelleme yayımlanır ve etkilenebilecek kullanıcılara ne yapmaları gerektiği sürüm notunda ve bu sayfada bildirilir. Global Code 01’in işlediği veriler (ör. e-posta yazışmaları) etkilenirse KVKK m. 12/5 uyarınca Kişisel Verileri Koruma Kurulu’na en geç 72 saat içinde, ilgili kişilere de en kısa sürede bildirim yapılır.</p>
+
+    <h2 id="tr-9">9. Hakların ve KVKK başvuru prosedürü</h2>
+    <p>KVKK m. 11 uyarınca; kişisel verilerinin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme, işlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme, yurt içinde ya da yurt dışında aktarıldığı üçüncü kişileri bilme, eksik ya da yanlış işlenmişse düzeltilmesini, şartları oluşmuşsa silinmesini ya da yok edilmesini ve bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, yalnızca otomatik sistemlerle analiz edilmesi sonucu aleyhine bir sonuç çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme haklarına sahipsin.</p>
+    <p>Uygulamadaki veriler zaten senin cihazında olduğu için bu hakların çoğunu doğrudan kullanabilirsin: Ayarlar › Gizlilik’ten verilerini JSON olarak indirebilir, rızalarını geri alabilir ve verilerini silebilirsin; kayıtlarını her ekranda düzeltebilirsin.</p>
+    <p><b>Başvuru:</b> Başvurunu <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20KVKK%20ba%C5%9Fvurusu">globalcode01@gmail.com</a> adresine e-postayla iletebilirsin; kayıtlı elektronik posta (KEP), güvenli elektronik imza ya da mobil imza da kullanabilirsin (Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ). Başvuruda adın soyadın, T.C. kimlik numaran (yabancıysan uyruğun ve pasaport ya da kimlik numaran), yazışma adresin ya da e-postan ve talebin bulunmalıdır. Başvurun ücretsiz olarak en geç 30 gün içinde sonuçlandırılır; işlem ayrıca bir maliyet gerektirirse Kurul’un belirlediği tarifeye göre ücret alınabilir. Başvurun reddedilirse, yanıtı yetersiz bulursan ya da süresinde yanıt verilmezse, yanıtı öğrendiğin tarihten itibaren 30 gün ve her hâlde başvuru tarihinden itibaren 60 gün içinde Kişisel Verileri Koruma Kurulu’na (<a href="https://www.kvkk.gov.tr" rel="noopener">kvkk.gov.tr</a>) şikâyette bulunabilirsin.</p>
+    <p>AB’de yaşıyorsan GDPR kapsamındaki hakların (erişim, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği, itiraz) da aynı yolla kullanılır; yaşadığın ülkenin veri koruma otoritesine şikâyet hakkın saklıdır.</p>
+
+    <h2 id="tr-10">10. Değişiklikler</h2>
+    <p>Bu metin uygulama güncellemeleriyle birlikte değişebilir; önemli değişiklikler sürüm notunda ve bu sayfada tarihiyle belirtilir.</p>
+    <ul>
+      <li>8 Kasım 2026: veri sorumlusu, aktarılan taraflar ve olası riskler, KVKK başvuru prosedürü, güvenlik prosedürü ve Android izinlerinin tamamı eklendi.</li>
+      <li>7 Kasım 2026: telefondaki takvimler ve yedek parolası sıfırlama.</li>
+      <li>6 Kasım 2026: sesle yazma.</li>
+      <li>3 Kasım 2026: ilk sürüm.</li>
+    </ul>
   </article>
 
-  <article id="en">
-    <h1>Privacy Policy</h1>
-    <p>Effective date: 3 November 2026. Applies to the TRacerCheck web and Android apps, published by Global Code 01 (globalcode01@gmail.com).</p>
-    <h2>1. Your data stays with you</h2>
-    <p>TRacerCheck is local-first. Work sessions, tasks, notes, journal entries, calendar items and settings are stored only on your device. The app has no server, no account and no database of its own. No ads, analytics or tracking. Fonts and app files ship with the app; no third-party CDN is used.</p>
-    <h2>2. What is processed</h2>
-    <p>Content you enter, time measurements you start, and a random device identifier used only to tell devices apart when merging backups. The publisher has no access to any of it.</p>
-    <h2>3. Android app</h2>
-    <p>The app writes a daily backup file to Documents/TRacerCheck on your phone (last 5 kept); it never leaves the device. “Google device backup” is off by default; only with your explicit consent is the app’s backup file included in Android’s backup to your own Google account. Turning it off deletes the file. Permissions: notifications (reminders and pomodoro end, optional) and internet (only for connections you start, such as an ICS subscription) and microphone (only when you tap the dictation button in Notes; asked on first use) and calendar (only when you pick phone calendars in Settings › Calendar; their events are read from and written to the phone’s calendar database, the app sends nothing over the internet; if a calendar belongs to a Google account, Android’s own account sync carries it to Google). No location, contacts, camera or broad file access.</p>
-    <p><b>Dictation:</b> when you tap the microphone in Notes, your voice is sent to your phone’s speech recognition service (usually Google LLC, USA; in the web version the browser’s service, Google or Microsoft) to be turned into text; with the language pack installed it may stay on the device. As this may be a transfer abroad, your explicit consent is asked first (accept and decline equal) and can be withdrawn in Settings › Privacy. The app stores no audio; only the resulting text goes into your note. Backup files go only where you choose in the system share sheet.</p>
-    <h2>4. Optional cloud connections</h2>
-    <p>In the web version, Google Drive / Google Calendar and OneDrive / Outlook Calendar are optional and off by default. Explicit consent is requested first, with accept and decline equally prominent. Data then goes directly from your device to the provider under your account; the provider processes your IP address and account details. You can withdraw consent at any time in Settings › Privacy.</p>
-    <h2>5. Retention, deletion, security</h2>
-    <p>Data stays until you delete it (Settings › Privacy › Delete all data, or uninstall). Encrypted backups use AES-256-GCM with a key derived via PBKDF2-SHA256 (600,000 iterations), plus a one-time recovery key. Neither secret is stored or transmitted.</p>
-    <h2>6. Contact</h2>
-    <p>globalcode01@gmail.com</p>
+  <article id="en" lang="en">
+    <h1>Privacy, Data Protection and Security</h1>
+    <p class="meta">Last updated: 8 November 2026. Applies to the TRacerCheck Android and web apps. This is the privacy notice under the Turkish Personal Data Protection Law No. 6698 (KVKK) and the EU General Data Protection Regulation (GDPR); the same text ships inside the app and reads offline (Settings › Privacy).</p>
+    <nav aria-label="Contents"><ol>
+      <li><a href="#en-1">Data controller</a></li><li><a href="#en-2">Core principle</a></li><li><a href="#en-3">What is processed and how</a></li>
+      <li><a href="#en-4">Purpose and legal basis</a></li><li><a href="#en-5">Recipients and transfers abroad</a></li><li><a href="#en-6">Android app and permissions</a></li>
+      <li><a href="#en-7">Retention and deletion</a></li><li><a href="#en-8">Security procedure</a></li><li><a href="#en-9">Your rights and how to apply</a></li>
+      <li><a href="#en-10">Changes</a></li>
+    </ol></nav>
+
+    <h2 id="en-1">1. Data controller</h2>
+    <p>Data controller: <b>Global Code 01</b> · <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20privacy">globalcode01@gmail.com</a>. TRacerCheck has no server, account or database of its own; Global Code 01 does not see, collect or store what you keep in the app. Data on your device stays under your control. The only personal data Global Code 01 processes is your e-mail address and message if you write to it (see 4 and 7).</p>
+
+    <h2 id="en-2">2. Core principle: your data stays with you</h2>
+    <p>TRacerCheck is local-first: work sessions, tasks, notes, journal entries, calendar items and settings are stored only on the device you use (in the app’s private storage on Android, in the browser’s IndexedDB on the web). No account is needed. No ads, analytics, tracking or tracking cookies. Fonts and all app files ship with the app; nothing is loaded from a third-party CDN. The app is not directed at people under 18.</p>
+
+    <h2 id="en-3">3. What is processed and how</h2>
+    <ul>
+      <li>Content you enter: tasks and subtasks, notes, journal entries, events, reminders, attachments, categories and tags.</li>
+      <li>Time records: start and end of work sessions, breaks, focus (pomodoro) sessions, time zone. For the clock guard the device clock is checked every 15 seconds while the app is open, and only the time of the last check is kept.</li>
+      <li>Your settings and consent choices.</li>
+      <li>A random device identifier, used only to tell devices apart when merging backups; it is not linked to your identity.</li>
+      <li>Only if you turn them on: events read from phone calendars, events downloaded from an ICS address, events synced from Google or Microsoft calendars (web), and your speech while dictating (only while it is turned into text; no audio is recorded).</li>
+    </ul>
+    <p>Method: data comes into being on your device through what you type and tap, partly automatically (timers, clock guard, daily backup). Nothing is sent over the internet by itself; the connections in section 5 run only when you start them.</p>
+
+    <h2 id="en-4">4. Purpose and legal basis</h2>
+    <ul>
+      <li>Records on your device: processed on your device and under your control to keep, analyse, remind you of and back up your own work records; Global Code 01 has no access to them.</li>
+      <li>Optional transfers (cloud connections, dictation, Google device backup): your explicit consent (KVKK Art. 5(1); GDPR Art. 6(1)(a)). For transfers abroad, explicit consent after being told the possible risks (KVKK Art. 9; see 5).</li>
+      <li>E-mails you send us: the legal obligation to answer data protection requests (KVKK Art. 5(2)(ç); GDPR Art. 6(1)(c)) and the legitimate interest in answering support requests (KVKK Art. 5(2)(f); GDPR Art. 6(1)(f)).</li>
+    </ul>
+    <p>If you do not consent, or withdraw consent, every other feature keeps working.</p>
+
+    <h2 id="en-5">5. Recipients and transfers abroad</h2>
+    <p>All of the following are off by default and run only if you turn them on. Where consent is needed, accept and decline are equally prominent:</p>
+    <ul>
+      <li><b>Google LLC: Google Drive and Google Calendar</b> (web only, consent): the backup file you choose and the events of calendars you allow to be read or written, under your account. Servers may be in the USA and other countries with Google data centres.</li>
+      <li><b>Microsoft Corporation: OneDrive and Outlook Calendar</b> (web only, consent): likewise; servers may be in the USA, the EU and other countries.</li>
+      <li><b>Speech recognition: dictation</b> (consent): your speech goes to your phone’s speech service (on Android usually Google LLC) or the browser’s service (Google in Chrome, Microsoft in Edge) to be turned into text. With the language pack installed it may stay on the device. TRacerCheck records no audio.</li>
+      <li><b>Google device backup</b> (Android, consent): the app’s backup file is copied to your own Google account by Android’s backup service. With a screen lock set, Android encrypts this backup end to end.</li>
+      <li><b>ICS subscription</b>: your device requests the calendar address you entered; that server sees your IP address.</li>
+      <li><b>Phone calendars</b> (Android): TRacerCheck sends these events nowhere. If a calendar belongs to a Google account, Android’s own account sync carries it to Google, according to your phone’s account settings.</li>
+    </ul>
+    <p>In these connections data goes directly from your device to the provider under your account; there is no Global Code 01 server in between. Providers process your IP address and account details under their own privacy policies. <b>Possible risks:</b> these countries may not offer protection equal to Turkey’s, and their authorities may access the data under their laws; Global Code 01 cannot audit the provider. With an encrypted backup the provider cannot read the file’s content. You can withdraw consent at any time in Settings › Privacy; withdrawing signs you out and stops further transfers. Files uploaded earlier can be deleted from your own account.</p>
+
+    <h2 id="en-6">6. Android app and permissions</h2>
+    <p>Data is kept in the app’s private storage, which other apps cannot read. Every day the app writes a backup file to Documents/TRacerCheck (last 5 kept); these files never leave your phone. “Save / share” sends a backup only where you choose. Google and Microsoft sign-in do not exist in the Android app. Permissions:</p>
+    <ul>
+      <li><b>Notifications</b>: reminders and pomodoro end (optional).</li>
+      <li><b>Run at startup and wake lock</b>: to set reminders again after the phone restarts.</li>
+      <li><b>Internet</b>: only for connections you start (an ICS address, Google Calendar’s secret iCal address).</li>
+      <li><b>Microphone</b>: only when you tap the dictation button; asked on first use.</li>
+      <li><b>Calendar</b>: only when you pick phone calendars in Settings › Calendar. Chosen calendars are read; events you add or edit in the app are written there.</li>
+      <li><b>Storage</b> (Android 10 and earlier only): for the daily backup in Documents.</li>
+    </ul>
+    <p>No location, contacts, camera, all-files access, exact alarms or advertising ID. You can turn permissions off at any time in Android Settings › Apps › TRacerCheck › Permissions.</p>
+
+    <h2 id="en-7">7. Retention and deletion</h2>
+    <ul>
+      <li>Data stays on your device until you delete it. Deleted items go to Archive first, where they can be restored or removed for good.</li>
+      <li>Automatic copies taken before a restore (last 5) and the backup history are also kept on the device.</li>
+      <li>Settings › Privacy › “Delete all data” permanently deletes everything on this device. Uninstalling also deletes the app’s data; backup files in Documents/TRacerCheck stay on the phone until you delete them in a file manager.</li>
+      <li>Backups uploaded to your cloud accounts are deleted from those accounts by you.</li>
+      <li>E-mails sent to Global Code 01 are deleted within one year after the request is closed, unless the law requires keeping them.</li>
+    </ul>
+
+    <h2 id="en-8">8. Security procedure</h2>
+    <p>Measures:</p>
+    <ul>
+      <li>No server: records are never pooled in one place, so there is no bulk breach risk.</li>
+      <li>Network: encrypted (HTTPS) connections only; plain HTTP and mixed content are blocked. No advertising, analytics or tracking libraries.</li>
+      <li>Encrypted backup: AES-256-GCM. A random master key is wrapped twice, with keys derived from your password (PBKDF2-SHA256, 600,000 iterations) and from a one-time recovery key (HKDF-SHA256). Neither secret is stored or sent anywhere; on the device the master key is kept non-extractable.</li>
+      <li>Integrity: modified or damaged backup files are rejected; an automatic copy of current data is taken before any restore.</li>
+      <li>Forgotten password: a reset waits 12 hours and can be cancelled meanwhile, so someone holding your phone cannot silently replace your backup password. Older encrypted backups open only with the old password or the recovery key.</li>
+      <li>Sessions (web): the Google access token lives only for the open session, the Microsoft session is kept in the browser; withdrawing consent signs you out.</li>
+      <li>Clock guard: turning the device clock back is flagged on the work session.</li>
+    </ul>
+    <p>What you can do: use a screen lock, set up an encrypted backup and keep the recovery key somewhere safe, save backups only where you trust, keep the app updated.</p>
+    <p><b>Reporting a vulnerability:</b> write to <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20security">globalcode01@gmail.com</a> with the subject “TRacerCheck security”. You get a reply within 7 days; confirmed issues are fixed in an update and mentioned in its release notes.</p>
+    <p><b>In case of a breach:</b> if an issue that could affect user data is found, it is fixed, an update is published, and users who may be affected are told what to do in the release notes and on this page. If data processed by Global Code 01 (such as e-mails) is affected, the Turkish Personal Data Protection Board is notified within 72 hours under KVKK Art. 12(5), and the people concerned as soon as possible.</p>
+
+    <h2 id="en-9">9. Your rights and how to apply</h2>
+    <p>Under KVKK Art. 11 you may learn whether your data is processed, request information about it, learn the purpose and whether it is used accordingly, know the third parties it is transferred to in Turkey or abroad, ask for correction, deletion or destruction and for these to be passed on to those third parties, object to an adverse result produced solely by automated analysis, and claim compensation for damage caused by unlawful processing. If you live in the EU you also have the GDPR rights of access, rectification, erasure, restriction, data portability and objection, and you may complain to your local supervisory authority.</p>
+    <p>Because the app’s data is already on your device, you can use most of these rights directly: in Settings › Privacy you can download all your data as JSON, withdraw consents and delete your data, and you can correct records on every screen.</p>
+    <p><b>How to apply:</b> e-mail <a href="mailto:globalcode01@gmail.com?subject=TRacerCheck%20data%20request">globalcode01@gmail.com</a>, including your name, how to reach you and your request. Requests are answered free of charge within 30 days. If you are not satisfied with the answer you may complain to the Turkish Personal Data Protection Board (<a href="https://www.kvkk.gov.tr" rel="noopener">kvkk.gov.tr</a>) or, in the EU, to your supervisory authority.</p>
+
+    <h2 id="en-10">10. Changes</h2>
+    <p>This text may change with app updates; significant changes are dated in the release notes and on this page. 8 November 2026: data controller, recipients and possible risks, application and security procedures, and the full list of Android permissions added. 7 November 2026: phone calendars and backup password reset. 6 November 2026: dictation. 3 November 2026: first version.</p>
   </article>
 </main>
 </body>
