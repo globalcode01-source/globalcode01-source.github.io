@@ -5,12 +5,22 @@
   "interstitialFreeOps": 3,
   "billing": false,
   "proTools": [
-    "cert_sign",
-    "pdfa",
+    "watermark",
+    "header_footer",
+    "remove_blank",
     "compare",
     "pdf_excel",
     "pdf_ppt",
-    "header_footer"
+    "pdfa",
+    "extract_images",
+    "unprotect",
+    "cert_sign",
+    "zip_create",
+    "img_resize",
+    "img_convert",
+    "gif_create",
+    "gif_frames",
+    "video_project"
   ],
   "rewardedId": ""
 }
