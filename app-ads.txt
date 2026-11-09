@@ -1,2 +1,2 @@
-# Melodi Mix · app-ads.txt
+# Global Code 01 · app-ads.txt (Melodi Mix, AllFixDoc)
 google.com, pub-8926273130707412, DIRECT, f08c47fec0942fa0
