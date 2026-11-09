@@ -4,5 +4,12 @@
   "interstitialMinutes": 3,
   "interstitialFreeOps": 3,
   "billing": false,
-  "proTools": []
+  "proTools": [
+    "cert_sign",
+    "pdfa",
+    "compare",
+    "pdf_excel",
+    "pdf_ppt",
+    "header_footer"
+  ]
 }
