@@ -32,11 +32,11 @@ def add_domain(d):
     if DOMAIN.match(d) and not re.match(r"^\d+(\.\d+){3}$", d):
         domains.add(d)
 
-def abusech(name, url, body):
+def abusech(name, url, body=None):
     if not KEY:
         print(f"{name}: ABUSECH_KEY yok, atlandı"); return
     try:
-        txt = fetch(url, data=urllib.parse.urlencode(body).encode(), headers={"Auth-Key": KEY})
+        txt = fetch(url, data=urllib.parse.urlencode(body).encode() if body else None, headers={"Auth-Key": KEY})
         j = json.loads(txt); n = 0
         for item in j.get("data") or j.get("urls") or []:
             h = (item.get("sha256_hash") or "").lower()
@@ -61,8 +61,10 @@ def text_source(name, url, is_url=False, comment="#"):
         print(f"{name}: hata {e}")
 
 # Android zararlı APK özetleri (MalwareBazaar, son 1000 apk) ve zararlı alan adları (URLhaus son 1000 URL)
-abusech("MalwareBazaar", "https://mb-api.abuse.ch/api/v1/", {"query": "get_file_type", "file_type": "apk", "limit": "1000"})
-abusech("URLhaus", "https://urlhaus-api.abuse.ch/v1/urls/recent/?limit=1000", {})
+abusech("MalwareBazaar apk", "https://mb-api.abuse.ch/api/v1/", {"query": "get_file_type", "file_type": "apk", "limit": "1000"})
+abusech("MalwareBazaar tag", "https://mb-api.abuse.ch/api/v1/", {"query": "get_taginfo", "tag": "apk", "limit": "1000"})
+abusech("MalwareBazaar android", "https://mb-api.abuse.ch/api/v1/", {"query": "get_taginfo", "tag": "android", "limit": "1000"})
+abusech("URLhaus", "https://urlhaus-api.abuse.ch/v1/urls/recent/limit/1000/")
 # Oltalama alan adları (anahtarsız)
 text_source("OpenPhish", "https://openphish.com/feed.txt", is_url=True)
 text_source("PhishingArmy", "https://phishing.army/download/phishing_army_blocklist.txt")
