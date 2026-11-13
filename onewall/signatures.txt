@@ -1,0 +1,5 @@
+# OneWall çevrimdışı imza listesi. Satır: SHA-256 (APK/dosya) ya da domain:<alan adı>. Güncel listeyi uygulama "Listeyi güncelle" ile indirir.
+# updated: 2026-11-13
+# EICAR test dosyası (zararsız, tarayıcı denemesi için standart)
+275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f
+domain:eicar.org.test
