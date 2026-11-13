@@ -1,0 +1,23 @@
+name: OneWall imza listesi
+on:
+  schedule:
+    - cron: "17 4 * * 1"   # her pazartesi 04:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Listeyi üret
+        env:
+          ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}
+        run: python3 -I onewall/tools/make_signatures.py onewall/signatures.txt
+      - name: Yayınla
+        run: |
+          git config user.name "globalcode01-source"
+          git config user.email "globalcode01@gmail.com"
+          git add onewall/signatures.txt
+          git diff --cached --quiet || git commit -m "OneWall imza listesi güncellendi"
+          git push
