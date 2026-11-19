@@ -33,7 +33,7 @@
 
     <h2>What OneWall processes on your device</h2>
     <ul>
-      <li><b>Connection records:</b> which app looked up which domain, when, whether it was a known tracker and whether it was blocked. Stored only on your device (Android: kept for 7 days, 30 days with Pro), never uploaded. You can delete them in Settings at any time. They leave the device only if you export them yourself (CSV).</li>
+      <li><b>Connection records:</b> which app looked up which domain, when, whether it was a known tracker, whether it was blocked, and the country of the server it resolved to (looked up in an offline database inside the app, for the connection map). Stored only on your device (Android: kept for 7 days, 30 days with Pro), never uploaded. You can delete them in Settings at any time. They leave the device only if you export them yourself (CSV).</li>
       <li><b>List of installed apps</b> (Android): used only to show per-app rules and quarantine new apps. It is not sent anywhere.</li>
       <li><b>Approximate map positions:</b> computed offline from a built-in database (DB-IP Lite). Your location permission is never used.</li>
       <li><b>Parental controls</b> (Android): the parent PIN and recovery code are stored only as salted hashes. The parental event log keeps only the time and type of each event (wrong PIN, recovery code used, protection or uninstall protection turned off), at most 50 entries. All of it stays on the device and is excluded from cloud backups. Uninstall protection uses Android's device admin only to keep OneWall from being uninstalled or reset; no other admin rights are used.</li>
@@ -96,7 +96,7 @@
 
     <h2>OneWall cihazında neleri işler?</h2>
     <ul>
-      <li><b>Bağlantı kayıtları:</b> hangi uygulamanın hangi alan adını ne zaman sorguladığı, bunun bilinen bir izleyici olup olmadığı ve engellenip engellenmediği. Yalnızca cihazında tutulur (Android'de 7 gün, Pro'da 30 gün), hiçbir yere yüklenmez. Ayarlar'dan istediğin zaman silebilirsin. Cihazdan yalnızca sen dışa aktarırsan (CSV) çıkar.</li>
+      <li><b>Bağlantı kayıtları:</b> hangi uygulamanın hangi alan adını ne zaman sorguladığı, bunun bilinen bir izleyici olup olmadığı, engellenip engellenmediği ve sunucunun bulunduğu ülke (bağlantı haritası için uygulamanın içindeki çevrimdışı veritabanından bulunur). Yalnızca cihazında tutulur (Android'de 7 gün, Pro'da 30 gün), hiçbir yere yüklenmez. Ayarlar'dan istediğin zaman silebilirsin. Cihazdan yalnızca sen dışa aktarırsan (CSV) çıkar.</li>
       <li><b>Yüklü uygulamalar listesi</b> (Android): yalnızca uygulama başına kuralları göstermek ve yeni uygulamaları karantinaya almak için kullanılır. Hiçbir yere gönderilmez.</li>
       <li><b>Haritadaki yaklaşık konumlar:</b> uygulamadaki çevrimdışı veritabanıyla (DB-IP Lite) hesaplanır. Konum izni hiç kullanılmaz.</li>
       <li><b>Ebeveyn denetimi</b> (Android): ebeveyn PIN'i ve kurtarma kodu yalnızca tuzlanmış karma (hash) olarak saklanır. Ebeveyn olay kaydı yalnızca olayın saatini ve türünü tutar (yanlış PIN, kurtarma kodu kullanımı, korumanın ya da kaldırma korumasının kapatılması), en fazla 50 kayıt. Hepsi cihazda kalır, bulut yedeğine girmez. Kaldırma koruması Android'in cihaz yöneticisi özelliğini yalnızca OneWall'un kaldırılmasını ve sıfırlanmasını önlemek için kullanır; başka yönetici yetkisi kullanılmaz.</li>
